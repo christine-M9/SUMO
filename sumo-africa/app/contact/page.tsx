@@ -245,7 +245,7 @@ export default function ContactPage() {
       </section>
 
       {/* PARTNER CTA */}
-      <section className="bg-[#06153a] py-20 md:py-24 text-center">
+      <section className="bg-[#071a2f] py-20 md:py-24 text-center">
         <div className="max-w-5xl mx-auto px-6 md:px-10">
           <h2 className="text-white text-[30px] md:text-[54px] font-black uppercase tracking-tight leading-none">
             Looking To Partner With Us?
@@ -276,7 +276,7 @@ export default function ContactPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#06153a] text-white">
+      <footer className="bg-[#071a2f] text-white">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-16 grid md:grid-cols-2 xl:grid-cols-4 gap-14">
           <div>
             <h3 className="text-[30px] md:text-[34px] font-black uppercase tracking-tight leading-none">

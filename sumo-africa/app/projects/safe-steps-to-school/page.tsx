@@ -448,7 +448,7 @@ export default function SafeStepsToSchoolPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#0f2236] text-white">
+      <footer className="bg-[#071a2f] text-white">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-20 grid md:grid-cols-2 xl:grid-cols-4 gap-14">
           <div>
             <h3 className="text-[30px] md:text-[34px] font-black uppercase tracking-tight leading-none">

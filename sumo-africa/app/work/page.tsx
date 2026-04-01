@@ -370,7 +370,7 @@ export default function OurWorkPage() {
       </main>
 
       
-<footer className="bg-[#0f2236] text-white pt-20 pb-8">
+<footer className="bg-[#071a2f] text-white pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* COLUMN 1 */}
