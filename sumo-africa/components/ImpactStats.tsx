@@ -10,7 +10,7 @@ export default function ImpactStats() {
 <h2 className="text-4xl font-bold text-orange-500">
 2024
 </h2>
-<p className="text-sm mt-2 tracking-wider text-gray-300">
+<p className="text-sm mt-2 tracking-wider text-[#3eaef2]">
 FOUNDED
 </p>
 </div>
@@ -20,7 +20,7 @@ FOUNDED
 <h2 className="text-4xl font-bold text-orange-500">
 7+
 </h2>
-<p className="text-sm mt-2 tracking-wider text-gray-300">
+<p className="text-sm mt-2 tracking-wider text-[#3eaef2]">
 KEY STAKEHOLDER PARTNERS
 </p>
 </div>
@@ -30,7 +30,7 @@ KEY STAKEHOLDER PARTNERS
 <h2 className="text-4xl font-bold text-orange-500">
 3
 </h2>
-<p className="text-sm mt-2 tracking-wider text-gray-300">
+<p className="text-sm mt-2 tracking-wider text-[#3eaef2]">
 ACTIVE PROJECTS
 </p>
 </div>
@@ -40,7 +40,7 @@ ACTIVE PROJECTS
 <h2 className="text-4xl font-bold text-orange-500">
 1000+
 </h2>
-<p className="text-sm mt-2 tracking-wider text-gray-300">
+<p className="text-sm mt-2 tracking-wider text-[#3eaef2]">
 LIVES TO IMPACT
 </p>
 </div>

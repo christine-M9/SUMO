@@ -96,26 +96,28 @@ const projects = [
     ],
     button: false,
   },
-  {
-    status: "ACTIVE",
-    statusClass: "bg-[#22c55e] text-white",
-    year: "2025",
-    title: "DRIVE RIGHT",
-    description:
-      "Youth-led initiative to reduce speeding and enhance matatu safety in Nairobi through operator training, speed monitoring, and policy advocacy.",
-    achievements: [],
-    button: true,
-  },
-  {
-    status: "ACTIVE",
-    statusClass: "bg-[#22c55e] text-white",
-    year: "2025",
-    title: "SAFE STEPS TO SCHOOL",
-    description:
-      "School safety initiative focused on protecting children through safer crossings, awareness, and community-led action around learning institutions.",
-    achievements: [],
-    button: true,
-  },
+{
+  status: "ACTIVE",
+  statusClass: "bg-[#22c55e] text-white",
+  year: "2025",
+  title: "DRIVE RIGHT",
+  description:
+    "Youth-led initiative to reduce speeding and enhance matatu safety in Nairobi through operator training, speed monitoring, and policy advocacy.",
+  achievements: [],
+  button: true,
+  link: "/projects/drive-right",
+},
+ {
+  status: "ACTIVE",
+  statusClass: "bg-[#22c55e] text-white",
+  year: "2025",
+  title: "SAFE STEPS TO SCHOOL",
+  description:
+    "School safety initiative focused on protecting children through safer crossings, awareness, and community-led action around learning institutions.",
+  achievements: [],
+  button: true,
+  link: "/projects/safe-steps-to-school",
+},
 ]
 
 const goals = [
@@ -195,10 +197,10 @@ export default function OurWorkPage() {
                 return (
                   <div
                     key={item.title}
-                    className="group border border-[#e5e7eb] bg-white px-7 py-7 transition duration-300 hover:border-[#06132e] hover:bg-[#06132e]"
+                    className="group border border-[#e5e7eb] bg-white px-7 py-7 transition duration-300 hover:border-[#06132e] hover:bg-[#3eaef2]"
                   >
                     <div className="flex items-start gap-5">
-                      <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center bg-[#06132e] transition duration-300 group-hover:bg-orange-500">
+                      <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center bg-[#3eaef2] transition duration-300 group-hover:bg-orange-500">
                         <Icon
                           size={23}
                           className="text-orange-500 transition duration-300 group-hover:text-white"
@@ -220,7 +222,7 @@ export default function OurWorkPage() {
                               key={point}
                               className="flex items-center gap-2.5 text-[15px] text-slate-500 transition duration-300 group-hover:text-slate-200"
                             >
-                              <CheckCircle2 size={17} className="text-[#9ae6b4]" />
+                              <CheckCircle2 size={17} className="text-orange-500" />
                               <span>{point}</span>
                             </div>
                           ))}
@@ -285,7 +287,7 @@ export default function OurWorkPage() {
                             key={achievement}
                             className="flex items-center gap-2.5 text-[15px] text-slate-500"
                           >
-                            <CheckCircle2 size={17} className="text-[#9ae6b4]" />
+                            <CheckCircle2 size={17} className="text-[#3eaef2]" />
                             <span>{achievement}</span>
                           </div>
                         ))}
@@ -296,7 +298,7 @@ export default function OurWorkPage() {
                   {project.button && (
                     <div className="mt-8">
                       <Link
-                        href="/projects"
+                        href={project.link}
                         className="inline-flex items-center gap-3 bg-[#06132e] px-7 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition duration-300 hover:bg-orange-500"
                       >
                         VIEW PROJECT
@@ -379,13 +381,13 @@ export default function OurWorkPage() {
               SUMO AFRICA
             </h2>
 
-            <p className="mt-3 text-orange-500 text-sm font-bold uppercase tracking-[0.14em] leading-snug">
+            <p className="mt-3 text-[#3eaef2] text-sm font-bold uppercase tracking-[0.14em] leading-snug">
               Inclusive & Sustainable
               <br />
               Mobility
             </p>
 
-            <p className="mt-8 text-[#b7bfd3] text-base leading-8 max-w-[280px]">
+            <p className="mt-8 text-[#3eaef2] text-base leading-8 max-w-[280px]">
               A Nairobi-based NGO advancing road safety and sustainable transport
               across Africa through advocacy, awareness, education, and research.
             </p>
@@ -420,20 +422,20 @@ export default function OurWorkPage() {
               Quick Links
             </h3>
 
-            <div className="flex flex-col gap-4 text-[#c0c8da] text-base">
-              <Link href="/" className="hover:text-orange-500 transition">
+            <div className="flex flex-col gap-4 text-[#3eaef2] text-base">
+              <Link href="/" className="hover:text-[#3eaef2] transition">
                 Home
               </Link>
-              <Link href="/about" className="hover:text-orange-500 transition">
+              <Link href="/about" className="hover:text-[#3eaef2] transition">
                 About Us
               </Link>
-              <Link href="/our-work" className="hover:text-orange-500 transition">
+              <Link href="/our-work" className="hover:text-[#3eaef2] transition">
                 Our Work
               </Link>
-              <Link href="/news" className="hover:text-orange-500 transition">
+              <Link href="/news" className="hover:text-[#3eaef2] transition">
                 News
               </Link>
-              <Link href="/contact" className="hover:text-orange-500 transition">
+              <Link href="/contact" className="hover:text-[#3eaef2] transition">
                 Contact
               </Link>
             </div>
@@ -445,19 +447,19 @@ export default function OurWorkPage() {
               Local Action Projects
             </h3>
 
-            <div className="flex flex-col gap-4 text-[#c0c8da] text-base">
-              <Link href="/projects" className="hover:text-orange-500 transition">
+            <div className="flex flex-col gap-4 text-[#3eaef2] text-base">
+              <Link href="/projects" className="hover:text-[#3eaef2] transition">
                 Drive Right
               </Link>
-              <Link href="/projects" className="hover:text-orange-500 transition">
+              <Link href="/projects" className="hover:text-[#3eaef2] transition">
                 Safe Steps to School
               </Link>
             </div>
 
             <div className="mt-10 space-y-5">
               <div className="flex items-start gap-4">
-                <MapPin className="text-orange-500 mt-1 shrink-0" size={20} />
-                <p className="text-[#c0c8da] text-base leading-7">
+                <MapPin className="text-[#3eaef2] mt-1 shrink-0" size={20} />
+                <p className="text-[#3eaef2] text-base leading-7">
                   CVS Plaza, Lenana Road,
                   <br />
                   6281-00100, Nairobi, Kenya
@@ -465,10 +467,10 @@ export default function OurWorkPage() {
               </div>
 
               <div className="flex items-center gap-4">
-                <Mail className="text-orange-500 shrink-0" size={20} />
+                <Mail className="text-[#3eaef2] shrink-0" size={20} />
                 <a
                   href="mailto:info@sumoafrica.org"
-                  className="text-[#c0c8da] text-base hover:text-orange-500 transition"
+                  className="text-[#3eaef2] text-base hover:text-[#3eaef2] transition"
                 >
                   info@sumoafrica.org
                 </a>
@@ -482,7 +484,7 @@ export default function OurWorkPage() {
               Stay Updated
             </h3>
 
-            <p className="text-[#c0c8da] text-base leading-7 max-w-[290px] mb-6">
+            <p className="text-[#3eaef2] text-base leading-7 max-w-[290px] mb-6">
               Subscribe to our newsletter for the latest updates on road safety
               and sustainable mobility.
             </p>
@@ -494,7 +496,7 @@ export default function OurWorkPage() {
                 className="w-full h-14 bg-[#112246] border border-[#1b2f5c] px-5 text-white placeholder:text-[#6f7b98] outline-none"
               />
 
-              <button className="w-full h-14 bg-orange-500 hover:bg-orange-600 transition flex items-center justify-center gap-3 text-white font-bold uppercase tracking-wide">
+              <button className="w-full h-14 bg-[#3eaef2] hover:bg-orange-600 transition flex items-center justify-center gap-3 text-white font-bold uppercase tracking-wide">
                 <Send size={16} />
                 Subscribe
               </button>
@@ -504,11 +506,11 @@ export default function OurWorkPage() {
 
         {/* BOTTOM BAR */}
         <div className="border-t border-[#112246] mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#8e98b3] text-sm">
+          <p className="text-[#3eaef2] text-sm">
             © 2026 SUMO Africa. All rights reserved.
           </p>
 
-          <p className="text-[#8e98b3] text-sm text-center md:text-right">
+          <p className="text-[#3eaef2] text-sm text-center md:text-right">
             Founded August 2024 • Nairobi, Kenya
           </p>
         </div>

@@ -6,7 +6,7 @@ export default function JoinMovement() {
 
       {/* JOIN MOVEMENT */}
       <div className="max-w-3xl mx-auto text-center px-6">
-        <p className="text-orange-500 tracking-widest text-sm font-semibold">
+        <p className="text-[#4DA8DA] tracking-widest text-sm font-semibold">
           STAY CONNECTED
         </p>
 
@@ -14,7 +14,7 @@ export default function JoinMovement() {
           JOIN OUR MOVEMENT
         </h2>
 
-        <p className="text-gray-300 mb-8">
+        <p className="text-[#3eaef2] mb-8">
           Subscribe to receive updates on our projects, road safety insights,
           and opportunities to get involved.
         </p>
@@ -29,7 +29,7 @@ export default function JoinMovement() {
               className="flex-1 bg-gray-200 px-5 py-4 text-gray-700 placeholder-gray-500 outline-none"
             />
 
-            <button className="bg-[#f58220] px-8 py-4 font-semibold tracking-wide hover:bg-[#e37112] transition flex items-center gap-2">
+            <button className="bg-[#4DA8DA] px-8 py-4 font-semibold tracking-wide hover:bg-[#4DA8DA] transition flex items-center gap-2">
               <Send size={16} />
               SUBSCRIBE
             </button>
@@ -44,13 +44,13 @@ export default function JoinMovement() {
 
           {/* ABOUT */}
           <div>
-            <h3 className="font-bold text-lg">SUMO AFRICA</h3>
+            <h3 className="font-bold text-white">SUMO AFRICA</h3>
 
-            <p className="text-orange-500 text-xs mt-1">
+            <p className="text-[#3eaef2] text-xs mt-1">
               INCLUSIVE & SUSTAINABLE MOBILITY
             </p>
 
-            <p className="text-gray-400 text-sm mt-4 leading-relaxed">
+            <p className="text-[#3eaef2] text-sm mt-4 leading-relaxed">
               A Nairobi-based NGO advancing road safety and sustainable
               transport across Africa through advocacy, awareness,
               education, and research.
@@ -66,9 +66,9 @@ export default function JoinMovement() {
 
           {/* QUICK LINKS */}
           <div>
-            <h4 className="font-semibold mb-4">QUICK LINKS</h4>
+            <h4 className="text-white font-semibold mb-4">QUICK LINKS</h4>
 
-            <ul className="space-y-2 text-gray-400 text-sm">
+            <ul className="space-y-2 text-[#3eaef2] text-sm">
               <li className="hover:text-white cursor-pointer">Home</li>
               <li className="hover:text-white cursor-pointer">About Us</li>
               <li className="hover:text-white cursor-pointer">Our Work</li>
@@ -79,16 +79,16 @@ export default function JoinMovement() {
 
           {/* PROJECTS + CONTACT */}
           <div>
-            <h4 className="font-semibold mb-4">LOCAL ACTION PROJECTS</h4>
+            <h4 className="text-white font-semibold mb-4">LOCAL ACTION PROJECTS</h4>
 
-            <ul className="space-y-2 text-gray-400 text-sm mb-6">
+            <ul className="space-y-2 text-[#3eaef2] text-sm mb-6">
               <li className="hover:text-white cursor-pointer">Drive Right</li>
               <li className="hover:text-white cursor-pointer">Safe Steps to School</li>
             </ul>
 
             {/* LOCATION */}
-            <div className="flex gap-2 text-gray-400 text-sm mb-2">
-              <MapPin size={16} className="text-orange-500 mt-1" />
+            <div className="flex gap-2 text-[#3eaef2] text-sm mb-2">
+              <MapPin size={16} className="text-[#4DA8DA] mt-1" />
               <p>
                 CVS Plaza, Lenana Road <br />
                 Nairobi, Kenya
@@ -96,17 +96,17 @@ export default function JoinMovement() {
             </div>
 
             {/* EMAIL */}
-            <div className="flex gap-2 text-gray-400 text-sm">
-              <Mail size={16} className="text-orange-500 mt-1" />
+            <div className="flex gap-2 text-[#3eaef2] text-sm">
+              <Mail size={16} className="text-[#4DA8DA] mt-1" />
               <p>info@sumoafrica.org</p>
             </div>
           </div>
 
           {/* NEWSLETTER */}
           <div>
-            <h4 className="font-semibold mb-4">STAY UPDATED</h4>
+            <h4 className="text-white font-semibold mb-4">STAY UPDATED</h4>
 
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-[#3eaef2] text-sm mb-4">
               Subscribe to our newsletter for the latest updates
               on road safety and sustainable mobility.
             </p>
@@ -114,10 +114,10 @@ export default function JoinMovement() {
             <div className="flex flex-col gap-2">
               <input
                 placeholder="Enter your email"
-                className="px-4 py-3 text-black outline-none"
+                className="px-4 py-3 text-[#4DA8DA] outline-none"
               />
 
-              <button className="bg-orange-500 py-3 font-semibold hover:bg-orange-600 transition flex items-center justify-center gap-2">
+              <button className="bg-[#4DA8DA] py-3 font-semibold hover:bg-[#3a8bc9] transition flex items-center justify-center gap-2">
                 <Send size={16} />
                 SUBSCRIBE
               </button>

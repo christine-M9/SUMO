@@ -14,7 +14,7 @@ export default function AboutSection() {
             ABOUT US
           </p>
 
-          <h2 className="text-4xl font-bold text-[#0c1b2a] leading-tight mb-6">
+          <h2 className="text-4xl font-bold text-[#3eaef2] leading-tight mb-6">
             DRIVING CHANGE FOR <br/> SAFER AFRICAN ROADS
           </h2>
 
@@ -42,7 +42,7 @@ export default function AboutSection() {
           {/* Vision */}
           <div className="flex gap-3 mb-10 items-start">
 
-            <Eye size={20} className="text-green-500 mt-1" />
+            <Eye size={20} className="text-[#3eaef2] mt-1" />
 
             <div>
               <p className="font-semibold text-[#0c1b2a]">Our Vision</p>
@@ -53,7 +53,7 @@ export default function AboutSection() {
 
           </div>
 
-          <button className="bg-[#0c1b2a] text-white px-7 py-3 text-sm font-semibold">
+          <button className="bg-[#3eaef2] text-white px-7 py-3 text-sm font-semibold">
             DISCOVER OUR STORY →
           </button>
 
@@ -62,13 +62,15 @@ export default function AboutSection() {
         {/* RIGHT IMAGE */}
         <div className="relative">
 
-          <Image
-            src="/images/sumo3.webp"
-            alt="SUMO Africa"
-            width={520}
-            height={380}
-            className="object-cover rounded"
-          />
+<div className="w-full max-w-[500px] h-[380px] overflow-hidden rounded-lg">
+  <Image
+    src="/images/sumo13.jpeg"
+    alt="SUMO Africa"
+    width={520}
+    height={380}
+    className="w-full h-full object-cover"
+  />
+</div>
 
           {/* Orange Overlay */}
           <div className="absolute -bottom-6 -left-6 bg-orange-500 text-white px-6 py-5 rounded-md">

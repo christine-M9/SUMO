@@ -73,7 +73,7 @@ export default function DriveRightPage() {
       </section>
 
       {/* ORANGE STRIP */}
-      <section className="bg-[#ff7a12]">
+      <section className="bg-[#3eaef2]">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-8 md:py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div>
             <p className="text-white/85 text-[11px] md:text-xs font-bold uppercase tracking-[0.14em]">
@@ -104,7 +104,7 @@ export default function DriveRightPage() {
       <section className="bg-[#f7f7f7] py-24 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
           <div>
-            <p className="text-[#ef8a52] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
+            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               The Challenge
             </p>
 
@@ -126,7 +126,7 @@ export default function DriveRightPage() {
                 "Limited accountability and monitoring systems",
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <span className="mt-2 w-4 h-4 rounded-full bg-[#ff5a5f] shrink-0"></span>
+                  <span className="mt-2 w-4 h-4 rounded-full bg-[#3eaef2] shrink-0"></span>
                   <p className="text-[#5d6673] text-[16px] md:text-[18px] leading-[1.7]">
                     {item}
                   </p>
@@ -154,7 +154,7 @@ export default function DriveRightPage() {
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <CheckCircle2
-                    className="text-[#18c45b] mt-1 shrink-0"
+                    className="text-[#3eaef2] mt-1 shrink-0"
                     size={26}
                     strokeWidth={2.4}
                   />
@@ -172,7 +172,7 @@ export default function DriveRightPage() {
       <section className="bg-[#f6f6f6] py-24 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
           <div className="text-center">
-            <p className="text-[#ef8a52] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
+            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               Key Milestones
             </p>
             <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[52px] font-black uppercase tracking-tight">
@@ -182,7 +182,7 @@ export default function DriveRightPage() {
 
           <div className="mt-16 grid md:grid-cols-2 xl:grid-cols-3 gap-8">
             <div className="bg-white border border-[#e7e7e7] shadow-[0_10px_24px_rgba(0,0,0,0.04)] px-8 py-10 text-center">
-              <div className="w-20 h-20 mx-auto bg-[#ff7a12] flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto bg-[#3eaef2] flex items-center justify-center">
                 <Users className="text-white" size={34} strokeWidth={2.4} />
               </div>
               <h3 className="mt-8 text-[#08142c] text-[20px] md:text-[22px] font-black uppercase leading-tight">
@@ -208,7 +208,7 @@ export default function DriveRightPage() {
             </div>
 
             <div className="bg-white border border-[#e7e7e7] shadow-[0_18px_35px_rgba(0,0,0,0.08)] px-8 py-10 text-center">
-              <div className="w-20 h-20 mx-auto bg-[#ff7a12] flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto bg-[#3eaef2] flex items-center justify-center">
                 <Shield className="text-white" size={34} strokeWidth={2.4} />
               </div>
               <h3 className="mt-8 text-[#08142c] text-[20px] md:text-[22px] font-black uppercase leading-tight">
@@ -227,7 +227,7 @@ export default function DriveRightPage() {
       <section className="bg-[#f7f7f7] py-24 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-start">
           <div>
-            <p className="text-[#ef8a52] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
+            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               Impact
             </p>
 
@@ -246,7 +246,7 @@ export default function DriveRightPage() {
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <CheckCircle2
-                    className="text-[#77d68f] mt-1 shrink-0"
+                    className="text-[#3eaef2] mt-1 shrink-0"
                     size={26}
                     strokeWidth={2.4}
                   />
@@ -293,7 +293,7 @@ export default function DriveRightPage() {
               </p>
             </div>
 
-            <div className="bg-[#f0f1f5] min-h-[230px] md:min-h-[260px] flex flex-col items-center justify-center text-center px-6">
+            <div className="bg-[#3eaef2] min-h-[230px] md:min-h-[260px] flex flex-col items-center justify-center text-center px-6">
               <Award className="text-[#08142c]" size={38} strokeWidth={2.4} />
               <h3 className="mt-8 text-[#08142c] text-[42px] md:text-[54px] font-black leading-none">
                 2
@@ -310,7 +310,7 @@ export default function DriveRightPage() {
       <section className="bg-[#06153a] py-24 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
           <div className="text-center">
-            <p className="text-[#ef8a52] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
+            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               2025 Global Youth Statement
             </p>
             <h2 className="mt-4 text-white text-[30px] md:text-[52px] font-black uppercase tracking-tight">
@@ -353,14 +353,14 @@ export default function DriveRightPage() {
       <section className="bg-[#f5f5f5] py-24 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid xl:grid-cols-2 gap-10 items-stretch">
           {/* Project Lead Card */}
-          <div className="bg-white shadow-[0_18px_40px_rgba(0,0,0,0.06)] overflow-hidden">
-            <div className="h-[390px] md:h-[470px] overflow-hidden">
-              <img
-                src="/images/william-wambulwa.jpg"
-                alt="William Wambulwa"
-                className="w-full h-full object-cover"
-              />
-            </div>
+        <div className="bg-white shadow-[0_18px_40px_rgba(0,0,0,0.06)] p-8 flex flex-col items-center">
+  <div className="w-56 h-56 md:w-64 md:h-64 overflow-hidden rounded-full">
+    <img
+      src="/images/William.jpeg"
+      alt="William"
+      className="w-full h-full object-cover rounded-full"
+    />
+  </div>
 
             <div className="px-8 md:px-10 py-8 md:py-10">
               <span className="bg-[#ff7a12] text-white text-[10px] md:text-[11px] font-extrabold tracking-[0.1em] uppercase px-4 py-3 inline-block">
@@ -429,7 +429,7 @@ export default function DriveRightPage() {
       {/* JOIN MOVEMENT */}
       <section
         id="join-movement"
-        className="bg-[#ff7a12] py-24 md:py-28 text-center"
+        className="bg-[#3eaef2] py-24 md:py-28 text-center"
       >
         <div className="max-w-5xl mx-auto px-6 md:px-10">
           <h2 className="text-white text-[32px] md:text-[58px] font-black uppercase tracking-tight leading-none">
@@ -465,14 +465,14 @@ export default function DriveRightPage() {
       <footer className="bg-[#071a2f] text-white">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-20 grid md:grid-cols-2 xl:grid-cols-4 gap-14">
           <div>
-            <h3 className="text-[30px] md:text-[34px] font-black uppercase tracking-tight leading-none">
+            <h3 className="text-[30px] md:text-[24px] font-black uppercase tracking-tight leading-none">
               SUMO AFRICA
             </h3>
-            <p className="mt-3 text-[#ff7a12] text-xs md:text-[13px] font-bold uppercase tracking-[0.16em] leading-relaxed">
+            <p className="mt-3 text-[#3eaef2] text-xs md:text-[13px] font-bold uppercase tracking-[0.16em] leading-relaxed">
               Inclusive & Sustainable <br /> Mobility
             </p>
 
-            <p className="mt-8 text-white/75 text-[16px] md:text-[17px] leading-[1.9] max-w-sm">
+            <p className="mt-8 text-[#3eaef2] text-[16px] md:text-[17px] leading-[1.9] max-w-sm">
               A Nairobi-based NGO advancing road safety and sustainable
               transport across Africa through advocacy, awareness, education,
               and research.
@@ -495,7 +495,7 @@ export default function DriveRightPage() {
             <h4 className="text-white text-[18px] md:text-[20px] font-black uppercase">
               Quick Links
             </h4>
-            <div className="mt-7 space-y-4 text-white/75 text-[16px] md:text-[17px]">
+            <div className="mt-7 space-y-4 text-[#3eaef2]/75 text-[16px] md:text-[17px]">
               <Link href="/" className="block hover:text-[#ff7a12] transition">
                 Home
               </Link>
@@ -530,7 +530,7 @@ export default function DriveRightPage() {
             <h4 className="text-white text-[18px] md:text-[20px] font-black uppercase">
               Local Action Projects
             </h4>
-            <div className="mt-7 space-y-4 text-white/75 text-[16px] md:text-[17px]">
+            <div className="mt-7 space-y-4 text-[#3eaef2]/75 text-[16px] md:text-[17px]">
               <Link
                 href="/projects/drive-right"
                 className="block hover:text-[#ff7a12] transition"
@@ -545,7 +545,7 @@ export default function DriveRightPage() {
               </Link>
             </div>
 
-            <div className="mt-9 space-y-5 text-white/75 text-[15px] md:text-[16px] leading-[1.8]">
+            <div className="mt-9 space-y-5 text-[#3eaef2]/75 text-[15px] md:text-[16px] leading-[1.8]">
               <p>CVS Plaza, Lenana Road, 8281-00100, Nairobi, Kenya</p>
               <p>info@sumoafrica.org</p>
             </div>
@@ -556,7 +556,7 @@ export default function DriveRightPage() {
               Stay Updated
             </h4>
 
-            <p className="mt-7 text-white/75 text-[16px] md:text-[17px] leading-[1.9]">
+            <p className="mt-7 text-[#3eaef2]/75 text-[16px] md:text-[17px] leading-[1.9]">
               Subscribe to our newsletter for the latest updates on road safety
               and sustainable mobility.
             </p>
@@ -569,7 +569,7 @@ export default function DriveRightPage() {
               />
               <button
                 type="submit"
-                className="w-full bg-[#ff7a12] hover:bg-[#ef6d09] text-white px-5 py-4 text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] transition"
+                className="w-full bg-[#3eaef2] hover:bg-[#3eaef2] text-white px-5 py-4 text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] transition"
               >
                 Subscribe
               </button>

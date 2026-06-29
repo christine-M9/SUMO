@@ -22,7 +22,7 @@ const newsItems = [
   },
   {
     id: 3,
-    image: "/images/news/news-3.jpg",
+    image: "/images/sumo10.jpeg",
     category: "Projects",
     date: "March 2026",
     title: "Youth-Led Action Driving Awareness on Safer Public Transport",
@@ -49,7 +49,7 @@ const newsItems = [
   },
   {
     id: 6,
-    image: "/images/news/news-6.jpg",
+    image: "/images/sumo7.jpeg",
     category: "Community",
     date: "January 2026",
     title: "Community Outreach Continues to Shape Safer Streets",
@@ -150,7 +150,7 @@ export default function NewsPage() {
           </p>
 
          <div className="flex justify-center mt-8">
-  <button className="h-14 bg-orange-500 px-10 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-orange-600">
+  <button className="h-14 bg-[#3eaef2] px-10 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#3eaef2]">
     Subscribe Now
   </button>
 </div>
@@ -166,13 +166,13 @@ export default function NewsPage() {
               SUMO AFRICA
             </h2>
 
-            <p className="mt-3 text-orange-500 text-sm font-bold uppercase tracking-[0.14em] leading-snug">
+            <p className="mt-3 text-[#3eaef2] text-sm font-bold uppercase tracking-[0.14em] leading-snug">
               Inclusive & Sustainable
               <br />
               Mobility
             </p>
 
-            <p className="mt-8 text-[#b7bfd3] text-base leading-8 max-w-[280px]">
+            <p className="mt-8 text-[#3eaef2] text-base leading-8 max-w-[280px]">
               A Nairobi-based NGO advancing road safety and sustainable transport
               across Africa through advocacy, awareness, education, and research.
             </p>
@@ -207,20 +207,20 @@ export default function NewsPage() {
               Quick Links
             </h3>
 
-            <div className="flex flex-col gap-4 text-[#c0c8da] text-base">
-              <Link href="/" className="hover:text-orange-500 transition">
+            <div className="flex flex-col gap-4 text-[#3eaef2] text-base">
+              <Link href="/" className="hover:text-[#3eaef2] transition">
                 Home
               </Link>
-              <Link href="/about" className="hover:text-orange-500 transition">
+              <Link href="/about" className="hover:text-[#3eaef2] transition">
                 About Us
               </Link>
-              <Link href="/our-work" className="hover:text-orange-500 transition">
+              <Link href="/our-work" className="hover:text-[#3eaef2] transition">
                 Our Work
               </Link>
-              <Link href="/news" className="hover:text-orange-500 transition">
+              <Link href="/news" className="hover:text-[#3eaef2] transition">
                 News
               </Link>
-              <Link href="/contact" className="hover:text-orange-500 transition">
+              <Link href="/contact" className="hover:text-[#3eaef2] transition">
                 Contact
               </Link>
             </div>
@@ -232,19 +232,19 @@ export default function NewsPage() {
               Local Action Projects
             </h3>
 
-            <div className="flex flex-col gap-4 text-[#c0c8da] text-base">
-              <Link href="/projects" className="hover:text-orange-500 transition">
+            <div className="flex flex-col gap-4 text-[#3eaef2] text-base">
+              <Link href="/projects" className="hover:text-[#3eaef2] transition">
                 Drive Right
               </Link>
-              <Link href="/projects" className="hover:text-orange-500 transition">
+              <Link href="/projects" className="hover:text-[#3eaef2] transition">
                 Safe Steps to School
               </Link>
             </div>
 
             <div className="mt-10 space-y-5">
               <div className="flex items-start gap-4">
-                <MapPin className="text-orange-500 mt-1 shrink-0" size={20} />
-                <p className="text-[#c0c8da] text-base leading-7">
+                <MapPin className="text-[#3eaef2] mt-1 shrink-0" size={20} />
+                <p className="text-[#3eaef2] text-base leading-7">
                   CVS Plaza, Lenana Road,
                   <br />
                   6281-00100, Nairobi, Kenya
@@ -252,10 +252,10 @@ export default function NewsPage() {
               </div>
 
               <div className="flex items-center gap-4">
-                <Mail className="text-orange-500 shrink-0" size={20} />
+                <Mail className="text-[#3eaef2] shrink-0" size={20} />
                 <a
                   href="mailto:info@sumoafrica.org"
-                  className="text-[#c0c8da] text-base hover:text-orange-500 transition"
+                  className="text-[#3eaef2] text-base hover:text-[#3eaef2] transition"
                 >
                   info@sumoafrica.org
                 </a>
@@ -269,7 +269,7 @@ export default function NewsPage() {
               Stay Updated
             </h3>
 
-            <p className="text-[#c0c8da] text-base leading-7 max-w-[290px] mb-6">
+            <p className="text-[#3eaef2] text-base leading-7 max-w-[290px] mb-6">
               Subscribe to our newsletter for the latest updates on road safety
               and sustainable mobility.
             </p>
@@ -281,7 +281,7 @@ export default function NewsPage() {
                 className="w-full h-14 bg-[#112246] border border-[#1b2f5c] px-5 text-white placeholder:text-[#6f7b98] outline-none"
               />
 
-              <button className="w-full h-14 bg-orange-500 hover:bg-orange-600 transition flex items-center justify-center gap-3 text-white font-bold uppercase tracking-wide">
+              <button className="w-full h-14 bg-[#3eaef2] hover:bg-orange-600 transition flex items-center justify-center gap-3 text-white font-bold uppercase tracking-wide">
                 <Send size={16} />
                 Subscribe
               </button>
@@ -291,11 +291,11 @@ export default function NewsPage() {
 
         {/* BOTTOM BAR */}
         <div className="border-t border-[#112246] mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#8e98b3] text-sm">
+          <p className="text-[#3eaef2] text-sm">
             © 2026 SUMO Africa. All rights reserved.
           </p>
 
-          <p className="text-[#8e98b3] text-sm text-center md:text-right">
+          <p className="text-[#3eaef2] text-sm text-center md:text-right">
             Founded August 2024 • Nairobi, Kenya
           </p>
         </div>

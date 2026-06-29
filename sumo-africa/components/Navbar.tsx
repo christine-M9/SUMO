@@ -33,25 +33,25 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="w-full bg-white shadow-sm fixed top-0 z-50 border-b border-gray-200">
+    <nav className="w-full bg-[#071521] shadow-sm fixed top-0 z-50 border-b border-[#071521]">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-10 py-5">
         
         {/* Logo */}
         <div>
-          <h1 className="font-extrabold text-[32px] leading-none tracking-tight text-[#0c1b2a]">
+          <h1 className="font-extrabold text-[32px] leading-none tracking-tight text-[#3eaef2]">
             SUMO AFRICA
           </h1>
-          <p className="text-[13px] font-semibold text-orange-500 tracking-[0.18em] mt-2">
+          <p className="text-[13px] font-semibold text-[#3eaef2] tracking-[0.18em] mt-2">
             INCLUSIVE & SUSTAINABLE MOBILITY
           </p>
         </div>
 
         {/* Menu */}
-        <div className="flex items-center gap-10 text-[15px] font-bold text-[#1b2230]">
+        <div className="flex items-center gap-10 text-[15px] font-bold text-[#3eaef2]">
           
           <Link
             href="/"
-            className={`hover:text-orange-500 ${
+            className={`hover:text-[#3eaef2] ${
               isActive("/") ? "text-orange-500" : ""
             }`}
           >
@@ -126,7 +126,7 @@ export default function Navbar() {
 
           <Link
             href="/contact"
-            className="bg-[#08142c] text-white px-8 py-4 font-bold hover:bg-orange-500 transition"
+            className="bg-[#3eaef2] text-white px-8 py-4 font-bold hover:bg-[#3eaef2] transition"
           >
             CONTACT US
           </Link>

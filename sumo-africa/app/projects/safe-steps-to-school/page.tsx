@@ -76,7 +76,7 @@ export default function SafeStepsToSchoolPage() {
       </section>
 
       {/* GREEN STRIP */}
-      <section className="bg-[#22d35f]">
+      <section className="bg-[#3eaef2]">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-8 md:py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div>
             <p className="text-white/90 text-[11px] md:text-xs font-bold uppercase tracking-[0.14em]">
@@ -107,7 +107,7 @@ export default function SafeStepsToSchoolPage() {
       <section className="bg-[#f7f7f7] py-24 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
           <div>
-            <p className="text-[#22d35f] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
+            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               The Challenge
             </p>
 
@@ -130,7 +130,7 @@ export default function SafeStepsToSchoolPage() {
                 "Lack of safe cycling infrastructure",
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <span className="mt-2 w-4 h-4 rounded-full bg-[#ff5a5f] shrink-0"></span>
+                  <span className="mt-2 w-4 h-4 rounded-full bg-[#3eaef2] shrink-0"></span>
                   <p className="text-[#5d6673] text-[16px] md:text-[18px] leading-[1.7]">
                     {item}
                   </p>
@@ -182,7 +182,7 @@ export default function SafeStepsToSchoolPage() {
       <section className="bg-[#f6f6f6] py-24 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
           <div className="text-center">
-            <p className="text-[#22d35f] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
+            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               Our Approach
             </p>
             <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[52px] font-black uppercase tracking-tight">
@@ -192,8 +192,8 @@ export default function SafeStepsToSchoolPage() {
 
           <div className="mt-16 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
             <div className="bg-white border border-[#e9e9e9] shadow-[0_10px_24px_rgba(0,0,0,0.03)] px-8 py-10 text-center relative">
-              <div className="absolute left-0 top-0 h-[4px] w-full bg-[#22d35f]"></div>
-              <div className="w-16 h-16 mx-auto bg-[#22d35f] flex items-center justify-center">
+              <div className="absolute left-0 top-0 h-[4px] w-full bg-[#3eaef2]"></div>
+              <div className="w-16 h-16 mx-auto bg-[#3eaef2] flex items-center justify-center">
                 <MapPin className="text-white" size={28} strokeWidth={2.2} />
               </div>
               <div className="mt-6 text-[#d8dde6] text-[34px] md:text-[40px] font-black">
@@ -209,7 +209,7 @@ export default function SafeStepsToSchoolPage() {
             </div>
 
             <div className="bg-white border border-[#e9e9e9] shadow-[0_10px_24px_rgba(0,0,0,0.03)] px-8 py-10 text-center">
-              <div className="w-16 h-16 mx-auto bg-[#22d35f] flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto bg-[#3eaef2] flex items-center justify-center">
                 <Eye className="text-white" size={28} strokeWidth={2.2} />
               </div>
               <div className="mt-6 text-[#d8dde6] text-[34px] md:text-[40px] font-black">
@@ -225,7 +225,7 @@ export default function SafeStepsToSchoolPage() {
             </div>
 
             <div className="bg-white border border-[#e9e9e9] shadow-[0_10px_24px_rgba(0,0,0,0.03)] px-8 py-10 text-center">
-              <div className="w-16 h-16 mx-auto bg-[#22d35f] flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto bg-[#3eaef2] flex items-center justify-center">
                 <TriangleAlert className="text-white" size={28} strokeWidth={2.2} />
               </div>
               <div className="mt-6 text-[#d8dde6] text-[34px] md:text-[40px] font-black">
@@ -241,7 +241,7 @@ export default function SafeStepsToSchoolPage() {
             </div>
 
             <div className="bg-white border border-[#e9e9e9] shadow-[0_10px_24px_rgba(0,0,0,0.03)] px-8 py-10 text-center">
-              <div className="w-16 h-16 mx-auto bg-[#22d35f] flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto bg-[#3eaef2] flex items-center justify-center">
                 <Shield className="text-white" size={28} strokeWidth={2.2} />
               </div>
               <div className="mt-6 text-[#d8dde6] text-[34px] md:text-[40px] font-black">
@@ -263,7 +263,7 @@ export default function SafeStepsToSchoolPage() {
       <section className="bg-[#f7f7f7] py-24 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-start">
           <div>
-            <p className="text-[#22d35f] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
+            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               Impact
             </p>
 
@@ -295,7 +295,7 @@ export default function SafeStepsToSchoolPage() {
           </div>
 
           <div className="grid grid-cols-2 gap-4 md:gap-5">
-            <div className="bg-[#22d35f] min-h-[220px] md:min-h-[240px] flex flex-col items-center justify-center text-center px-6">
+            <div className="bg-[#3eaef2] min-h-[220px] md:min-h-[240px] flex flex-col items-center justify-center text-center px-6">
               <Footprints className="text-white" size={38} strokeWidth={2.4} />
               <p className="mt-7 text-white/90 text-[16px] md:text-[18px] uppercase tracking-wide">
                 Safer
@@ -341,14 +341,14 @@ export default function SafeStepsToSchoolPage() {
       {/* LEAD + PARTNER */}
       <section className="bg-[#f5f5f5] py-24 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid xl:grid-cols-2 gap-10 items-stretch">
-          <div className="bg-white shadow-[0_18px_40px_rgba(0,0,0,0.06)] overflow-hidden">
-            <div className="h-[390px] md:h-[470px] overflow-hidden">
-              <img
-                src="/images/mary-abungu.jpg"
-                alt="Mary Abungu"
-                className="w-full h-full object-cover"
-              />
-            </div>
+         <div className="bg-white shadow-[0_18px_40px_rgba(0,0,0,0.06)] p-8 flex flex-col items-center">
+  <div className="w-56 h-56 md:w-64 md:h-64 overflow-hidden rounded-full">
+    <img
+      src="/images/Abungu.jpeg"
+      alt="Mary Abungu"
+      className="w-full h-full object-cover rounded-full"
+    />
+  </div>
 
             <div className="px-8 md:px-10 py-8 md:py-10">
               <span className="bg-[#22d35f] text-white text-[10px] md:text-[11px] font-extrabold tracking-[0.1em] uppercase px-4 py-3 inline-block">
@@ -372,7 +372,7 @@ export default function SafeStepsToSchoolPage() {
               </p>
 
               <Link
-                href="#"
+                href="https://www.linkedin.com/in/mary-abungu-b947b3118/"
                 className="mt-8 inline-flex items-center gap-3 text-[#08142c] hover:text-[#22d35f] text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] transition"
               >
                 Connect on LinkedIn
@@ -382,6 +382,7 @@ export default function SafeStepsToSchoolPage() {
           </div>
 
           <div className="bg-[#06153a] text-white shadow-[0_18px_40px_rgba(0,0,0,0.08)] px-8 md:px-12 py-10 md:py-12 flex flex-col justify-center">
+             
             <span className="bg-[#22d35f] text-white text-[10px] md:text-[11px] font-extrabold tracking-[0.1em] uppercase px-4 py-3 inline-block w-fit">
               Partner Organization
             </span>
@@ -416,7 +417,7 @@ export default function SafeStepsToSchoolPage() {
       {/* JOIN MOVEMENT */}
       <section
         id="join-movement"
-        className="bg-[#22d35f] py-24 md:py-28 text-center"
+        className="bg-[#3eaef2] py-24 md:py-28 text-center"
       >
         <div className="max-w-5xl mx-auto px-6 md:px-10">
           <h2 className="text-white text-[32px] md:text-[58px] font-black uppercase tracking-tight leading-none">
@@ -451,14 +452,14 @@ export default function SafeStepsToSchoolPage() {
       <footer className="bg-[#071a2f] text-white">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-20 grid md:grid-cols-2 xl:grid-cols-4 gap-14">
           <div>
-            <h3 className="text-[30px] md:text-[34px] font-black uppercase tracking-tight leading-none">
+            <h3 className="text-[30px] md:text-[24px] font-black uppercase tracking-tight leading-none">
               SUMO AFRICA
             </h3>
-            <p className="mt-3 text-[#ff7a12] text-xs md:text-[13px] font-bold uppercase tracking-[0.16em] leading-relaxed">
+            <p className="mt-3 text-[#3eaef2] text-xs md:text-[13px] font-bold uppercase tracking-[0.16em] leading-relaxed">
               Inclusive & Sustainable <br /> Mobility
             </p>
 
-            <p className="mt-8 text-white/75 text-[16px] md:text-[17px] leading-[1.9] max-w-sm">
+            <p className="mt-8 text-[#3eaef2] text-[17px] md:text-[15px] leading-[1.9] max-w-sm">
               A Nairobi-based NGO advancing road safety and sustainable
               transport across Africa through advocacy, awareness, education,
               and research.
@@ -481,7 +482,7 @@ export default function SafeStepsToSchoolPage() {
             <h4 className="text-white text-[18px] md:text-[20px] font-black uppercase">
               Quick Links
             </h4>
-            <div className="mt-7 space-y-4 text-white/75 text-[16px] md:text-[17px]">
+            <div className="mt-7 space-y-4 text-[#3eaef2] text-[12px] md:text-[17px]">
               <Link href="/" className="block hover:text-[#22d35f] transition">
                 Home
               </Link>
@@ -505,7 +506,7 @@ export default function SafeStepsToSchoolPage() {
               </Link>
               <Link
                 href="/contact"
-                className="block hover:text-[#22d35f] transition"
+                className="block hover:text-[#3eaef2] transition"
               >
                 Contact
               </Link>
@@ -516,22 +517,22 @@ export default function SafeStepsToSchoolPage() {
             <h4 className="text-white text-[18px] md:text-[20px] font-black uppercase">
               Local Action Projects
             </h4>
-            <div className="mt-7 space-y-4 text-white/75 text-[16px] md:text-[17px]">
+            <div className="mt-7 space-y-4 text-[#3eaef2] text-[14px] md:text-[17px]">
               <Link
                 href="/projects/drive-right"
-                className="block hover:text-[#22d35f] transition"
+                className="block hover:text-[#3eaef2] transition"
               >
                 Drive Right
               </Link>
               <Link
                 href="/projects/safe-steps-to-school"
-                className="block hover:text-[#22d35f] transition"
+                className="block hover:text-[#3eaef2] transition"
               >
                 Safe Steps To School
               </Link>
             </div>
 
-            <div className="mt-9 space-y-5 text-white/75 text-[15px] md:text-[16px] leading-[1.8]">
+            <div className="mt-9 space-y-3 text-[#3eaef2] text-[15px] md:text-[16px] leading-[1.8]">
               <p>CVS Plaza, Lenana Road, 8281-00100, Nairobi, Kenya</p>
               <p>info@sumoafrica.org</p>
             </div>
@@ -542,7 +543,7 @@ export default function SafeStepsToSchoolPage() {
               Stay Updated
             </h4>
 
-            <p className="mt-7 text-white/75 text-[16px] md:text-[17px] leading-[1.9]">
+            <p className="mt-7 text-[#3eaef2] text-[16px] md:text-[17px] leading-[1.9]">
               Subscribe to our newsletter for the latest updates on road safety
               and sustainable mobility.
             </p>
@@ -555,7 +556,7 @@ export default function SafeStepsToSchoolPage() {
               />
               <button
                 type="submit"
-                className="w-full bg-[#ff7a12] hover:bg-[#ef6d09] text-white px-5 py-4 text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] transition"
+                className="w-full bg-[#3eaef2] hover:bg-[#3eaef2]text-white px-5 py-4 text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] transition"
               >
                 Subscribe
               </button>
