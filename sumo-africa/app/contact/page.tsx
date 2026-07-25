@@ -20,7 +20,7 @@ export default function ContactPage() {
               Contact Us
             </p>
 
-            <h1 className="mt-5 text-white text-[40px] md:text-[64px] font-black uppercase tracking-tight leading-[0.95]">
+            <h1 className="mt-5 text-white text-[40px] md:text-[60px] font-black uppercase tracking-tight leading-[0.95]">
               Let&apos;s Connect
             </h1>
 
@@ -38,7 +38,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-start">
           {/* LEFT */}
           <div>
-            <h2 className="text-[#08142c] text-[28px] md:text-[42px] font-black uppercase tracking-tight">
+            <h2 className="text-[#08142c] text-[28px] md:text-[30px] font-black uppercase tracking-tight">
               Send Us A Message
             </h2>
 
@@ -101,7 +101,7 @@ export default function ContactPage() {
 
           {/* RIGHT */}
           <div>
-            <h2 className="text-[#08142c] text-[28px] md:text-[42px] font-black uppercase tracking-tight">
+            <h2 className="text-[#08142c] text-[28px] md:text-[30px] font-black uppercase tracking-tight">
               Get In Touch
             </h2>
 
@@ -165,7 +165,7 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-12">
-              <h3 className="text-[#08142c] text-[20px] md:text-[26px] font-black uppercase tracking-tight">
+              <h3 className="text-[#08142c] text-[20px] md:text-[24px] font-black uppercase tracking-tight">
                 Follow Us
               </h3>
 
@@ -228,52 +228,22 @@ export default function ContactPage() {
 
       {/* MAP / LOCATION SECTION */}
       <section className="bg-[#f5f5f5] py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
-          <div className="bg-white/40 min-h-[280px] md:min-h-[340px] flex items-center justify-center border border-[#eceef3]">
-            <div className="text-center">
-              <MapPin
-                className="mx-auto text-[#aab2bf]"
-                size={48}
-                strokeWidth={1.8}
-              />
-              <p className="mt-5 text-[#8f98a6] text-[18px] md:text-[20px]">
-                CVS Plaza, Lenana Road, Nairobi, Kenya
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+    <div className="overflow-hidden rounded-lg shadow-lg">
+      <iframe
+        src="https://www.google.com/maps?q=CVS+Plaza+Lenana+Road+Nairobi+Kenya&output=embed"
+        width="97%"
+        height="450"
+        style={{ border: 0 }}
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
 
-      {/* PARTNER CTA */}
-      <section className="bg-[#071a2f] py-20 md:py-24 text-center">
-        <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <h2 className="text-white text-[30px] md:text-[54px] font-black uppercase tracking-tight leading-none">
-            Looking To Partner With Us?
-          </h2>
-
-          <p className="mt-7 text-white/75 text-[16px] md:text-[20px] leading-[1.9] max-w-4xl mx-auto">
-            We welcome partnerships with government agencies, NGOs, private
-            sector organizations, and development partners committed to road
-            safety and sustainable mobility.
-          </p>
-
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="mailto:info@sumoafrica.org"
-              className="bg-[#3eaef2] hover:bg-[#3eaef2] text-white px-10 py-5 min-w-[270px] text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] inline-flex items-center justify-center transition"
-            >
-              Email Us Directly
-            </a>
-
-            <a
-              href="https://www.linkedin.com/company/sustainable-mobility-africa-sumo-africa/"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#06153a] px-10 py-5 min-w-[300px] text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] inline-flex items-center justify-center transition"
-            >
-              Connect On LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
+      
 
       <footer className="bg-[#071a2f] text-white pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-10">

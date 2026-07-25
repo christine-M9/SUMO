@@ -38,7 +38,7 @@ export default function DriveRightPage() {
               </span>
             </div>
 
-            <h1 className="text-white text-[46px] md:text-[72px] leading-[0.95] font-black uppercase tracking-tight">
+            <h1 className="text-white text-[46px] md:text-[52px] leading-[0.95] font-black uppercase tracking-tight">
               Drive Right
             </h1>
 
@@ -108,7 +108,7 @@ export default function DriveRightPage() {
               The Challenge
             </p>
 
-            <h2 className="mt-5 text-[#08142c] text-[28px] md:text-[48px] font-black uppercase leading-[1.04] tracking-tight max-w-3xl">
+            <h2 className="mt-5 text-[#08142c] text-[28px] md:text-[38px] font-black uppercase leading-[1.04] tracking-tight max-w-3xl">
               High Crash Rates in Nairobi&apos;s Matatu Sector
             </h2>
 
@@ -175,7 +175,7 @@ export default function DriveRightPage() {
             <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               Key Milestones
             </p>
-            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[52px] font-black uppercase tracking-tight">
+            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[40px] font-black uppercase tracking-tight">
               Project Objectives
             </h2>
           </div>
@@ -231,7 +231,7 @@ export default function DriveRightPage() {
               Impact
             </p>
 
-            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[50px] font-black uppercase tracking-tight leading-[1.05]">
+            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[46px] font-black uppercase tracking-tight leading-[1.05]">
               Expected Outcomes
             </h2>
 
@@ -258,14 +258,14 @@ export default function DriveRightPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 md:gap-5">
-            <div className="bg-[#06153a] min-h-[230px] md:min-h-[260px] flex flex-col items-center justify-center text-center px-6">
+          <div className="grid grid-cols-2 gap-4 md:gap-5 mt-16">
+            <div className="bg-[#06153a] min-h-[150px] md:min-h-[170px] flex flex-col items-center justify-center text-center px-6">
               <TrendingUp
                 className="text-[#ff7a12]"
                 size={38}
                 strokeWidth={2.4}
               />
-              <h3 className="mt-8 text-white text-[42px] md:text-[54px] font-black leading-none">
+              <h3 className="mt-8 text-white text-[42px] md:text-[46px] font-black leading-none">
                 20+
               </h3>
               <p className="mt-3 text-white/85 text-[17px] md:text-[19px] leading-tight">
@@ -273,9 +273,9 @@ export default function DriveRightPage() {
               </p>
             </div>
 
-            <div className="bg-[#ff7a12] min-h-[230px] md:min-h-[260px] flex flex-col items-center justify-center text-center px-6">
+            <div className="bg-[#ff7a12] min-h-[180px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
               <Gauge className="text-white" size={38} strokeWidth={2.4} />
-              <h3 className="mt-8 text-white text-[42px] md:text-[54px] font-black leading-none">
+              <h3 className="mt-8 text-white text-[42px] md:text-[46px] font-black leading-none">
                 100+
               </h3>
               <p className="mt-3 text-white text-[17px] md:text-[19px] leading-tight">
@@ -283,9 +283,9 @@ export default function DriveRightPage() {
               </p>
             </div>
 
-            <div className="bg-[#22d35f] min-h-[230px] md:min-h-[260px] flex flex-col items-center justify-center text-center px-6">
+            <div className="bg-[#22d35f] min-h-[180px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
               <Target className="text-white" size={38} strokeWidth={2.4} />
-              <h3 className="mt-8 text-white text-[42px] md:text-[54px] font-black leading-none">
+              <h3 className="mt-8 text-white text-[42px] md:text-[46px] font-black leading-none">
                 30
               </h3>
               <p className="mt-3 text-white text-[17px] md:text-[19px] leading-tight">
@@ -293,9 +293,9 @@ export default function DriveRightPage() {
               </p>
             </div>
 
-            <div className="bg-[#3eaef2] min-h-[230px] md:min-h-[260px] flex flex-col items-center justify-center text-center px-6">
+            <div className="bg-[#3eaef2] min-h-[180px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
               <Award className="text-[#08142c]" size={38} strokeWidth={2.4} />
-              <h3 className="mt-8 text-[#08142c] text-[42px] md:text-[54px] font-black leading-none">
+              <h3 className="mt-8 text-[#08142c] text-[42px] md:text-[46px] font-black leading-none">
                 2
               </h3>
               <p className="mt-3 text-[#08142c] text-[17px] md:text-[19px] leading-tight">
@@ -313,7 +313,7 @@ export default function DriveRightPage() {
             <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               2025 Global Youth Statement
             </p>
-            <h2 className="mt-4 text-white text-[30px] md:text-[52px] font-black uppercase tracking-tight">
+            <h2 className="mt-4 text-white text-[30px] md:text-[42px] font-black uppercase tracking-tight">
               Aligned With Global Goals
             </h2>
           </div>
@@ -349,90 +349,13 @@ export default function DriveRightPage() {
         </div>
       </section>
 
-      {/* LEAD + PARTNER */}
-      <section className="bg-[#f5f5f5] py-24 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid xl:grid-cols-2 gap-10 items-stretch">
-          {/* Project Lead Card */}
-        <div className="bg-white shadow-[0_18px_40px_rgba(0,0,0,0.06)] p-8 flex flex-col items-center">
-  <div className="w-56 h-56 md:w-64 md:h-64 overflow-hidden rounded-full">
-    <img
-      src="/images/William.jpeg"
-      alt="William"
-      className="w-full h-full object-cover rounded-full"
-    />
-  </div>
-
-            <div className="px-8 md:px-10 py-8 md:py-10">
-              <span className="bg-[#ff7a12] text-white text-[10px] md:text-[11px] font-extrabold tracking-[0.1em] uppercase px-4 py-3 inline-block">
-                Project Lead
-              </span>
-
-              <h3 className="mt-7 text-[#08142c] text-[26px] md:text-[36px] font-black uppercase tracking-tight">
-                William Wambulwa
-              </h3>
-
-              <p className="mt-4 text-[#ef8a52] text-[17px] md:text-[21px] font-semibold leading-relaxed">
-                Transportation Engineer & Road Safety Consultant
-              </p>
-
-              <p className="mt-7 text-[#66707f] text-[16px] md:text-[18px] leading-[1.9]">
-                Civil Engineering graduate from the University of Nairobi,
-                currently pursuing a master&apos;s in Transportation Science at
-                Hasselt University, Belgium. Dedicated to promoting sustainable,
-                inclusive transport solutions through evidence-based
-                approaches.
-              </p>
-
-              <Link
-                href="#"
-                className="mt-8 inline-flex items-center gap-3 text-[#08142c] hover:text-[#ff7a12] text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] transition"
-              >
-                Connect on LinkedIn
-                <ArrowRight size={18} />
-              </Link>
-            </div>
-          </div>
-
-          {/* Partner Card */}
-          <div className="bg-[#06153a] text-white shadow-[0_18px_40px_rgba(0,0,0,0.08)] px-8 md:px-12 py-10 md:py-12 flex flex-col justify-center">
-            <span className="bg-[#ff7a12] text-white text-[10px] md:text-[11px] font-extrabold tracking-[0.1em] uppercase px-4 py-3 inline-block w-fit">
-              Partner Organization
-            </span>
-
-            <h3 className="mt-7 text-[32px] md:text-[48px] font-black uppercase tracking-tight">
-              NAPTA
-            </h3>
-
-            <p className="mt-4 text-[#ef8a52] text-[18px] md:text-[24px] font-semibold leading-relaxed">
-              National Public Transport Alliance
-            </p>
-
-            <p className="mt-8 text-white/90 text-[16px] md:text-[19px] leading-[1.95]">
-              A Kenyan nonprofit organisation committed to transforming
-              Kenya&apos;s public transportation through inclusive,
-              sustainable, and smart solutions. NAPTA brings together transport
-              operators, civil society, and government stakeholders to promote
-              equity, resilience, and innovation in public transport.
-            </p>
-
-            <Link
-              href="#"
-              className="mt-10 inline-flex items-center gap-3 text-[#ff7a12] hover:text-white text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] transition"
-            >
-              Visit NAPTA Website
-              <ArrowUpRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* JOIN MOVEMENT */}
+            {/* JOIN MOVEMENT */}
       <section
         id="join-movement"
         className="bg-[#3eaef2] py-24 md:py-28 text-center"
       >
         <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <h2 className="text-white text-[32px] md:text-[58px] font-black uppercase tracking-tight leading-none">
+          <h2 className="text-white text-[32px] md:text-[52px] font-black uppercase tracking-tight leading-none">
             Join The Movement
           </h2>
 

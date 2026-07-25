@@ -39,7 +39,7 @@ export default function SafeStepsToSchoolPage() {
               </span>
             </div>
 
-            <h1 className="text-white text-[46px] md:text-[74px] leading-[0.92] font-black uppercase tracking-tight">
+            <h1 className="text-white text-[46px] md:text-[58px] leading-[0.92] font-black uppercase tracking-tight">
               Safe Steps
               <br />
               <span className="text-[#22d35f]">To School</span>
@@ -111,7 +111,7 @@ export default function SafeStepsToSchoolPage() {
               The Challenge
             </p>
 
-            <h2 className="mt-5 text-[#08142c] text-[28px] md:text-[48px] font-black uppercase leading-[1.04] tracking-tight max-w-3xl">
+            <h2 className="mt-5 text-[#08142c] text-[28px] md:text-[42px] font-black uppercase leading-[1.04] tracking-tight max-w-3xl">
               Dangerous School Zones In Nairobi
             </h2>
 
@@ -185,7 +185,7 @@ export default function SafeStepsToSchoolPage() {
             <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               Our Approach
             </p>
-            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[52px] font-black uppercase tracking-tight">
+            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[42px] font-black uppercase tracking-tight">
               Project Activities
             </h2>
           </div>
@@ -267,7 +267,7 @@ export default function SafeStepsToSchoolPage() {
               Impact
             </p>
 
-            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[50px] font-black uppercase tracking-tight leading-[1.05]">
+            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[42px] font-black uppercase tracking-tight leading-[1.05]">
               What We&apos;ll Achieve
             </h2>
 
@@ -294,8 +294,8 @@ export default function SafeStepsToSchoolPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 md:gap-5">
-            <div className="bg-[#3eaef2] min-h-[220px] md:min-h-[240px] flex flex-col items-center justify-center text-center px-6">
+          <div className="grid grid-cols-2 gap-4 md:gap-5 mt-8">
+            <div className="bg-[#3eaef2] min-h-[190px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
               <Footprints className="text-white" size={38} strokeWidth={2.4} />
               <p className="mt-7 text-white/90 text-[16px] md:text-[18px] uppercase tracking-wide">
                 Safer
@@ -305,7 +305,7 @@ export default function SafeStepsToSchoolPage() {
               </h3>
             </div>
 
-            <div className="bg-[#06153a] min-h-[220px] md:min-h-[240px] flex flex-col items-center justify-center text-center px-6">
+            <div className="bg-[#06153a] min-h-[190px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
               <Eye className="text-[#22d35f]" size={38} strokeWidth={2.4} />
               <p className="mt-7 text-white/90 text-[16px] md:text-[18px] uppercase tracking-wide">
                 Enhanced
@@ -315,7 +315,7 @@ export default function SafeStepsToSchoolPage() {
               </h3>
             </div>
 
-            <div className="bg-[#f0f1f5] min-h-[220px] md:min-h-[240px] flex flex-col items-center justify-center text-center px-6">
+            <div className="bg-[#f0f1f5] min-h-[190px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
               <TriangleAlert className="text-[#e2b12d]" size={38} strokeWidth={2.4} />
               <p className="mt-7 text-[#6d7380] text-[16px] md:text-[18px] uppercase tracking-wide">
                 Speed
@@ -325,7 +325,7 @@ export default function SafeStepsToSchoolPage() {
               </h3>
             </div>
 
-            <div className="bg-[#06153a] min-h-[220px] md:min-h-[240px] flex flex-col items-center justify-center text-center px-6">
+            <div className="bg-[#06153a] min-h-[190px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
               <Bike className="text-[#22d35f]" size={38} strokeWidth={2.4} />
               <p className="mt-7 text-white/90 text-[16px] md:text-[18px] uppercase tracking-wide">
                 Active
@@ -338,89 +338,14 @@ export default function SafeStepsToSchoolPage() {
         </div>
       </section>
 
-      {/* LEAD + PARTNER */}
-      <section className="bg-[#f5f5f5] py-24 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid xl:grid-cols-2 gap-10 items-stretch">
-         <div className="bg-white shadow-[0_18px_40px_rgba(0,0,0,0.06)] p-8 flex flex-col items-center">
-  <div className="w-56 h-56 md:w-64 md:h-64 overflow-hidden rounded-full">
-    <img
-      src="/images/Abungu.jpeg"
-      alt="Mary Abungu"
-      className="w-full h-full object-cover rounded-full"
-    />
-  </div>
-
-            <div className="px-8 md:px-10 py-8 md:py-10">
-              <span className="bg-[#22d35f] text-white text-[10px] md:text-[11px] font-extrabold tracking-[0.1em] uppercase px-4 py-3 inline-block">
-                Project Lead
-              </span>
-
-              <h3 className="mt-7 text-[#08142c] text-[26px] md:text-[36px] font-black uppercase tracking-tight">
-                Mary Abungu
-              </h3>
-
-              <p className="mt-4 text-[#22d35f] text-[17px] md:text-[21px] font-semibold leading-relaxed">
-                Transportation Engineer & Road Safety Specialist
-              </p>
-
-              <p className="mt-7 text-[#66707f] text-[16px] md:text-[18px] leading-[1.9]">
-                Born in Nairobi, Mary holds a Master of Science in Transport
-                Engineering, Planning, and Management from Newcastle
-                University, UK. She is the founder of SUMO Africa and is
-                actively involved in empowering women and youth in the
-                transport sector.
-              </p>
-
-              <Link
-                href="https://www.linkedin.com/in/mary-abungu-b947b3118/"
-                className="mt-8 inline-flex items-center gap-3 text-[#08142c] hover:text-[#22d35f] text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] transition"
-              >
-                Connect on LinkedIn
-                <ArrowRight size={18} />
-              </Link>
-            </div>
-          </div>
-
-          <div className="bg-[#06153a] text-white shadow-[0_18px_40px_rgba(0,0,0,0.08)] px-8 md:px-12 py-10 md:py-12 flex flex-col justify-center">
-             
-            <span className="bg-[#22d35f] text-white text-[10px] md:text-[11px] font-extrabold tracking-[0.1em] uppercase px-4 py-3 inline-block w-fit">
-              Partner Organization
-            </span>
-
-            <h3 className="mt-7 text-[32px] md:text-[48px] font-black uppercase tracking-tight">
-              ELGIA
-            </h3>
-
-            <p className="mt-4 text-[#22d35f] text-[18px] md:text-[24px] font-semibold leading-relaxed">
-              Continental Organization for Good Governance
-            </p>
-
-            <p className="mt-8 text-white/90 text-[16px] md:text-[19px] leading-[1.95]">
-              ELGIA is a Continental Organisation working to strengthen
-              constitutional democracy and good governance in Africa. Their key
-              activities include strengthening governance institutions through
-              technical assistance, capacity building, law reforms, advocacy,
-              research, and the implementation of improvement projects.
-            </p>
-
-            <Link
-              href="#"
-              className="mt-10 inline-flex items-center gap-3 text-[#22d35f] hover:text-white text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] transition"
-            >
-              Follow ELGIA
-              <ArrowUpRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
+     
       {/* JOIN MOVEMENT */}
       <section
         id="join-movement"
         className="bg-[#3eaef2] py-24 md:py-28 text-center"
       >
         <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <h2 className="text-white text-[32px] md:text-[58px] font-black uppercase tracking-tight leading-none">
+          <h2 className="text-white text-[32px] md:text-[46px] font-black uppercase tracking-tight leading-none">
             Protect Our Children
           </h2>
 

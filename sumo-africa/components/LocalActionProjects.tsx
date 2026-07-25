@@ -3,96 +3,113 @@ import Link from "next/link";
 
 export default function LocalActionProjects() {
   return (
-    <section className="py-24 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-28 bg-[#071a2f]">
+{/* SECTION HEADER */}
+<div className="max-w-6xl mx-auto text-center mb-20">
 
-        {/* Heading */}
-<p className="text-orange-500 text-sm font-semibold tracking-wider mb-2 ml-[60px]">
-  LOCAL ACTION PROJECTS
+  <p className="inline-flex items-center gap-3 text-orange-500 text-sm font-semibold tracking-[0.28em] uppercase">
+
+    <span className="h-px w-10 bg-orange-500" />
+
+    Local Action Projects
+
+    <span className="h-px w-10 bg-orange-500" />
+
+  </p>
+
+  <h2 className="mt-6 text-5xl font-bold tracking-tight text-white">
+    Global Youth Coalition
+    <span className="block text-[#3eaef2]">
+      Grant Projects
+    </span>
+  </h2>
+
+<div className="mt-8 flex justify-center">
+  <div className="w-20 h-[2px] bg-orange-500" />
+</div>
+
+<p className="mt-8 max-w-2xl mx-auto text-center text-[18px] leading-9 text-slate-300">
+  Supporting <span className="text-white font-semibold">youth-led solutions</span> that
+  reduce road traffic injuries, strengthen community resilience, and create
+  <span className="text-[#3eaef2] font-semibold"> safer journeys for everyone.</span>
 </p>
+   {/* PROJECTS */}
+<div className="grid lg:grid-cols-2 gap-10 max-w-[900px] mx-auto">
 
-        <h2 className="text-[#3eaef2] text-3xl font-bold mb-12 ml-[54px]">
-          GLOBAL YOUTH COALITION GRANTS
-        </h2>
+  {[
+    {
+      title: "DRIVE RIGHT",
+      category: "SPEED REDUCTION",
+      image: "/images/sumo15.jpeg",
+      description:
+        "Transforming public transport operations in Nairobi through youth-led speed monitoring, operator engagement, and road safety awareness.",
+      href: "/projects/drive-right",
+    },
+    {
+      title: "SAFE STEPS TO SCHOOL",
+      category: "CHILD SAFETY",
+      image: "/images/sumo8.jpeg",
+      description:
+        "Creating safer journeys for children through school zone assessments, infrastructure improvements, and community road safety initiatives.",
+      href: "/projects/safe-steps-to-school",
+    },
+  ].map((project) => (
+    <Link
+      key={project.title}
+      href={project.href}
+      className="group bg-white rounded-3xl overflow-hidden shadow-[0_18px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.14)] transition-all duration-500"
+    >
+      {/* IMAGE */}
+      <div className="relative h-60 overflow-hidden">
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover transition duration-700 group-hover:scale-105"
+        />
 
-          {/* Card 1 */}
-          <div className="relative h-[420px] rounded-xl overflow-hidden group">
-            <Image
-              src="/images/sumo15.jpeg"
-              alt=""
-              fill
-              className="object-cover"
-            />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
-            {/* Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+      </div>
 
-            {/* Content */}
-            <div className="absolute bottom-0 p-8 text-white">
+      {/* CONTENT */}
+      <div className="p-6">
 
-              <span className="bg-orange-500 text-white text-xs font-semibold px-3 py-1 inline-block mb-3">
-                SPEED REDUCTION
-              </span>
+        <span className="inline-flex rounded-full bg-orange-100 px-4 py-1 text-xs font-bold tracking-[0.18em] uppercase text-orange-600">
+          {project.category}
+        </span>
 
-              <h3 className="text-2xl text-[#3eaef2] font-bold mb-2">
-                DRIVE RIGHT
-              </h3>
+        <h3 className="mt-5 text-3xl font-bold text-[#071a2f] group-hover:text-[#3eaef2] transition-colors">
+          {project.title}
+        </h3>
 
-              <p className="text-sm text-[#3eaef2] mb-4">
-                Transforming public transport operations in Nairobi through youth -led speed monitoring and operator training.
-              </p>
+        <div className="mt-4 h-1 w-14 rounded-full bg-[#3eaef2] group-hover:w-24 transition-all duration-500" />
 
-             <Link
-  href="/projects/drive-right"
-  className="inline-flex items-center gap-2 bg-[#3eaef2] text-black font-semibold px-5 py-2 hover:bg-orange-500 hover:text-white transition"
->
-  LEARN MORE →
-</Link>
+        <p className="mt-2 text-gray-600 leading-7 text-[15px] line-clamp-3">
+          {project.description}
+        </p>
 
-            </div>
-          </div>
+        <div className="mt-8 flex items-center justify-between">
 
+          <span className="text-[#3eaef2] font-semibold flex items-center gap-2 group-hover:gap-4 transition-all">
+            Learn More
+            <span>→</span>
+          </span>
 
-          {/* Card 2 */}
-          <div className="relative h-[420px] rounded-xl overflow-hidden group">
-            <Image
-              src="/images/sumo8.jpeg"
-              alt=""
-              fill
-              className="object-cover"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-
-            <div className="absolute bottom-0 p-8 text-white">
-
-              <span className="bg-orange-500 text-white text-xs font-semibold px-3 py-1 inline-block mb-3">
-                CHILD SAFETY
-              </span>
-
-              <h3 className="text-2xl text-[#3eaef2] font-bold mb-2">
-                SAFE STEPS TO SCHOOL
-              </h3>
-
-              <p className="text-sm text-[#3eaef2]  mb-4">
-                Transforming public transport operations in Nairobi through youth -led speed monitoring and operator training.
-              </p>
-
-             <Link
-  href="/projects/safe-steps-to-school"
-  className="inline-flex items-center gap-2 bg-[#3eaef2] text-black font-semibold px-5 py-2 hover:bg-orange-500 hover:text-white transition"
->
-  LEARN MORE →
-</Link>
-
-            </div>
+          <div className="h-11 w-11 rounded-full bg-[#f3f8fc] flex items-center justify-center group-hover:bg-[#3eaef2] group-hover:text-white transition">
+            →
           </div>
 
         </div>
+
       </div>
+
+    </Link>
+  ))}
+
+</div>
+</div>
     </section>
   );
 }

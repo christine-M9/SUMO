@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Target, Eye } from "lucide-react"
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
@@ -53,9 +54,12 @@ export default function AboutSection() {
 
           </div>
 
-          <button className="bg-[#3eaef2] text-white px-7 py-3 text-sm font-semibold">
-            DISCOVER OUR STORY →
-          </button>
+          <Link
+  href="/about"
+  className="inline-flex items-center bg-[#3eaef2] text-white px-7 py-3 text-sm font-semibold hover:bg-[#2d9de0] transition-colors duration-300"
+>
+  DISCOVER OUR STORY →
+</Link>
 
         </div>
 
@@ -64,7 +68,7 @@ export default function AboutSection() {
 
 <div className="w-full max-w-[500px] h-[380px] overflow-hidden rounded-lg">
   <Image
-    src="/images/sumo13.jpeg"
+    src="/images/sumo3.jpeg"
     alt="SUMO Africa"
     width={520}
     height={380}

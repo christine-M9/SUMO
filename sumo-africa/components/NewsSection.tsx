@@ -1,37 +1,16 @@
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NewsSection() {
   const posts = [
-{
-  category: "ROAD SAFETY",
-  title: "SUMO Africa Conducts SR4S Road Safety Assessment at Children's Garden Home & School",
-  excerpt:
-    "SUMO Africa, together with NTSA and KURA, carried out a Star Rating for Schools (SR4S) assessment at Children's Garden Home & School to identify practical interventions that will improve the safety of children travelling to and from school.",
-  image: "/images/sumo12.jpeg",
-  content: `
-In March, following our initial ground-truthing visit, the SUMO Africa team returned to Children's Garden Home & School along Naivasha Road in Uthiru, Nairobi, to conduct the full iRAP Star Rating for Schools (SR4S) road safety assessment under the Safe Steps to School Project.
-
-Before the assessment commenced, the National Transport and Safety Authority (NTSA), led by Eng. Christine Ogut, conducted a road safety sensitisation session for learners, teachers, and the wider school community. The session highlighted the importance of creating safer school environments and prepared participants for the assessment activities.
-
-The assessment brought together SUMO Africa, officials from the Kenya Urban Roads Authority (KURA), represented by Eng. Wilson Tikwa, and NTSA officials. The team examined the school frontage and the surrounding roads and walking routes commonly used by learners on their daily journeys to and from school.
-
-During the exercise, the team observed road user behaviour, evaluated pedestrian infrastructure, identified potential conflict points, and assessed the safety of crossing points, school gates, access roads, and learner movement corridors. These observations provided valuable evidence for understanding the risks children face around the school environment.
-
-SUMO Africa then led the comprehensive iRAP Star Rating for Schools (SR4S) assessment, an internationally recognised methodology for measuring and improving road safety around schools. The findings will help identify practical, evidence-based interventions aimed at reducing road traffic risks and creating safer routes for children.
-
-We sincerely appreciate the National Transport and Safety Authority (NTSA), the Kenya Urban Roads Authority (KURA), the leadership of Children's Garden Home & School, and YOURS – Youth for Road Safety for their continued collaboration and commitment to improving road safety for children.
-
-Through the Safe Steps to School Project, SUMO Africa remains committed to working with partners to build safer school zones and ensure that every child can travel to and from school safely.
-  `,
-},
-  {
-  category: "CONFERENCE",
-  title: "AUSTRALASIAN ROAD SAFETY CONFERENCE 2025",
-  excerpt:
-    "We were honoured to participate in the Australasian Road Safety Conference 2025 in Perth, where SUMO Africa shared its work on strengthening multi-sectoral collaboration to improve road safety data systems in Kenya.",
-  image: "/images/sumo20.jpeg",
-  content: `
+    {
+      category: "CONFERENCE",
+      title: "AUSTRALASIAN ROAD SAFETY CONFERENCE 2025",
+      excerpt:
+        "We were honoured to participate in the Australasian Road Safety Conference 2025 in Perth, where SUMO Africa shared its work on strengthening multi-sectoral collaboration to improve road safety data systems in Kenya.",
+      image: "/images/sumo20.jpeg",
+      content: `
 We were honoured to participate in the Australasian Road Safety Conference 2025 in Perth, Australia, where SUMO Africa presented the session, "Strengthening Multi-Sectoral Collaboration to Enhance Road Safety Data."
 
 The paper, led by Mary Abungu and presented on her behalf by William Wambulwa, highlighted practical approaches to improving road safety data systems through stronger collaboration among government agencies, development partners, and other key stakeholders.
@@ -45,18 +24,43 @@ We extend our sincere appreciation to the Australasian College of Road Safety (A
 Finally, we extend our heartfelt thanks to Dr. Marilyn Johnson and the talented Monash MADA students for their creativity, professionalism, and dedication in developing and designing our conference poster. Their collaboration helped bring our research and ideas to life in an impactful and visually engaging way.
 
 SUMO Africa remains committed to strengthening partnerships, improving road safety data systems, and advancing evidence-based interventions that contribute to safer, more sustainable mobility across Kenya and Africa.
-  `,
-  date: "2025",
-},
+      `,
+      date: "2025",
+    },
+
     {
       category: "EVENTS",
-      title:
-        "SPEAKING AT THE GLOBAL MINISTERIAL CONFERENCE ON ROAD SAFETY 2025",
+      title: "SPEAKING AT THE GLOBAL MINISTERIAL CONFERENCE ON ROAD SAFETY 2025",
       excerpt:
         "SUMO Africa was honored to participate in the 4th Global Ministerial Conference on Road Safety...",
-      image: "/news3.jpg",
+      image: "/images/sumo22.jpeg",
     },
-  ]; 
+
+    
+    {
+      category: "ROAD SAFETY",
+      title:
+        "SUMO Africa Conducts SR4S Road Safety Assessment at Children's Garden Home & School",
+      excerpt:
+        "SUMO Africa, together with NTSA and KURA, carried out a Star Rating for Schools (SR4S) assessment at Children's Garden Home & School to identify practical interventions that will improve the safety of children travelling to and from school.",
+      image: "/images/sumo12.jpeg",
+      content: `
+In March, following our initial ground-truthing visit, the SUMO Africa team returned to Children's Garden Home & School along Naivasha Road in Uthiru, Nairobi, to conduct the full iRAP Star Rating for Schools (SR4S) assessment under the Safe Steps to School Project.
+
+Before the assessment commenced, the National Transport and Safety Authority (NTSA), led by Eng. Christine Ogut, conducted a road safety sensitisation session for learners, teachers, and the wider school community. The session highlighted the importance of creating safer school environments and prepared participants for the assessment activities.
+
+The assessment brought together SUMO Africa, officials from the Kenya Urban Roads Authority (KURA), represented by Eng. Wilson Tikwa, and NTSA officials. The team examined the school frontage and the surrounding roads and walking routes commonly used by learners on their daily journeys to and from school.
+
+During the exercise, the team observed road user behaviour, evaluated pedestrian infrastructure, identified potential conflict points, and assessed the safety of crossing points, school gates, access roads, and learner movement corridors. These observations provided valuable evidence for understanding the risks children face around the school environment.
+
+SUMO Africa then led the comprehensive iRAP Star Rating for Schools (SR4S) assessment, an internationally recognised methodology for measuring and improving road safety around schools. The findings will help identify practical, evidence-based interventions aimed at reducing road traffic risks and creating safer routes for children.
+
+We sincerely appreciate the National Transport and Safety Authority (NTSA), the Kenya Urban Roads Authority (KURA), the leadership of Children's Garden Home & School, and YOURS – Youth for Road Safety for their continued collaboration and commitment to improving road safety for children.
+
+Through the Safe Steps to School Project, SUMO Africa remains committed to working with partners to build safer school zones and ensure that every child can travel to and from school safely.
+      `,
+    },
+  ];
 
   return (
     <section className="py-24 bg-gray-100">
@@ -75,56 +79,114 @@ SUMO Africa remains committed to strengthening partnerships, improving road safe
             </h2>
           </div>
 
-<button className="bg-[#3eaef2] text-white px-6 py-2 text-sm font-semibold hover:bg-[#3eaef2] transition">
-  VIEW ALL NEWS
-</button>
-
         </div>
+{/* NEWS LAYOUT */}
+<div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10">
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+  {/* FEATURED ARTICLE */}
+  <Link
+    href="/news"
+    className="group overflow-hidden bg-white border border-gray-200 hover:border-[#3eaef2] transition-all duration-500"
+  >
+    <div className="relative h-[400px] overflow-hidden">
+      <Image
+        src={posts[0].image}
+        alt={posts[0].title}
+        fill
+        className="object-cover transition duration-700 group-hover:scale-105"
+      />
 
-          {posts.map((post, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-sm hover:shadow-md transition"
-            >
-              <div className="relative h-56">
-                <Image
-                  src={post.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                />
-              </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#071a2f]/90 via-transparent to-transparent" />
 
-              <div className="p-6">
+      <div className="absolute bottom-0 left-0 p-8 text-white">
+        <span className="inline-block bg-orange-500 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em]">
+          {posts[0].category}
+        </span>
 
-                <span className="text-xs font-semibold text-gray-500 uppercase">
-                  {post.category}
-                </span>
-
-                <h3 className="font-bold text-lg mt-2 mb-3">
-                  {post.title}
-                </h3>
-
-                <p className="text-gray-600 text-sm mb-4">
-                  {post.excerpt}
-                </p>
-
-                
-
-  <button className="text-[#4DA8DA] font-semibold text-sm flex items-center gap-1">
-  READ MORE →
-</button>
-
-              </div>
-            </div>
-          ))}
-
-        </div>
-
+        <h3 className="mt-5 text-4xl font-bold leading-tight max-w-xl">
+          {posts[0].title}
+        </h3>
       </div>
+    </div>
+
+    <div className="p-8">
+
+      <p className="text-gray-600 leading-8">
+        {posts[0].excerpt}
+      </p>
+
+      <div className="mt-8 flex items-center gap-3 text-[#3eaef2] font-semibold group-hover:gap-5 transition-all">
+        Read Story →
+      </div>
+
+    </div>
+  </Link>
+
+  {/* NEWS LIST */}
+  <div className="flex flex-col divide-y divide-gray-200 bg-white border border-gray-200">
+
+    {posts.slice(1).map((post, index) => (
+
+      <Link
+        key={index}
+        href="/news"
+        className="group flex gap-5 p-6 hover:bg-gray-50 transition"
+      >
+
+        <div className="relative w-40 h-32 flex-shrink-0 overflow-hidden">
+
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover group-hover:scale-105 transition duration-700"
+          />
+
+        </div>
+
+        <div className="flex-1">
+
+          <p className="text-xs uppercase tracking-[0.18em] font-semibold text-orange-500 mb-3">
+            {post.category}
+          </p>
+
+          <h3 className="text-xl font-bold leading-snug text-[#071a2f] group-hover:text-[#3eaef2] transition">
+            {post.title}
+          </h3>
+
+          <p className="mt-3 text-sm text-gray-600 leading-7 line-clamp-3">
+            {post.excerpt}
+          </p>
+
+          <div className="mt-4 text-[#3eaef2] font-semibold">
+            Read →
+          </div>
+
+        </div>
+
+      </Link>
+
+    ))}
+
+  </div>
+
+</div>
+
+{/* VIEW ALL */}
+<div className="mt-14 flex justify-center">
+
+  <Link
+    href="/news"
+    className="group inline-flex items-center gap-3 border-2 border-[#071a2f] px-8 py-4 font-semibold text-[#071a2f] hover:bg-[#071a2f] hover:text-white transition-all duration-300"
+  >
+    VIEW ALL NEWS
+    <span className="group-hover:translate-x-1 transition-transform">
+      →
+    </span>
+  </Link>
+
+</div>
+ </div>
     </section>
   );
 }

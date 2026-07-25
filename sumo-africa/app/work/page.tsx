@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link"
 import {
   Shield,
@@ -10,6 +11,7 @@ import {
   ArrowRight,
   Mail, Send, Twitter, Linkedin, Facebook, MapPin
 } from "lucide-react"
+import { useState } from "react";
 
 const focusAreas = [
   {
@@ -144,6 +146,7 @@ const goals = [
 ]
 
 export default function OurWorkPage() {
+  const [selected, setSelected] = useState(0);
   return (
     <>
       <main className="bg-[#f3f3f4]">
@@ -157,7 +160,7 @@ export default function OurWorkPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#06132e]/90 via-[#06132e]/65 to-[#06132e]/45" />
 
             <div className="relative mx-auto flex min-h-[440px] max-w-7xl items-center px-6 sm:px-10">
-              <div className="max-w-2xl">
+              <div className="max-w-2xl -translate-y-8">
                 <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-orange-500">
                   OUR WORK
                 </p>
@@ -177,64 +180,164 @@ export default function OurWorkPage() {
           </div>
         </section>
 
-        {/* OUR FOCUS AREAS */}
-        <section className="py-24">
-          <div className="mx-auto max-w-6xl px-6 sm:px-10">
-            <div className="mb-14 text-center">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-orange-500">
-                WHAT WE DO
-              </p>
+       {/* OUR FOCUS AREAS */}
+<section className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-6 sm:px-10">
 
-              <h2 className="text-[2.1rem] font-extrabold uppercase leading-none tracking-tight text-[#071630] sm:text-[3rem]">
-                OUR FOCUS AREAS
-              </h2>
-            </div>
+    <div className="text-center mb-16">
+      <p className="text-orange-500 uppercase tracking-[0.22em] font-semibold text-sm">
+        WHAT WE DO
+      </p>
 
-            <div className="grid gap-5 md:grid-cols-2">
-              {focusAreas.map((item) => {
-                const Icon = item.icon
+      <h2 className="mt-3 text-[2.2rem] sm:text-[3rem] font-extrabold uppercase text-[#071630]">
+        OUR FOCUS AREAS
+      </h2>
+    </div>
 
-                return (
-                  <div
-                    key={item.title}
-                    className="group border border-[#e5e7eb] bg-white px-7 py-7 transition duration-300 hover:border-[#06132e] hover:bg-[#3eaef2]"
-                  >
-                    <div className="flex items-start gap-5">
-                      <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center bg-[#3eaef2] transition duration-300 group-hover:bg-orange-500">
-                        <Icon
-                          size={23}
-                          className="text-orange-500 transition duration-300 group-hover:text-white"
-                        />
-                      </div>
+    <div className="grid lg:grid-cols-2 gap-14 items-center">
 
-                      <div className="flex-1">
-                        <h3 className="text-[1.02rem] font-extrabold uppercase leading-snug text-[#071630] transition duration-300 group-hover:text-white">
-                          {item.title}
-                        </h3>
+      {/* IMAGE */}
 
-                        <p className="mt-3 text-[15px] leading-7 text-slate-500 transition duration-300 group-hover:text-slate-300">
-                          {item.description}
-                        </p>
+      <div className="relative h-[560px] overflow-hidden rounded-2xl shadow-xl">
 
-                        <div className="mt-6 space-y-2">
-                          {item.points.map((point) => (
-                            <div
-                              key={point}
-                              className="flex items-center gap-2.5 text-[15px] text-slate-500 transition duration-300 group-hover:text-slate-200"
-                            >
-                              <CheckCircle2 size={17} className="text-orange-500" />
-                              <span>{point}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
+        <img
+          src={`/images/focus ${selected + 1}.jpeg`}
+          alt={focusAreas[selected].title}
+          className="w-full h-full object-cover transition-all duration-700"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-[#06132e] via-[#06132e]/40 to-transparent"/>
+
+        <div className="absolute bottom-0 p-10 text-white">
+
+          {(() => {
+            const Icon = focusAreas[selected].icon;
+
+            return <Icon size={42} className="mb-5 text-orange-400" />;
+          })()}
+
+          <h3 className="text-3xl font-black uppercase">
+            {focusAreas[selected].title}
+          </h3>
+
+          <p className="mt-5 leading-8 text-slate-200">
+            {focusAreas[selected].description}
+          </p>
+
+          <div className="mt-7 space-y-3">
+
+            {focusAreas[selected].points.map((point) => (
+
+              <div
+                key={point}
+                className="flex items-center gap-3"
+              >
+
+                <CheckCircle2
+                  size={18}
+                  className="text-orange-400"
+                />
+
+                <span>{point}</span>
+
+              </div>
+
+            ))}
+
           </div>
-        </section>
+
+        </div>
+
+      </div>
+
+      {/* TABS */}
+
+      <div className="space-y-4">
+
+        {focusAreas.map((item, index) => {
+
+          const Icon = item.icon;
+
+          return (
+
+            <button
+
+              key={item.title}
+
+              onClick={() => setSelected(index)}
+
+              className={`w-full text-left rounded-xl border transition-all duration-300 p-6
+
+              ${
+                selected === index
+                  ? "bg-[#06132e] text-white border-[#06132e] shadow-xl"
+                  : "bg-white hover:bg-[#f5f7fa] border-[#e5e7eb]"
+              }
+
+              `}
+            >
+
+              <div className="flex items-center gap-5">
+
+                <div
+                  className={`w-14 h-14 rounded-lg flex items-center justify-center
+
+                  ${
+                    selected === index
+                      ? "bg-orange-500"
+                      : "bg-[#3eaef2]"
+                  }
+
+                  `}
+                >
+
+                  <Icon
+                    size={24}
+                    className="text-white"
+                  />
+
+                </div>
+
+                <div className="flex-1">
+
+                  <h3 className="font-black uppercase">
+
+                    {item.title}
+
+                  </h3>
+
+                  <p
+                    className={`mt-2 text-sm
+
+                    ${
+                      selected === index
+                        ? "text-slate-300"
+                        : "text-slate-500"
+                    }
+
+                    `}
+                  >
+
+                    {item.description.substring(0,90)}...
+
+                  </p>
+
+                </div>
+
+              </div>
+
+            </button>
+
+          );
+
+        })}
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
         {/* OUR PROJECTS */}
         <section className="pb-24">
@@ -298,7 +401,7 @@ export default function OurWorkPage() {
                   {project.button && (
                     <div className="mt-8">
                       <Link
-                        href={project.link}
+                        href={project.link!}
                         className="inline-flex items-center gap-3 bg-[#06132e] px-7 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition duration-300 hover:bg-orange-500"
                       >
                         VIEW PROJECT

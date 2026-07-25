@@ -1,18 +1,121 @@
+"use client"
+
 import {
+  Shield,
+  Leaf,
+  ChartColumn,
   Target,
   Eye,
   Heart,
   Users,
+    Handshake,
+  Megaphone,
+  CheckCircle2,
+  ArrowRight,
   CalendarDays,
   MapPin,
   Building2,
   UserRound,
   Mail, Send, Twitter, Linkedin, Facebook
 } from "lucide-react"
+
+import { useState } from "react";
 import Link from "next/link"
 import Image from "next/image";
 
+const focusAreas = [
+  {
+    title: "ROAD SAFETY & INJURY PREVENTION",
+    description:
+      "Advocacy, public awareness, education, capacity building, and stronger safety policies to reduce road crash deaths and injuries.",
+    points: [
+      "Policy advocacy",
+      "Crash data analysis",
+      "Community awareness campaigns",
+    ],
+    icon: Shield,
+  },
+  {
+    title: "CLEAN & SUSTAINABLE TRANSPORT",
+    description:
+      "Advocating for active transport, shared mobility, and low-emission options to reduce greenhouse gases and air pollution.",
+    points: [
+      "Active travel promotion",
+      "Clean transit advocacy",
+      "Emission reduction strategies",
+    ],
+    icon: Leaf,
+  },
+  {
+    title: "MOBILITY DATA & RESEARCH",
+    description:
+      "Gathering and analyzing data on safety, accessibility, and mobility to guide targeted interventions.",
+    points: [
+      "Data collection systems",
+      "Research partnerships",
+      "Evidence-based interventions",
+    ],
+    icon: ChartColumn,
+  },
+  {
+    title: "VULNERABLE ROAD USERS",
+    description:
+      "Advancing infrastructure and policies to protect pedestrians, cyclists, women, children, PWDs, and the elderly.",
+    points: [
+      "Pedestrian safety",
+      "Cycling infrastructure",
+      "Inclusive design",
+    ],
+    icon: Users,
+  },
+  {
+    title: "REGIONAL COLLABORATION",
+    description:
+      "Creating partnerships across cities, counties, and institutions to scale road safety and sustainable mobility action.",
+    points: [
+      "Cross-sector partnerships",
+      "County engagement",
+      "Regional learning exchange",
+    ],
+    icon: Handshake,
+  },
+  {
+    title: "PUBLIC AWARENESS & EDUCATION",
+    description:
+      "Using campaigns, training, and outreach to influence safer road behavior and build a culture of responsible mobility.",
+    points: [
+      "Behavior change campaigns",
+      "School outreach",
+      "Stakeholder education",
+    ],
+    icon: Megaphone,
+  },
+]
 export default function AboutPage() {
+  const [selected, setSelected] = useState(0);
+  const goals = [
+  {
+    title: "SDG 3",
+    text: "Promoting road safety and reducing traffic-related injuries through advocacy and evidence-based interventions.",
+    border: "border-orange-500",
+  },
+  {
+    title: "SDG 11",
+    text: "Supporting inclusive, safe, resilient, and sustainable cities through improved mobility systems.",
+    border: "border-[#3eaef2]",
+  },
+  {
+    title: "Global Plan",
+    text: "Contributing to the Global Plan for the Decade of Action for Road Safety 2021–2030.",
+    border: "border-green-500",
+  },
+  {
+    title: "Agenda 2063",
+    text: "Advancing the African Union's vision for integrated, prosperous, and sustainable transport across Africa.",
+    border: "border-purple-500",
+  },
+];
+
   return (
     <>
       {/* HERO SECTION */}
@@ -24,7 +127,7 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-10 relative z-10">
 
-          <p className="text-orange-500 font-semibold tracking-widest text-sm mb-4">
+          <p className="mt-10 text-orange-500 font-semibold tracking-widest text-sm mb-4">
             ABOUT US
           </p>
 
@@ -44,127 +147,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-      {/* MISSION / VISION SECTION */}
-      <section className="bg-gray-100 py-20">
-
-        <div className="max-w-7xl mx-auto px-10 grid md:grid-cols-2 gap-12">
-
-          {/* MISSION CARD */}
-          <div className="bg-white p-10 relative shadow-sm">
-
-            {/* orange side line */}
-            <div className="absolute left-0 top-0 h-full w-1 bg-[#3eaef2]"></div>
-
-            <div className="flex items-center gap-4 mb-6">
-
-              <div className="bg-orange-500 p-3">
-                <Target size={22} className="text-white"/>
-              </div>
-
-              <h3 className="font-bold text-[#3eaef2] tracking-wide">
-                OUR MISSION
-              </h3>
-
-            </div>
-
-            <p className="text-gray-600 leading-relaxed">
-              To promote safe, clean, sustainable, and inclusive mobility
-              through advocacy, awareness, education, and research. We aim to
-              empower youth participation,prioritize data driven approaches and advocate for policy changes that save lives.
-            </p>
-
-          </div>
-
-
-          {/* VISION CARD */}
-          <div className="bg-[#071a2f] p-10 shadow-sm">
-
-            <div className="flex items-center gap-4 mb-6">
-
-              <div className="bg-[#3eaef2] p-3">
-                <Eye size={22} className="text-white"/>
-              </div>
-
-              <h3 className="font-bold text-lg tracking-wide text-white">
-                OUR VISION
-              </h3>
-
-            </div>
-
-            <p className="text-gray-300 leading-relaxed">
-              Inclusivity and Sustainability in Mobility. We envision an
-              Africa where every person — regardless of gender, age,
-              or ability — has access to safe, clean, and
-              efficient transportation systems.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-{/* CORE VALUES SECTION */}
-<section className="bg-white py-24">
-  <div className="max-w-7xl mx-auto px-10 text-center">
-
-    {/* Heading */}
-    <p className="text-orange-500 font-semibold tracking-widest text-sm mb-2">
-      WHAT DRIVES US
-    </p>
-
-    <h2 className="text-3xl md:text-4xl font-bold text-[#0c1b2a] mb-16">
-      OUR CORE VALUES
-    </h2>
-
-    {/* Cards */}
-    <div className="grid md:grid-cols-3 gap-10">
-
-      {/* Inclusivity Card */}
-      <div className="flex flex-col items-center bg-gray-50 p-10 rounded-lg shadow-md">
-        <div className="bg-[#3eaef2] p-5 rounded-full mb-6">
-          <Heart size={28} className="text-orange-500"/>
-        </div>
-        <h3 className="font-semibold text-lg mb-2 text-[#0c1b2a]">
-          Inclusivity
-        </h3>
-        <p className="text-gray-600 text-sm text-center">
-          We ensure that every person, regardless of gender, age, or ability, is included in our programs and initiatives.
-        </p>
-      </div>
-
-      {/* Data-Driven Card */}
-      <div className="flex flex-col items-center bg-gray-50 p-10 rounded-lg shadow-md">
-        <div className="bg-[#3eaef2] p-5 rounded-full mb-6">
-          <Target size={28} className="text-orange-500"/>
-        </div>
-        <h3 className="font-semibold text-lg mb-2 text-[#0c1b2a]">
-          Data-Driven
-        </h3>
-        <p className="text-gray-600 text-sm text-center">
-          Our decisions are guided by research, analytics, and evidence to ensure impactful outcomes.
-        </p>
-      </div>
-
-      {/* Collaboration Card */}
-      <div className="flex flex-col items-center bg-gray-50 p-10 rounded-lg shadow-md">
-        <div className="bg-[#3eaef2] p-5 rounded-full mb-6">
-          <Users size={28} className="text-orange-500"/>
-        </div>
-        <h3 className="font-semibold text-lg mb-2 text-[#0c1b2a]">
-          Collaboration
-        </h3>
-        <p className="text-gray-600 text-sm text-center">
-          We work together with communities, partners, and stakeholders to create sustainable change.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-{/* ORGANIZATION / WHO WE ARE */}
+      {/* ORGANIZATION / WHO WE ARE */}
 <section className="bg-[#f3f3f4] py-24">
   <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-2 gap-16 items-start">
     {/* LEFT */}
@@ -239,6 +222,284 @@ export default function AboutPage() {
   </div>
 </section>
 
+
+
+     {/* MISSION / VISION SECTION */}
+<section className="bg-gray-100 py-20">
+  <div className="max-w-7xl mx-auto px-10 grid md:grid-cols-2 gap-12">
+
+    {/* MISSION CARD */}
+    <div className="bg-[#071a2f] p-10 shadow-sm">
+
+      <div className="flex items-center gap-4 mb-6">
+
+        <div className="bg-[#3eaef2] p-3">
+          <Target size={22} className="text-white" />
+        </div>
+
+        <h3 className="font-bold text-lg tracking-wide text-white">
+          OUR MISSION
+        </h3>
+
+      </div>
+
+      <p className="text-gray-300 leading-relaxed">
+        To promote safe, clean, sustainable, and inclusive mobility
+        through advocacy, awareness, education, and research. We aim to
+        empower youth participation, prioritize data driven approaches and
+        advocate for policy changes that save lives.
+      </p>
+
+    </div>
+
+    {/* VISION CARD */}
+    <div className="bg-white p-10 relative shadow-sm">
+
+      {/* Blue side line */}
+      <div className="absolute left-0 top-0 h-full w-1 bg-[#3eaef2]"></div>
+
+      <div className="flex items-center gap-4 mb-6">
+
+        <div className="bg-orange-500 p-3">
+          <Eye size={22} className="text-white" />
+        </div>
+
+        <h3 className="font-bold text-[#3eaef2] tracking-wide">
+          OUR VISION
+        </h3>
+
+      </div>
+
+      <p className="text-gray-600 leading-relaxed">
+        Inclusivity and Sustainability in Mobility. We envision an
+        Africa where every person — regardless of gender, age,
+        or ability — has access to safe, clean, and
+        efficient transportation systems.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+       {/* OUR FOCUS AREAS */}
+<section className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-6 sm:px-10">
+
+    <div className="text-center mb-16">
+      <p className="text-orange-500 uppercase tracking-[0.22em] font-semibold text-sm">
+        WHAT WE DO
+      </p>
+
+      <h2 className="mt-3 text-[2.2rem] sm:text-[3rem] font-extrabold uppercase text-[#071630]">
+        OUR FOCUS AREAS
+      </h2>
+    </div>
+
+    <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+      {/* IMAGE */}
+
+      <div className="relative h-[560px] overflow-hidden rounded-2xl shadow-xl">
+
+        <img
+          src={`/images/focus ${selected + 1}.jpeg`}
+          alt={focusAreas[selected].title}
+          className="w-full h-full object-cover transition-all duration-700"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-[#06132e] via-[#06132e]/40 to-transparent"/>
+
+        <div className="absolute bottom-0 p-10 text-white">
+
+          {(() => {
+            const Icon = focusAreas[selected].icon;
+
+            return <Icon size={42} className="mb-5 text-orange-400" />;
+          })()}
+
+          <h3 className="text-3xl font-black uppercase">
+            {focusAreas[selected].title}
+          </h3>
+
+          <p className="mt-5 leading-8 text-slate-200">
+            {focusAreas[selected].description}
+          </p>
+
+          <div className="mt-7 space-y-3">
+
+            {focusAreas[selected].points.map((point) => (
+
+              <div
+                key={point}
+                className="flex items-center gap-3"
+              >
+
+                <CheckCircle2
+                  size={18}
+                  className="text-orange-400"
+                />
+
+                <span>{point}</span>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* TABS */}
+
+      <div className="space-y-4">
+
+        {focusAreas.map((item, index) => {
+
+          const Icon = item.icon;
+
+          return (
+
+            <button
+
+              key={item.title}
+
+              onClick={() => setSelected(index)}
+
+              className={`w-full text-left rounded-xl border transition-all duration-300 p-6
+
+              ${
+                selected === index
+                  ? "bg-[#06132e] text-white border-[#06132e] shadow-xl"
+                  : "bg-white hover:bg-[#f5f7fa] border-[#e5e7eb]"
+              }
+
+              `}
+            >
+
+              <div className="flex items-center gap-5">
+
+                <div
+                  className={`w-14 h-14 rounded-lg flex items-center justify-center
+
+                  ${
+                    selected === index
+                      ? "bg-orange-500"
+                      : "bg-[#3eaef2]"
+                  }
+
+                  `}
+                >
+
+                  <Icon
+                    size={24}
+                    className="text-white"
+                  />
+
+                </div>
+
+                <div className="flex-1">
+
+                  <h3 className="font-black uppercase">
+
+                    {item.title}
+
+                  </h3>
+
+                  <p
+                    className={`mt-2 text-sm
+
+                    ${
+                      selected === index
+                        ? "text-slate-300"
+                        : "text-slate-500"
+                    }
+
+                    `}
+                  >
+
+                    {item.description.substring(0,90)}...
+
+                  </p>
+
+                </div>
+
+              </div>
+
+            </button>
+
+          );
+
+        })}
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{/* CORE VALUES SECTION */}
+<section className="bg-white py-24">
+  <div className="max-w-7xl mx-auto px-10 text-center">
+
+    {/* Heading */}
+    <p className="text-orange-500 font-semibold tracking-widest text-sm mb-2">
+      WHAT DRIVES US
+    </p>
+
+    <h2 className="text-3xl md:text-4xl font-bold text-[#0c1b2a] mb-16">
+      OUR CORE VALUES
+    </h2>
+
+    {/* Cards */}
+    <div className="grid md:grid-cols-3 gap-10">
+
+      {/* Inclusivity Card */}
+      <div className="flex flex-col items-center bg-gray-50 p-10 rounded-lg shadow-md">
+        <div className="bg-[#3eaef2] p-5 rounded-full mb-6">
+          <Heart size={28} className="text-orange-500"/>
+        </div>
+        <h3 className="font-semibold text-lg mb-2 text-[#0c1b2a]">
+          Inclusivity
+        </h3>
+        <p className="text-gray-600 text-sm text-center">
+          We ensure that every person, regardless of gender, age, or ability, is included in our programs and initiatives.
+        </p>
+      </div>
+
+      {/* Data-Driven Card */}
+      <div className="flex flex-col items-center bg-gray-50 p-10 rounded-lg shadow-md">
+        <div className="bg-[#3eaef2] p-5 rounded-full mb-6">
+          <Target size={28} className="text-orange-500"/>
+        </div>
+        <h3 className="font-semibold text-lg mb-2 text-[#0c1b2a]">
+          Data-Driven
+        </h3>
+        <p className="text-gray-600 text-sm text-center">
+          Our decisions are guided by research, analytics, and evidence to ensure impactful outcomes.
+        </p>
+      </div>
+
+      {/* Collaboration Card */}
+      <div className="flex flex-col items-center bg-gray-50 p-10 rounded-lg shadow-md">
+        <div className="bg-[#3eaef2] p-5 rounded-full mb-6">
+          <Users size={28} className="text-orange-500"/>
+        </div>
+        <h3 className="font-semibold text-lg mb-2 text-[#0c1b2a]">
+          Collaboration
+        </h3>
+        <p className="text-gray-600 text-sm text-center">
+          We work together with communities, partners, and stakeholders to create sustainable change.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 {/* OUR JOURNEY / MILESTONES */}
 <section className="bg-[#f3f3f4] py-24">
   <div className="max-w-5xl mx-auto px-10">
@@ -288,8 +549,8 @@ export default function AboutPage() {
   </div>
 </section>
 
-
-{/* MEET THE TEAM */}
+{/* TEAM */}
+{/*
 <section className="bg-[#f3f3f4] py-24">
   <div className="max-w-7xl mx-auto px-10">
     <div className="text-center mb-16">
@@ -304,7 +565,7 @@ export default function AboutPage() {
 
     <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-      {/* CARD 1 */}
+      
       <div className="bg-white border border-gray-200 shadow-sm rounded-xl overflow-hidden pb-8">
 
   <div className="pt-8 flex justify-center">
@@ -334,7 +595,7 @@ export default function AboutPage() {
 
 </div>
 
-      {/* CARD 2 */}
+      
       <div className="bg-white border border-gray-200 shadow-sm overflow-hidden">
         <div className="relative">
           <div className="pt-8 flex justify-center">
@@ -363,7 +624,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* CARD 3 */}
+     
       <div className="bg-white border border-gray-200 shadow-sm overflow-hidden">
         <div className="pt-8 flex justify-center">
   <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-lg bg-[#031238]">
@@ -389,7 +650,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* CARD 4 */}
+      
       <div className="bg-white border border-gray-200 shadow-sm overflow-hidden">
       <div className="pt-8 flex justify-center">
   <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-lg bg-[#031238]">
@@ -415,7 +676,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* CARD 5 */}
+      
       <div className="bg-white border border-gray-200 shadow-sm overflow-hidden">
         <div className="pt-8 flex justify-center">
   <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-lg bg-[#031238]">
@@ -443,10 +704,10 @@ export default function AboutPage() {
 
     </div>
   </div>
-</section>
+</section>/*}
 
 {/* OUR NETWORK */}
-<section className="bg-white py-24">
+<section className="bg-[#071a2f] py-24">
   <div className="max-w-7xl mx-auto px-10">
 
     <div className="text-center mb-14">
@@ -498,19 +759,14 @@ export default function AboutPage() {
       logo: "/images/kerra logo.jpeg",
     },
     {
-      abbr: "WORLD BANK",
-      full: "The World Bank",
-      logo: "/images/wb logo.jpeg",
+      abbr: "NAPTA",
+      full: "National Public Transport Alliance",
+      logo: "/images/napta logo.png",
     },
     {
-      abbr: "WHO",
-      full: "World Health Organization",
-      logo: "/images/who logo.jpeg",
-    },
-    {
-      abbr: "FIA FOUNDATION",
-      full: "FIA Foundation",
-      logo: "/images/fia logo.jpeg",
+      abbr: "ELGIA",
+      full: " Electoral Law and Governance Institute for Africa",
+      logo: "/images/elgia logo.png",
     },
     {
       abbr: "GLOBAL YOUTH COALITION",
@@ -548,18 +804,47 @@ export default function AboutPage() {
 
      {/* Partner CTA */}
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-gray-600 mb-6">
-            We're always looking for new partners to join our mission for safer, more sustainable mobility across Africa.
-          </p>
+         
 
-         <button className="bg-[#3eaef2] text-white font-semibold px-8 py-3 rounded-md hover:bg-slate-800 transition">
+         {/* <Link
+  href="/contact"
+  className="inline-flex items-center bg-[#3eaef2] text-white font-semibold px-8 py-3 rounded-md hover:bg-[#1d5d9b] transition"
+>
   BECOME A PARTNER
-</button>
+</Link> */}
         </div>
 
 
   </div>
 </section>
+{/* ALIGNED WITH GLOBAL GOALS */}
+        <section className="bg-[#06132e] py-20">
+          <div className="mx-auto max-w-6xl px-6 text-center sm:px-10">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-orange-500">
+              WHY IT MATTERS
+            </p>
+
+            <h2 className="text-[2rem] font-extrabold uppercase leading-none tracking-tight text-white sm:text-[2.7rem]">
+              ALIGNED WITH GLOBAL GOALS
+            </h2>
+
+            <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {goals.map((goal) => (
+                <div
+                  key={goal.title}
+                  className={`border-l-2 ${goal.border} bg-white/5 px-5 py-5 text-left`}
+                >
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-300">
+                    {goal.title}
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-slate-200">
+                    {goal.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
 <footer className="bg-[#071a2f] text-white pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-10">

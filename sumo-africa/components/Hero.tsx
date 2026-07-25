@@ -1,68 +1,69 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Hero() {
   return (
-
-    <section
-      className="h-screen flex items-center justify-center text-center text-white relative"
-      style={{
-        backgroundImage: "url('/images/sumo1.jpeg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center"
-      }}
-    >
+    <section className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+      {/* Static Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/images/sumo1.jpeg')",
+        }}
+      />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-[#0c1b2a]/50"></div>
+      <div className="absolute inset-0 bg-[#0c1b2a]/50 z-10" />
 
-      <div className="relative max-w-3xl">
+      {/* Content */}
+      <div className="relative z-20 max-w-3xl">
+        <p className="text-[#3eaef2] text-6xl tracking-widest mb-4 font-extrabold">
+          SUMO AFRICA
+        </p>
 
-<p className="text-orange-500 text-2xl tracking-widest mb-4 font-bold">
-  SUSTAINABLE MOBILITY AFRICA
-</p>
-
-        <h1 className="text-6xl font-extrabold leading-tight">
-          <span className="text-[#3eaef2]">SAFER ROADS,</span>
-          <br/>
-          <span className="text-orange-500">SUSTAINABLE FUTURE</span>
+        <h1 className="text-3xl font-bold leading-tight">
+          <span className="text-[#3eaef2]">INCLUSIVE & SUSTAINABLE MOBILITY</span>
+          <br />
+          {/* <span className="text-[#3eaef2]">SUSTAINABLE FUTURE</span> */}
         </h1>
 
-{/* <p className="text-[#3eaef2] mt-6 text-xl leading-10">
-  Promoting safe, clean, sustainable, and inclusive mobility across Africa
-  through advocacy, awareness, education, and research.
-</p> */}
-        {/* Buttons */}
         <div className="flex justify-center gap-5 mt-10">
-          <button className="bg-[#3eaef2] hover:bg-[#3eaef2] px-8 py-4 font-semibold flex items-center gap-2">
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 bg-[#3eaef2] hover:bg-[#2d9de0] px-8 py-4 font-semibold text-white transition duration-300"
+          >
             LEARN MORE →
-          </button>
-          <button className="bg-orange-500 hover:bg-orange-500 px-8 py-4 font-semibold">
+          </Link>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center bg-orange-500 hover:bg-orange-600 px-8 py-4 font-semibold text-white transition duration-300"
+          >
             GET INVOLVED
-          </button>
+          </Link>
         </div>
 
-        {/* Animated Orange Line (thinner) */}
+        {/* Animated Orange Line */}
         <div className="relative mt-10 w-40 h-[1px] mx-auto overflow-hidden">
           <div className="absolute top-0 left-0 h-[1px] w-full bg-orange-500 animate-slideLine"></div>
         </div>
-
       </div>
 
       <style jsx>{`
         @keyframes slideLine {
-          0% {
+          from {
             transform: translateX(-100%);
           }
-          100% {
+          to {
             transform: translateX(100%);
           }
         }
+
         .animate-slideLine {
           animation: slideLine 2s linear infinite;
         }
       `}</style>
-
     </section>
-
-  )
+  );
 }

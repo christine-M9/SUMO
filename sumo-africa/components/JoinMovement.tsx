@@ -14,28 +14,6 @@ export default function JoinMovement() {
           JOIN OUR MOVEMENT
         </h2>
 
-        <p className="text-[#3eaef2] mb-8">
-          Subscribe to receive updates on our projects, road safety insights,
-          and opportunities to get involved.
-        </p>
-
-        {/* EMAIL SUBSCRIBE */}
-        <div className="flex justify-center mt-8">
-          <div className="flex w-full max-w-xl">
-
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="flex-1 bg-gray-200 px-5 py-4 text-gray-700 placeholder-gray-500 outline-none"
-            />
-
-            <button className="bg-[#4DA8DA] px-8 py-4 font-semibold tracking-wide hover:bg-[#4DA8DA] transition flex items-center gap-2">
-              <Send size={16} />
-              SUBSCRIBE
-            </button>
-
-          </div>
-        </div>
       </div>
 
       {/* FOOTER */}
