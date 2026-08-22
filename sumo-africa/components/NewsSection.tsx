@@ -29,15 +29,6 @@ SUMO Africa remains committed to strengthening partnerships, improving road safe
     },
 
     {
-      category: "EVENTS",
-      title: "SPEAKING AT THE GLOBAL MINISTERIAL CONFERENCE ON ROAD SAFETY 2025",
-      excerpt:
-        "SUMO Africa was honored to participate in the 4th Global Ministerial Conference on Road Safety...",
-      image: "/images/sumo22.jpeg",
-    },
-
-    
-    {
       category: "ROAD SAFETY",
       title:
         "SUMO Africa Conducts SR4S Road Safety Assessment at Children's Garden Home & School",
@@ -60,6 +51,17 @@ We sincerely appreciate the National Transport and Safety Authority (NTSA), the 
 Through the Safe Steps to School Project, SUMO Africa remains committed to working with partners to build safer school zones and ensure that every child can travel to and from school safely.
       `,
     },
+
+    {
+      category: "EVENTS",
+      title: "SPEAKING AT THE GLOBAL MINISTERIAL CONFERENCE ON ROAD SAFETY 2025",
+      excerpt:
+        "SUMO Africa was honored to participate in the 4th Global Ministerial Conference on Road Safety...",
+      image: "/images/sumo22.jpeg",
+    },
+
+    
+    
   ];
 
   return (
@@ -174,17 +176,13 @@ Through the Safe Steps to School Project, SUMO Africa remains committed to worki
 
 {/* VIEW ALL */}
 <div className="mt-14 flex justify-center">
-
   <Link
     href="/news"
-    className="group inline-flex items-center gap-3 border-2 border-[#071a2f] px-8 py-4 font-semibold text-[#071a2f] hover:bg-[#071a2f] hover:text-white transition-all duration-300"
+    className="inline-flex items-center gap-3 rounded-md bg-[#3eaef2] px-8 py-4 font-semibold text-[#071521]"
   >
     VIEW ALL NEWS
-    <span className="group-hover:translate-x-1 transition-transform">
-      →
-    </span>
+    <span>→</span>
   </Link>
-
 </div>
  </div>
     </section>

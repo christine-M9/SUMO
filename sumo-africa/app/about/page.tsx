@@ -5,27 +5,27 @@ import {
   Leaf,
   ChartColumn,
   Target,
-  Eye,
   Heart,
   Users,
-    Handshake,
+  Handshake,
   Megaphone,
   CheckCircle2,
   ArrowRight,
-  CalendarDays,
   MapPin,
-  Building2,
-  UserRound,
-  Mail, Send, Twitter, Linkedin, Facebook
+  Mail,
+  Send,
+ 
 } from "lucide-react"
+import { FaXTwitter, FaLinkedin, FaFacebook } from "react-icons/fa6";
 
-import { useState } from "react";
+import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image";
+import Image from "next/image"
 
 const focusAreas = [
   {
     title: "ROAD SAFETY & INJURY PREVENTION",
+    image: "/images/focus 1.jpeg",
     description:
       "Advocacy, public awareness, education, capacity building, and stronger safety policies to reduce road crash deaths and injuries.",
     points: [
@@ -35,8 +35,10 @@ const focusAreas = [
     ],
     icon: Shield,
   },
+
   {
     title: "CLEAN & SUSTAINABLE TRANSPORT",
+    image: "/images/focus 2.jpeg",
     description:
       "Advocating for active transport, shared mobility, and low-emission options to reduce greenhouse gases and air pollution.",
     points: [
@@ -46,8 +48,10 @@ const focusAreas = [
     ],
     icon: Leaf,
   },
+
   {
     title: "MOBILITY DATA & RESEARCH",
+    image: "/images/focus 3.jpeg",
     description:
       "Gathering and analyzing data on safety, accessibility, and mobility to guide targeted interventions.",
     points: [
@@ -57,8 +61,10 @@ const focusAreas = [
     ],
     icon: ChartColumn,
   },
+
   {
     title: "VULNERABLE ROAD USERS",
+    image: "/images/focus 4.jpeg",
     description:
       "Advancing infrastructure and policies to protect pedestrians, cyclists, women, children, PWDs, and the elderly.",
     points: [
@@ -68,8 +74,10 @@ const focusAreas = [
     ],
     icon: Users,
   },
+
   {
     title: "REGIONAL COLLABORATION",
+    image: "/images/focus 5.jpeg",
     description:
       "Creating partnerships across cities, counties, and institutions to scale road safety and sustainable mobility action.",
     points: [
@@ -79,8 +87,10 @@ const focusAreas = [
     ],
     icon: Handshake,
   },
+
   {
     title: "PUBLIC AWARENESS & EDUCATION",
+    image: "/images/focus 6.jpeg",
     description:
       "Using campaigns, training, and outreach to influence safer road behavior and build a culture of responsible mobility.",
     points: [
@@ -91,907 +101,673 @@ const focusAreas = [
     icon: Megaphone,
   },
 ]
+
 export default function AboutPage() {
-  const [selected, setSelected] = useState(0);
-  const goals = [
-  {
-    title: "SDG 3",
-    text: "Promoting road safety and reducing traffic-related injuries through advocacy and evidence-based interventions.",
-    border: "border-orange-500",
-  },
-  {
-    title: "SDG 11",
-    text: "Supporting inclusive, safe, resilient, and sustainable cities through improved mobility systems.",
-    border: "border-[#3eaef2]",
-  },
-  {
-    title: "Global Plan",
-    text: "Contributing to the Global Plan for the Decade of Action for Road Safety 2021–2030.",
-    border: "border-green-500",
-  },
-  {
-    title: "Agenda 2063",
-    text: "Advancing the African Union's vision for integrated, prosperous, and sustainable transport across Africa.",
-    border: "border-purple-500",
-  },
-];
+  const [selected, setSelected] = useState(0)
 
   return (
     <>
-      {/* HERO SECTION */}
-      <section className="relative bg-[#071a2f] text-white pt-24 pb-16 overflow-hidden">
+      {/* =========================================================
+          HERO SECTION
+      ========================================================= */}
+      <section className="relative min-h-[620px] h-[75vh] overflow-hidden">
+        <img
+          src="/images/sumo1.jpeg"
+          alt="SUMO Africa"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
 
-        {/* glow effects */}
-        <div className="absolute -left-40 top-10 w-72 h-72 bg-orange-500/20 blur-3xl rounded-full"></div>
-        <div className="absolute -right-40 top-10 w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06132e]/95 via-[#06132e]/70 to-[#06132e]/40" />
 
-        <div className="max-w-7xl mx-auto px-10 relative z-10">
+        <div className="absolute -right-40 top-20 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-[#3eaef2]/20 blur-3xl" />
 
-          <p className="mt-10 text-orange-500 font-semibold tracking-widest text-sm mb-4">
-            ABOUT US
-          </p>
+        <div className="absolute -left-40 bottom-10 h-60 w-60 sm:h-72 sm:w-72 rounded-full bg-orange-500/20 blur-3xl" />
 
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight max-w-3xl mb-6">
-            BUILDING A SAFER,
-            <br />
-            MORE SUSTAINABLE AFRICA
-          </h1>
+        <div className="relative mx-auto flex h-full w-full max-w-7xl items-center px-4 sm:px-6 md:px-8 lg:px-10">
+          <div className="w-full max-w-3xl pt-12 sm:pt-16 md:pt-20">
+            <span className="inline-block rounded-full border border-orange-500/40 bg-orange-500/20 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-orange-300 sm:px-5 sm:py-2 sm:text-xs sm:tracking-[0.25em]">
+              About Us
+            </span>
 
-          <p className="text-gray-300 max-w-2xl leading-relaxed">
-            SUMO Africa is a regional non-profit organization dedicated to
-            advancing safe, inclusive, and sustainable transportation systems
-            across Africa. We combine technical expertise with community
-            engagement to create lasting change.
-          </p>
+            <h1 className="mt-6 max-w-3xl text-[2.45rem] font-black uppercase leading-[1.08] text-white xs:text-[2.7rem] sm:mt-8 sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="text-[#3eaef2]">Building</span>{" "}
+              A Safer,{" "}
+              <span className="text-[#3eaef2]">Sustainable</span>{" "}
+              <span className="text-[#3eaef2]">Africa</span>
+            </h1>
 
+            <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-300 sm:mt-8 sm:text-base sm:leading-8 md:text-lg md:leading-9">
+              SUMO Africa is a regional non-profit organization dedicated to
+              advancing safe, inclusive, and sustainable transportation systems
+              across Africa through advocacy, awareness, education, research,
+              and collaboration.
+            </p>
+
+            <Link
+              href="#journey"
+              className="mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-orange-500 px-5 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-orange-600 sm:px-7 sm:text-sm"
+            >
+              Our Journey
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
+{/* =========================================================
+    ORGANIZATION / OUR APPROACH
+========================================================= */}
+<section
+  id="journey"
+  className="my-8 bg-[#3eaef2] py-10 sm:my-10 sm:py-12"
+>
+  <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
 
-      {/* ORGANIZATION / WHO WE ARE */}
-<section className="bg-[#f3f3f4] py-24">
-  <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-2 gap-16 items-start">
-    {/* LEFT */}
-    <div>
-      <p className="text-orange-500 font-semibold tracking-[0.22em] text-sm mb-4 uppercase">
-        Organization
+    {/* Heading */}
+    <div className="mb-8 text-center">
+      <p className="mb-1 text-[14px] font-semibold uppercase tracking-[0.2em] text-white">
+        Our Approach
       </p>
 
-      <h2 className="text-[#071a2f] text-3xl md:text-4xl font-extrabold uppercase leading-none mb-10">
-        Who We Are
-      </h2>
+      <h3 className="text-2xl font-extrabold uppercase tracking-tight text-[#06132e] sm:text-3xl">
+        From Idea To Impact
+      </h3>
+    </div>
 
+    {/* Process */}
+    <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:flex-nowrap lg:gap-2">
       {[
         {
-          title: "Founded",
-          text: "August 2024",
-          Icon: CalendarDays,
+          title: "Pilot",
+          text: "Community-based mobility solutions.",
         },
         {
-          title: "Headquarters",
-          text: "CVS Plaza, Lenana Road, Nairobi, Kenya",
-          Icon: MapPin,
+          title: "Refine",
+          text: "Using data to improve interventions.",
         },
         {
-          title: "Structure",
-          text: "Board-led NGO with Executive Team, Technical Advisory Board, and Expert Consultants",
-          Icon: Building2,
+          title: "Scale",
+          text: "Expanding successful models countywide.",
         },
-      ].map(({ title, text, Icon }, i) => (
-        <div key={i} className="flex items-start gap-5 mb-8">
-          <div className="w-12 h-12 bg-white shadow-sm flex items-center justify-center text-[#3eaef2] shrink-0">
-            <Icon size={20} />
-          </div>
+        {
+          title: "Replicate",
+          text: "Supporting adoption across Africa.",
+        },
+      ].map((step, index, steps) => (
+        <div
+          key={step.title}
+          className="flex flex-col items-center lg:flex-row"
+        >
+          {/* Circle */}
+          <div className="flex aspect-square w-[150px] flex-none flex-col items-center justify-center rounded-full border-2 border-[#06132e]/80 bg-white/20 px-5 text-center backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/30 sm:w-[160px]">
+            <h4 className="text-sm font-extrabold uppercase tracking-wide text-[#06132e]">
+              {step.title}
+            </h4>
 
-          <div>
-            <h3 className="text-[#071a2f] font-semibold text-lg mb-1">
-              {title}
-            </h3>
-
-            <p className="text-gray-600 text-base leading-relaxed max-w-xl">
-              {text}
+            <p className="mt-2 max-w-[115px] text-[11px] leading-4 text-[#06132e]/70">
+              {step.text}
             </p>
           </div>
+
+          {/* Arrow */}
+          {index < steps.length - 1 && (
+            <>
+              {/* Mobile: downward arrow */}
+              <span className="my-1 text-2xl font-light text-[#06132e]/60 lg:hidden">
+                ↓
+              </span>
+
+              {/* Desktop: horizontal arrow */}
+              <span className="mx-2 hidden text-2xl font-light text-[#06132e]/60 lg:block">
+                →
+              </span>
+            </>
+          )}
         </div>
       ))}
     </div>
-
-    {/* RIGHT */}
-    <div className="bg-[#031238] text-white px-10 py-12 shadow-sm">
-      <h3 className="text-xl md:text-2xl font-bold uppercase mb-8">
-        Our Approach
-      </h3>
-
-      <div className="space-y-6 text-base leading-relaxed">
-        <p className="text-gray-200">
-          <span className="text-[#3eaef2] font-bold">1. Pilot</span> — Community-based mobility solutions at the local level.
-        </p>
-
-        <p className="text-gray-200">
-          <span className="text-[#3eaef2] font-bold">2. Refine</span> — Use data to improve and optimize interventions.
-        </p>
-
-        <p className="text-gray-200">
-          <span className="text-[#3eaef2] font-bold">3. Scale</span> — Expand successful models countywide in Kenya.
-        </p>
-
-        <p className="text-gray-200">
-          <span className="text-[#3eaef2] font-bold">4. Replicate</span> — Support adoption across Africa through policy alignment and partnerships.
-        </p>
-      </div>
-    </div>
   </div>
 </section>
+{/* =========================================================
+    OUR FOCUS AREAS
+========================================================= */}
+<section className="my-8 overflow-hidden bg-[#3eaef2]/10 py-16 sm:my-10 sm:py-20 md:my-12 md:py-24">
+  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10">
 
-
-
-     {/* MISSION / VISION SECTION */}
-<section className="bg-gray-100 py-20">
-  <div className="max-w-7xl mx-auto px-10 grid md:grid-cols-2 gap-12">
-
-    {/* MISSION CARD */}
-    <div className="bg-[#071a2f] p-10 shadow-sm">
-
-      <div className="flex items-center gap-4 mb-6">
-
-        <div className="bg-[#3eaef2] p-3">
-          <Target size={22} className="text-white" />
-        </div>
-
-        <h3 className="font-bold text-lg tracking-wide text-white">
-          OUR MISSION
-        </h3>
-
-      </div>
-
-      <p className="text-gray-300 leading-relaxed">
-        To promote safe, clean, sustainable, and inclusive mobility
-        through advocacy, awareness, education, and research. We aim to
-        empower youth participation, prioritize data driven approaches and
-        advocate for policy changes that save lives.
-      </p>
-
-    </div>
-
-    {/* VISION CARD */}
-    <div className="bg-white p-10 relative shadow-sm">
-
-      {/* Blue side line */}
-      <div className="absolute left-0 top-0 h-full w-1 bg-[#3eaef2]"></div>
-
-      <div className="flex items-center gap-4 mb-6">
-
-        <div className="bg-orange-500 p-3">
-          <Eye size={22} className="text-white" />
-        </div>
-
-        <h3 className="font-bold text-[#3eaef2] tracking-wide">
-          OUR VISION
-        </h3>
-
-      </div>
-
-      <p className="text-gray-600 leading-relaxed">
-        Inclusivity and Sustainability in Mobility. We envision an
-        Africa where every person — regardless of gender, age,
-        or ability — has access to safe, clean, and
-        efficient transportation systems.
-      </p>
-
-    </div>
-
-  </div>
-</section>
-       {/* OUR FOCUS AREAS */}
-<section className="py-24 bg-white">
-  <div className="max-w-7xl mx-auto px-6 sm:px-10">
-
-    <div className="text-center mb-16">
-      <p className="text-orange-500 uppercase tracking-[0.22em] font-semibold text-sm">
-        WHAT WE DO
-      </p>
-
-      <h2 className="mt-3 text-[2.2rem] sm:text-[3rem] font-extrabold uppercase text-[#071630]">
+    {/* Heading */}
+    <div className="mb-10 text-center sm:mb-14 md:mb-16">
+      <h2 className="text-[1.8rem] font-extrabold uppercase leading-tight text-[#071630] sm:text-[2.4rem] md:text-[3rem]">
         OUR FOCUS AREAS
       </h2>
     </div>
 
-    <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-      {/* IMAGE */}
-
-      <div className="relative h-[560px] overflow-hidden rounded-2xl shadow-xl">
-
-        <img
-          src={`/images/focus ${selected + 1}.jpeg`}
-          alt={focusAreas[selected].title}
-          className="w-full h-full object-cover transition-all duration-700"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-[#06132e] via-[#06132e]/40 to-transparent"/>
-
-        <div className="absolute bottom-0 p-10 text-white">
-
-          {(() => {
-            const Icon = focusAreas[selected].icon;
-
-            return <Icon size={42} className="mb-5 text-orange-400" />;
-          })()}
-
-          <h3 className="text-3xl font-black uppercase">
-            {focusAreas[selected].title}
-          </h3>
-
-          <p className="mt-5 leading-8 text-slate-200">
-            {focusAreas[selected].description}
-          </p>
-
-          <div className="mt-7 space-y-3">
-
-            {focusAreas[selected].points.map((point) => (
-
-              <div
-                key={point}
-                className="flex items-center gap-3"
-              >
-
-                <CheckCircle2
-                  size={18}
-                  className="text-orange-400"
-                />
-
-                <span>{point}</span>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* TABS */}
-
-      <div className="space-y-4">
-
-        {focusAreas.map((item, index) => {
-
-          const Icon = item.icon;
-
-          return (
-
-            <button
-
-              key={item.title}
-
-              onClick={() => setSelected(index)}
-
-              className={`w-full text-left rounded-xl border transition-all duration-300 p-6
-
-              ${
-                selected === index
-                  ? "bg-[#06132e] text-white border-[#06132e] shadow-xl"
-                  : "bg-white hover:bg-[#f5f7fa] border-[#e5e7eb]"
-              }
-
-              `}
-            >
-
-              <div className="flex items-center gap-5">
-
-                <div
-                  className={`w-14 h-14 rounded-lg flex items-center justify-center
-
-                  ${
-                    selected === index
-                      ? "bg-orange-500"
-                      : "bg-[#3eaef2]"
-                  }
-
-                  `}
-                >
-
-                  <Icon
-                    size={24}
-                    className="text-white"
-                  />
-
-                </div>
-
-                <div className="flex-1">
-
-                  <h3 className="font-black uppercase">
-
-                    {item.title}
-
-                  </h3>
-
-                  <p
-                    className={`mt-2 text-sm
-
-                    ${
-                      selected === index
-                        ? "text-slate-300"
-                        : "text-slate-500"
-                    }
-
-                    `}
-                  >
-
-                    {item.description.substring(0,90)}...
-
-                  </p>
-
-                </div>
-
-              </div>
-
-            </button>
-
-          );
-
-        })}
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-{/* CORE VALUES SECTION */}
-<section className="bg-white py-24">
-  <div className="max-w-7xl mx-auto px-10 text-center">
-
-    {/* Heading */}
-    <p className="text-orange-500 font-semibold tracking-widest text-sm mb-2">
-      WHAT DRIVES US
-    </p>
-
-    <h2 className="text-3xl md:text-4xl font-bold text-[#0c1b2a] mb-16">
-      OUR CORE VALUES
-    </h2>
-
-    {/* Cards */}
-    <div className="grid md:grid-cols-3 gap-10">
-
-      {/* Inclusivity Card */}
-      <div className="flex flex-col items-center bg-gray-50 p-10 rounded-lg shadow-md">
-        <div className="bg-[#3eaef2] p-5 rounded-full mb-6">
-          <Heart size={28} className="text-orange-500"/>
-        </div>
-        <h3 className="font-semibold text-lg mb-2 text-[#0c1b2a]">
-          Inclusivity
-        </h3>
-        <p className="text-gray-600 text-sm text-center">
-          We ensure that every person, regardless of gender, age, or ability, is included in our programs and initiatives.
-        </p>
-      </div>
-
-      {/* Data-Driven Card */}
-      <div className="flex flex-col items-center bg-gray-50 p-10 rounded-lg shadow-md">
-        <div className="bg-[#3eaef2] p-5 rounded-full mb-6">
-          <Target size={28} className="text-orange-500"/>
-        </div>
-        <h3 className="font-semibold text-lg mb-2 text-[#0c1b2a]">
-          Data-Driven
-        </h3>
-        <p className="text-gray-600 text-sm text-center">
-          Our decisions are guided by research, analytics, and evidence to ensure impactful outcomes.
-        </p>
-      </div>
-
-      {/* Collaboration Card */}
-      <div className="flex flex-col items-center bg-gray-50 p-10 rounded-lg shadow-md">
-        <div className="bg-[#3eaef2] p-5 rounded-full mb-6">
-          <Users size={28} className="text-orange-500"/>
-        </div>
-        <h3 className="font-semibold text-lg mb-2 text-[#0c1b2a]">
-          Collaboration
-        </h3>
-        <p className="text-gray-600 text-sm text-center">
-          We work together with communities, partners, and stakeholders to create sustainable change.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-{/* OUR JOURNEY / MILESTONES */}
-<section className="bg-[#f3f3f4] py-24">
-  <div className="max-w-5xl mx-auto px-10">
-
-    <div className="text-center mb-16">
-      <p className="text-orange-500 font-semibold tracking-[0.22em] text-sm mb-4 uppercase">
-        Our Journey
-      </p>
-
-      {/* ↓ reduced */}
-      <h2 className="text-[#071a2f] text-3xl md:text-4xl font-extrabold uppercase leading-none">
-        Milestones
-      </h2>
-    </div>
-
-    <div className="space-y-12">
-      {[
-        ["August 2024","SUMO Africa Founded","Established as a Nairobi-based NGO to advance road safety and sustainable transport across Africa."],
-        ["October 2024","Global Youth Coalition Grant","Awarded the Local Action Grant for 'Connect the Dots, Save a Life' project."],
-        ["November 2024","IEK Engineers Convention","Speaking engagement at the Institution of Engineers of Kenya 2024 Convention."],
-      ].map(([date,title,desc],i)=>(
-        <div key={i} className="grid md:grid-cols-[48px_1fr] gap-6 items-stretch">
-
-          <div className="hidden md:flex justify-center relative">
-            <div className="absolute top-0 w-4 h-4 bg-[#3eaef2]"></div>
-            <div className="mt-4 w-[4px] h-full bg-gradient-to-b from-[#b8a33c] to-[#7fd58f]"></div>
-          </div>
-
-          <div className="bg-white border border-gray-200 px-6 py-6 shadow-sm">
-            <span className="inline-block bg-[#3eaef2] text-white text-xs font-bold uppercase px-3 py-1 mb-4">
-              {date}
-            </span>
-
-            {/* ↓ reduced */}
-            <h3 className="text-[#071a2f] text-xl md:text-2xl font-bold uppercase mb-2 leading-tight">
-              {title}
-            </h3>
-
-            <p className="text-gray-600 text-base leading-relaxed">
-              {desc}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-  </div>
-</section>
-
-{/* TEAM */}
-{/*
-<section className="bg-[#f3f3f4] py-24">
-  <div className="max-w-7xl mx-auto px-10">
-    <div className="text-center mb-16">
-      <p className="text-orange-500 font-semibold tracking-[0.22em] text-sm mb-4 uppercase">
-        Meet the Team
-      </p>
-
-      <h2 className="text-[#071a2f] text-3xl md:text-4xl font-extrabold uppercase leading-none max-w-5xl mx-auto">
-        The People Behind SUMO Africa
-      </h2>
-    </div>
-
-    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-
-      
-      <div className="bg-white border border-gray-200 shadow-sm rounded-xl overflow-hidden pb-8">
-
-  <div className="pt-8 flex justify-center">
-    <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-lg bg-[#031238]">
-      <img
-        src="/images/Abungu.jpeg"
-        alt="Mary Abungu"
-        className="w-full h-full object-cover"
-      />
-    </div>
-  </div>
-
-  <div className="px-6 pt-6">
-    <h3 className="text-[#071a2f] text-xl md:text-2xl font-bold uppercase mb-2">
-      Mary Abungu
+    {/* Main Layout */}
+    <div className="grid min-w-0 grid-cols-1 items-start gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
+
+      {/* =====================================================
+          LEFT — SELECTED FOCUS AREA
+      ===================================================== */}
+      <div className="min-w-0">
+
+    {/* IMAGE */}
+<div className="relative h-[300px] overflow-hidden rounded-3xl shadow-[0_20px_45px_rgba(0,0,0,0.16)] sm:h-[350px] md:h-[350px]">
+  <img
+    src={focusAreas[selected].image}
+    alt={focusAreas[selected].title}
+    className="h-full w-full object-cover transition-all duration-700"
+  />
+</div>
+
+{/* SELECTED FOCUS AREA TEXT */}
+<div className="mt-6">
+
+  {/* Small label */}
+  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-orange-500">
+    {focusAreas[selected].title}
+  </p>
+
+  {/* Title */}
+  <h3 className="text-2xl font-extrabold uppercase leading-tight text-[#071630] sm:text-3xl">
+    {focusAreas[selected].title}
+  </h3>
+
+  {/* Description */}
+  <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-600 sm:text-[15px]">
+    {focusAreas[selected].description}
+  </p>
+
+</div>
+
+{/* KEY ACTIVITIES */}
+<div className="mt-6 rounded-3xl border border-gray-200 bg-[#f8fafc] p-5 sm:p-6">
+
+  <div className="mb-5 flex items-center justify-between gap-4">
+    <h3 className="text-lg font-bold text-[#071630]">
+      Key Activities
     </h3>
 
-    <p className="text-[#3eaef2] text-base md:text-lg mb-4">
-      Founder & Executive Director
-    </p>
+    <div className="h-1 w-10 flex-shrink-0 rounded-full bg-[#3eaef2] sm:w-12" />
+  </div>
 
-    <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-      Transportation Engineer and Road Safety Specialist with a Master of
-      Science in Transport Engineering from Newcastle University, UK.
-    </p>
+  <div className="space-y-3">
+    {focusAreas[selected].points.map((point) => (
+      <div
+        key={point}
+        className="flex min-w-0 items-start gap-3"
+      >
+        <CheckCircle2
+          size={18}
+          className="mt-1 flex-shrink-0 text-orange-500"
+        />
+
+        <span className="min-w-0 text-sm leading-6 text-gray-700 sm:text-[15px]">
+          {point}
+        </span>
+      </div>
+    ))}
   </div>
 
 </div>
+      </div>
 
-      
-      <div className="bg-white border border-gray-200 shadow-sm overflow-hidden">
-        <div className="relative">
-          <div className="pt-8 flex justify-center">
-  <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-lg bg-[#031238]">
-    <img
-      src="/images/team/placeholder.jpg"
-      alt="Team member"
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
+      {/* =====================================================
+          RIGHT — FOCUS AREA SELECTOR
+      ===================================================== */}
+      <div className="min-w-0">
+
+        {/* Header */}
+        <div className="mb-5 sm:mb-6">
+
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500 sm:text-sm sm:tracking-[0.18em]">
+            Select a Focus Area
+          </p>
+
+          <h3 className="mt-2 text-xl font-bold text-[#071630] sm:text-2xl">
+            Explore Our Work
+          </h3>
+
         </div>
 
-        <div className="p-6">
-          <h3 className="text-[#071a2f] text-xl md:text-2xl font-bold uppercase mb-2">
-            William Wambulwa
-          </h3>
-          <p className="text-[#3eaef2] text-base md:text-lg mb-4">
-            Transportation Engineer & Road Safety Consultant
-          </p>
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Civil Engineering graduate from the University of Nairobi,
-            currently pursuing a master’s in Transportation Science at
-            Hasselt University.
-          </p>
+        {/* Focus Area List */}
+        <div className="max-w-xl space-y-3">
+
+          {focusAreas.map((item, index) => {
+            const Icon = item.icon
+
+            return (
+              <button
+                key={item.title}
+                onClick={() => setSelected(index)}
+                className={`group w-full min-w-0 rounded-2xl border p-4 text-left transition-all duration-300 sm:p-5 ${
+                  selected === index
+                    ? "border-[#3eaef2] bg-[#3eaef2] shadow-xl"
+                    : "border-gray-200 bg-white hover:border-[#3eaef2] hover:shadow-lg"
+                }`}
+              >
+
+                <div className="flex min-w-0 items-start gap-3 sm:gap-4">
+
+                  {/* ICON */}
+                  <div
+                    className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl transition sm:h-12 sm:w-12 ${
+                      selected === index
+                        ? "bg-white"
+                        : "bg-[#3eaef2] group-hover:bg-orange-500"
+                    }`}
+                  >
+
+                    <Icon
+                      size={21}
+                      className={
+                        selected === index
+                          ? "text-[#3eaef2]"
+                          : "text-white"
+                      }
+                    />
+
+                  </div>
+
+                  {/* TEXT */}
+                  <div className="min-w-0 flex-1">
+
+                    <h4
+                      className={`break-words text-sm font-bold uppercase leading-5 transition sm:text-base ${
+                        selected === index
+                          ? "text-[#071630]"
+                          : "text-[#071630]"
+                      }`}
+                    >
+                      {item.title}
+                    </h4>
+
+                    <p
+                      className={`mt-1.5 text-xs leading-5 transition sm:mt-2 sm:text-sm sm:leading-6 ${
+                        selected === index
+                          ? "text-[#071630]/70"
+                          : "text-gray-500"
+                      }`}
+                    >
+                      {item.description.substring(0, 90)}...
+                    </p>
+
+                  </div>
+
+                </div>
+              </button>
+            )
+          })}
+
         </div>
       </div>
 
-     
-      <div className="bg-white border border-gray-200 shadow-sm overflow-hidden">
-        <div className="pt-8 flex justify-center">
-  <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-lg bg-[#031238]">
-    <img
-      src="/images/team/placeholder.jpg"
-      alt="Team member"
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
-
-        <div className="p-6">
-          <h3 className="text-[#071a2f] text-xl md:text-2xl font-bold uppercase mb-2">
-            Olivia Nzyoka
-          </h3>
-          <p className="text-[#3eaef2] text-base md:text-lg mb-4">
-            Project Coordinator
-          </p>
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Dedicated professional supporting SUMO Africa&apos;s road safety
-            initiatives and stakeholder engagement programs across Kenya.
-          </p>
-        </div>
-      </div>
-
-      
-      <div className="bg-white border border-gray-200 shadow-sm overflow-hidden">
-      <div className="pt-8 flex justify-center">
-  <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-lg bg-[#031238]">
-    <img
-      src="/images/team/placeholder.jpg"
-      alt="Team member"
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
-
-        <div className="p-6">
-          <h3 className="text-[#071a2f] text-xl md:text-2xl font-bold uppercase mb-2">
-            Rosebrenda Muchiga
-          </h3>
-          <p className="text-[#3eaef2] text-base md:text-lg mb-4">
-            Communications & Outreach
-          </p>
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Passionate advocate for road safety awareness, leading community
-            outreach and youth engagement initiatives.
-          </p>
-        </div>
-      </div>
-
-      
-      <div className="bg-white border border-gray-200 shadow-sm overflow-hidden">
-        <div className="pt-8 flex justify-center">
-  <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-lg bg-[#031238]">
-    <img
-      src="/images/team/placeholder.jpg"
-      alt="Team member"
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
-
-        <div className="p-6">
-          <h3 className="text-[#071a2f] text-xl md:text-2xl font-bold uppercase mb-2">
-            John Roy Akumu
-          </h3>
-          <p className="text-[#3eaef2] text-base md:text-lg mb-4">
-            Research & Data Analyst
-          </p>
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Focuses on road safety data collection and analysis to inform
-            evidence-based interventions and policy recommendations.
-          </p>
-        </div>
-      </div>     
-
     </div>
-  </div>
-</section>/*}
-
-{/* OUR NETWORK */}
-<section className="bg-[#071a2f] py-24">
-  <div className="max-w-7xl mx-auto px-10">
-
-    <div className="text-center mb-14">
-      <p className="text-orange-500 font-semibold tracking-[0.22em] text-sm mb-4 uppercase">
-        Our Network
-      </p>
-
-      {/* ↓ reduced */}
-      <h2 className="text-[#071a2f] text-3xl md:text-4xl font-extrabold uppercase leading-none">
-        Organizations We Work With
-      </h2>
-    </div>
-
-    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-  {[
-    {
-      abbr: "NTSA",
-      full: "National Transport and Safety Authority",
-      logo: "/images/ntsa logo.png",
-    },
-    {
-      abbr: "KENYA POLICE",
-      full: "Kenya National Police Service",
-      logo: "/images/kp logo.jpeg",
-    },
-    {
-      abbr: "KENHA",
-      full: "Kenya National Highways Authority",
-      logo: "/images/kenha logo.jpeg",
-    },
-    {
-      abbr: "KURA",
-      full: "Kenya Urban Roads Authority",
-      logo: "/images/kura logo.png",
-    },
-    {
-      abbr: "MINISTRY OF HEALTH",
-      full: "Ministry of Health Kenya",
-      logo: "/images/mohlogo.jpg",
-    },
-    {
-      abbr: "MINISTRY OF TRANSPORT",
-      full: "Ministry of Transport Kenya",
-      logo: "/images/mot logo.jpeg",
-    },
-    {
-      abbr: "KERRA",
-      full: "Kenya Rural Roads Authority",
-      logo: "/images/kerra logo.jpeg",
-    },
-    {
-      abbr: "NAPTA",
-      full: "National Public Transport Alliance",
-      logo: "/images/napta logo.png",
-    },
-    {
-      abbr: "ELGIA",
-      full: " Electoral Law and Governance Institute for Africa",
-      logo: "/images/elgia logo.png",
-    },
-    {
-      abbr: "GLOBAL YOUTH COALITION",
-      full: "Global Youth Coalition for Road Safety",
-      logo: "/images/gy.jpeg",
-    },
-    {
-      abbr: "BLOOMBERG",
-      full: "Bloomberg Philanthropies",
-      logo: "/images/b logo.jpeg",
-    },
-  ].map((org) => (
-    <div
-      key={org.abbr}
-      className="bg-[#f8f8f8] border border-gray-200 px-6 py-6 text-center shadow-sm hover:shadow-md transition"
-    >
-      <Image
-        src={org.logo}
-        alt={org.abbr}
-        width={90}
-        height={90}
-        className="mx-auto mb-4 h-16 w-auto object-contain"
-      />
-
-      <h3 className="text-[#071a2f] text-base font-bold uppercase">
-        {org.abbr}
-      </h3>
-
-      <p className="text-gray-600 text-sm mt-2 leading-relaxed">
-        {org.full}
-      </p>
-    </div>
-  ))}
-</div>
-
-     {/* Partner CTA */}
-        <div className="text-center max-w-2xl mx-auto">
-         
-
-         {/* <Link
-  href="/contact"
-  className="inline-flex items-center bg-[#3eaef2] text-white font-semibold px-8 py-3 rounded-md hover:bg-[#1d5d9b] transition"
->
-  BECOME A PARTNER
-</Link> */}
-        </div>
-
-
   </div>
 </section>
-{/* ALIGNED WITH GLOBAL GOALS */}
-        <section className="bg-[#06132e] py-20">
-          <div className="mx-auto max-w-6xl px-6 text-center sm:px-10">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-orange-500">
-              WHY IT MATTERS
+      {/* =========================================================
+          CORE VALUES
+      ========================================================= */}
+      <section className="my-8 bg-white py-16 sm:my-10 sm:py-20 md:my-12 md:py-24">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10">
+          <div className="mb-10 text-center sm:mb-14 md:mb-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange-500 sm:text-sm sm:tracking-[0.22em]">
+              What Drives Us
             </p>
 
-            <h2 className="text-[2rem] font-extrabold uppercase leading-none tracking-tight text-white sm:text-[2.7rem]">
-              ALIGNED WITH GLOBAL GOALS
+            <h2 className="mt-3 text-3xl font-bold text-[#071a2f] sm:mt-4 sm:text-4xl">
+              Our Core Values
             </h2>
 
-            <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-              {goals.map((goal) => (
-                <div
-                  key={goal.title}
-                  className={`border-l-2 ${goal.border} bg-white/5 px-5 py-5 text-left`}
-                >
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-300">
-                    {goal.title}
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-slate-200">
-                    {goal.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-<footer className="bg-[#071a2f] text-white pt-20 pb-8">
-      <div className="max-w-7xl mx-auto px-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
-          {/* COLUMN 1 */}
-          <div>
-            <h2 className="text-2xl font-extrabold uppercase leading-none tracking-tight">
-              SUMO AFRICA
-            </h2>
-
-            <p className="mt-3 text-[#3eaef2] text-sm font-bold uppercase tracking-[0.14em] leading-snug">
-              Inclusive & Sustainable
-              <br />
-              Mobility
-            </p>
-
-            <p className="mt-8 text-[#3eaef2] text-base leading-8 max-w-[280px]">
-              A Nairobi-based NGO advancing road safety and sustainable transport
-              across Africa through advocacy, awareness, education, and research.
-            </p>
-
-            <div className="flex items-center gap-4 mt-8">
-              <a
-                href="#"
-                className="w-12 h-12 bg-[#112246] border border-[#1b2f5c] flex items-center justify-center transition hover:bg-[#17305d]"
-              >
-                <Twitter size={18} className="text-white" />
-              </a>
-
-              <a
-                href="#"
-                className="w-12 h-12 bg-[#112246] border border-[#1b2f5c] flex items-center justify-center transition hover:bg-[#17305d]"
-              >
-                <Linkedin size={18} className="text-white" />
-              </a>
-
-              <a
-                href="#"
-                className="w-12 h-12 bg-[#112246] border border-[#1b2f5c] flex items-center justify-center transition hover:bg-[#17305d]"
-              >
-                <Facebook size={18} className="text-white" />
-              </a>
-            </div>
+            <div className="mx-auto mt-5 h-1 w-20 bg-[#3eaef2] sm:mt-6 sm:w-24" />
           </div>
 
-          {/* COLUMN 2 */}
-          <div>
-            <h3 className="text-lg font-extrabold uppercase tracking-tight mb-8">
-              Quick Links
-            </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            {/* VALUE 1 */}
+            <div className="flex min-w-0 gap-4 border-b border-gray-200 px-0 py-7 sm:px-4 md:border-b-0 md:border-r md:px-6 md:py-8">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3eaef2]/10 sm:h-14 sm:w-14">
+                <Heart className="text-[#3eaef2]" size={25} />
+              </div>
 
-            <div className="flex flex-col gap-4 text-[#3eaef2] text-base">
-              <Link href="/" className="hover:text-[#3eaef2] transition">
-                Home
-              </Link>
-              <Link href="/about" className="hover:text-[#3eaef2] transition">
-                About Us
-              </Link>
-              <Link href="/our-work" className="hover:text-[#3eaef2] transition">
-                Our Work
-              </Link>
-              <Link href="/news" className="hover:text-[#3eaef2] transition">
-                News
-              </Link>
-              <Link href="/contact" className="hover:text-[#3eaef2] transition">
-                Contact
-              </Link>
-            </div>
-          </div>
+              <div className="min-w-0">
+                <h3 className="text-lg font-bold text-[#071a2f] sm:text-xl">
+                  Inclusivity
+                </h3>
 
-          {/* COLUMN 3 */}
-          <div>
-            <h3 className="text-lg font-extrabold uppercase tracking-tight mb-8">
-              Local Action Projects
-            </h3>
-
-            <div className="flex flex-col gap-4 text-[#3eaef2] text-base">
-              <Link href="/projects" className="hover:text-[#3eaef2] transition">
-                Drive Right
-              </Link>
-              <Link href="/projects" className="hover:text-[#3eaef2] transition">
-                Safe Steps to School
-              </Link>
-            </div>
-
-            <div className="mt-10 space-y-5">
-              <div className="flex items-start gap-4">
-                <MapPin className="text-[#3eaef2] mt-1 shrink-0" size={20} />
-                <p className="text-[#3eaef2] text-base leading-7">
-                  CVS Plaza, Lenana Road,
-                  <br />
-                  6281-00100, Nairobi, Kenya
+                <p className="mt-2 text-sm leading-6 text-gray-600 sm:mt-3 sm:leading-7">
+                  We ensure every person, regardless of gender, age or ability,
+                  is represented in our programmes and decision making.
                 </p>
               </div>
+            </div>
 
-              <div className="flex items-center gap-4">
-                <Mail className="text-[#3eaef2] shrink-0" size={20} />
-                <a
-                  href="mailto:info@sumoafrica.org"
-                  className="text-[#3eaef2] text-base hover:text-[#3eaef2] transition"
-                >
-                  info@sumoafrica.org
-                </a>
+            {/* VALUE 2 */}
+            <div className="flex min-w-0 gap-4 border-b border-gray-200 px-0 py-7 sm:px-4 md:border-b-0 md:border-r md:px-6 md:py-8">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 sm:h-14 sm:w-14">
+                <Target className="text-orange-500" size={25} />
+              </div>
+
+              <div className="min-w-0">
+                <h3 className="text-lg font-bold text-[#071a2f] sm:text-xl">
+                  Data-Driven
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-gray-600 sm:mt-3 sm:leading-7">
+                  We rely on research, evidence and innovation to guide every
+                  intervention and maximise long-term impact.
+                </p>
+              </div>
+            </div>
+
+            {/* VALUE 3 */}
+            <div className="flex min-w-0 gap-4 px-0 py-7 sm:px-4 md:px-6 md:py-8">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3eaef2]/10 sm:h-14 sm:w-14">
+                <Users className="text-[#3eaef2]" size={25} />
+              </div>
+
+              <div className="min-w-0">
+                <h3 className="text-lg font-bold text-[#071a2f] sm:text-xl">
+                  Collaboration
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-gray-600 sm:mt-3 sm:leading-7">
+                  We work with governments, communities, partners and young
+                  leaders to create safer roads and sustainable mobility.
+                </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* COLUMN 4 */}
-          <div>
-            <h3 className="text-lg font-extrabold uppercase tracking-tight mb-8">
-              Stay Updated
-            </h3>
-
-            <p className="text-[#3eaef2] text-base leading-7 max-w-[290px] mb-6">
-              Subscribe to our newsletter for the latest updates on road safety
-              and sustainable mobility.
+      {/* =========================================================
+          OUR NETWORK
+      ========================================================= */}
+      <section className="my-8 bg-white py-16 sm:my-10 sm:py-20 md:my-12 md:py-24">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10">
+          <div className="mb-10 text-center sm:mb-14">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-orange-500 sm:mb-4 sm:text-sm sm:tracking-[0.22em]">
+              Our Network
             </p>
 
-            <div className="space-y-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full h-14 bg-[#112246] border border-[#1b2f5c] px-5 text-white placeholder:text-[#6f7b98] outline-none"
-              />
+            <h2 className="mx-auto max-w-3xl text-2xl font-extrabold uppercase leading-tight text-[#071a2f] sm:text-3xl md:text-4xl">
+              Organizations We've Worked With
+            </h2>
+          </div>
 
-              <button className="w-full h-14 bg-[#3eaef2] hover:bg-orange-600 transition flex items-center justify-center gap-3 text-white font-bold uppercase tracking-wide">
-                <Send size={16} />
-                Subscribe
-              </button>
-            </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+            {[
+              {
+                abbr: "NTSA",
+                full: "National Transport and Safety Authority",
+                logo: "/images/ntsa logo.png",
+              },
+              {
+                abbr: "KENYA POLICE",
+                full: "Kenya National Police Service",
+                logo: "/images/kp logo.jpeg",
+              },
+              {
+                abbr: "KENHA",
+                full: "Kenya National Highways Authority",
+                logo: "/images/kenha logo.jpeg",
+              },
+              {
+                abbr: "KURA",
+                full: "Kenya Urban Roads Authority",
+                logo: "/images/kura logo.png",
+              },
+              {
+                abbr: "MINISTRY OF HEALTH",
+                full: "Ministry of Health Kenya",
+                logo: "/images/mohlogo.jpg",
+              },
+              {
+                abbr: "MINISTRY OF TRANSPORT",
+                full: "Ministry of Transport Kenya",
+                logo: "/images/mot logo.jpeg",
+              },
+              {
+                abbr: "KERRA",
+                full: "Kenya Rural Roads Authority",
+                logo: "/images/kerra logo.jpeg",
+              },
+              {
+                abbr: "NAPTA",
+                full: "National Public Transport Alliance",
+                logo: "/images/naptalogo.png",
+              },
+              {
+                abbr: "ELGIA",
+                full: "Electoral Law and Governance Institute for Africa",
+                logo: "/images/elgia logo.png",
+              },
+              {
+                abbr: "GLOBAL YOUTH COALITION",
+                full: "Global Youth Coalition for Road Safety",
+                logo: "/images/gyfrslogo.jpeg",
+              },
+              {
+                abbr: "YFRS",
+                full: "Youth for Road Safety",
+                logo: "/images/yfrslogo.webp",
+              },
+            ].map((org) => (
+              <div
+                key={org.abbr}
+                className="flex min-h-[220px] min-w-0 flex-col items-center justify-center border border-gray-200 bg-[#f8f8f8] px-5 py-6 text-center shadow-sm transition hover:shadow-md sm:min-h-[230px]"
+              >
+                <Image
+                  src={org.logo}
+                  alt={org.abbr}
+                  width={90}
+                  height={90}
+                  className="mb-4 h-14 w-auto object-contain sm:h-16"
+                />
+
+                <h3 className="break-words text-sm font-bold uppercase leading-5 text-[#071a2f] sm:text-base">
+                  {org.abbr}
+                </h3>
+
+                <p className="mt-2 max-w-xs text-xs leading-5 text-gray-600 sm:text-sm sm:leading-relaxed">
+                  {org.full}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        {/* BOTTOM BAR */}
-        <div className="border-t border-[#112246] mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#3eaef2] text-sm">
-            © 2026 SUMO Africa. All rights reserved.
-          </p>
+     {/* =========================================================
+    GLOBAL GOALS
+========================================================= */}
+<section className="my-8 bg-[#06132e] py-16 sm:my-10 sm:py-20 md:my-12">
+  <div className="mx-auto w-full max-w-7xl px-4 text-center sm:px-6 md:px-8 lg:px-10">
 
-          <p className="text-[#3eaef2] text-sm text-center md:text-right">
-            Founded August 2024 • Nairobi, Kenya
-          </p>
+    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-orange-500 sm:mb-4 sm:text-sm sm:tracking-[0.22em]">
+      WHY IT MATTERS
+    </p>
+
+    <h2 className="text-[1.75rem] font-extrabold uppercase leading-tight tracking-tight text-white sm:text-[2.2rem] md:text-[2.7rem]">
+      ALIGNED WITH GLOBAL GOALS
+    </h2>
+
+{/* SDG IMAGES */}
+<div className="mx-auto mt-10 grid max-w-5xl grid-cols-3 sm:mt-14 md:flex md:flex-wrap md:justify-center md:gap-6">
+
+  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
+    <img
+      src="/images/sdg3.png"
+      alt="SDG 3"
+      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
+    />
+  </div>
+
+  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
+    <img
+      src="/images/sdg4.png"
+      alt="SDG 4"
+      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
+    />
+  </div>
+
+  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
+    <img
+      src="/images/sdg5.png"
+      alt="SDG 5"
+      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
+    />
+  </div>
+
+  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
+    <img
+      src="/images/sdg11.png"
+      alt="SDG 11"
+      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
+    />
+  </div>
+
+  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
+    <img
+      src="/images/sdg13.png"
+      alt="SDG 13"
+      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
+    />
+  </div>
+
+  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
+    <img
+      src="/images/sdg17.png"
+      alt="SDG 17"
+      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
+    />
+  </div>
+
+</div>
+  </div>
+</section>
+      {/* =========================================================
+          FOOTER
+      ========================================================= */}
+      <footer className="mt-10 bg-[#3eaef2] sm:mt-12 md:mt-16">
+<div className="grid w-full grid-cols-1 gap-10 px-4 py-12 sm:grid-cols-2 sm:gap-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:grid-cols-4 lg:pl-[10%] lg:pr-10">
+          {/* ABOUT */}
+          <div className="min-w-0">
+            <h3 className="font-bold text-[#071521]">
+              SUMO AFRICA
+            </h3>
+
+            <p className="mt-1 text-xs text-[#071521]">
+              INCLUSIVE & SUSTAINABLE MOBILITY
+            </p>
+
+            <p className="mt-4 text-sm leading-6 text-[#071521]">
+              A Nairobi-based NGO advancing road safety and sustainable
+              transport across Africa through advocacy, awareness, education,
+              and research.
+            </p>
+<div className="flex gap-4 mt-5 items-center">
+  <a href="#" aria-label="X (Twitter)">
+    <FaXTwitter
+      size={24}
+      className="text-black transition-transform duration-300 hover:scale-110"
+    />
+  </a>
+
+  <a href="#" aria-label="LinkedIn)">
+    <FaLinkedin
+      size={25}
+      className="text-[#0A66C2] transition-transform duration-300 hover:scale-110"
+    />
+  </a>
+
+  <a href="#" aria-label="Facebook">
+    <FaFacebook
+      size={25}
+      className="text-[#1877F2] transition-transform duration-300 hover:scale-110"
+    />
+  </a>
+</div>
+          </div>
+
+          {/* QUICK LINKS */}
+          <div className="min-w-0">
+            <h4 className="mb-4 font-semibold text-[#071521]">
+              QUICK LINKS
+            </h4>
+
+            <ul className="space-y-2 text-sm text-[#071521]">
+              <li className="cursor-pointer hover:text-white">Home</li>
+              <li className="cursor-pointer hover:text-white">About Us</li>
+              <li className="cursor-pointer hover:text-white">Our Work</li>
+              <li className="cursor-pointer hover:text-white">News</li>
+              <li className="cursor-pointer hover:text-white">Contact</li>
+            </ul>
+          </div>
+
+          {/* PROJECTS + CONTACT */}
+          <div className="min-w-0">
+            <h4 className="mb-4 font-semibold text-[#071521]">
+              LOCAL ACTION PROJECTS
+            </h4>
+
+            <ul className="mb-6 space-y-2 text-sm text-[#071521]">
+              <li className="cursor-pointer hover:text-white">
+                Drive Right
+              </li>
+
+              <li className="cursor-pointer hover:text-white">
+                Safe Steps to School
+              </li>
+            </ul>
+
+            <div className="mb-3 flex min-w-0 gap-2 text-sm text-[#071521]">
+              <MapPin
+                size={16}
+                className="mt-1 flex-shrink-0 text-[#071521]"
+              />
+
+              <p className="min-w-0 leading-6">
+                CVS Plaza, Lenana Road
+                <br />
+                Nairobi, Kenya
+              </p>
+            </div>
+
+            <div className="flex min-w-0 gap-2 text-sm text-[#071521]">
+              <Mail
+                size={16}
+                className="mt-1 flex-shrink-0 text-[#071521]"
+              />
+
+              <p className="min-w-0 break-all">
+                info@sumoafrica.org
+              </p>
+            </div>
+          </div>
+
+{/* GET IN TOUCH */}
+<div className="min-w-0">
+  <h4 className="mb-4 font-semibold text-[#071521]">
+    GET IN TOUCH
+  </h4>
+
+  <p className="mb-5 text-sm leading-6 text-[#071521]">
+    Have a question, partnership idea, or want to learn more about
+    our work? We'd love to hear from you.
+  </p>
+
+  <a
+    href="/contact"
+    className="inline-flex items-center text-sm font-semibold text-[#071521] transition-colors hover:text-white"
+  >
+    Contact Us →
+  </a>
+</div>
         </div>
-      </div>
-    </footer>
 
+        {/* COPYRIGHT */}
+        <div className="border-t border-white/10 px-4 pb-6 pt-6 text-center text-xs text-[#071521] sm:px-6 sm:text-sm">
+          © 2026 SUMO Africa. All rights reserved.
+        </div>
+      </footer>
     </>
-    
   )
 }

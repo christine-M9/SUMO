@@ -1,0 +1,156 @@
+/* =====================================================
+   DESKTOP DEFAULT
+===================================================== */
+
+.desktopNav {
+  display: flex;
+}
+
+.mobileMenuButton {
+  display: none;
+}
+
+.mobileNav {
+  display: none;
+}
+
+.mobileBrand {
+  display: none;
+}
+
+
+/* =====================================================
+   TABLET AND MOBILE
+   BELOW 1100px
+===================================================== */
+
+@media screen and (max-width: 1100px) {
+
+  /* Reduce navbar padding */
+  .navbarContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  /* Hide desktop navlinks BEFORE they interfere */
+  .desktopNav {
+    display: none !important;
+  }
+
+  /* Show hamburger */
+  .mobileMenuButton {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: #071521;
+    cursor: pointer;
+  }
+
+  /* Mobile menu */
+  .mobileNav {
+    display: flex !important;
+    flex-direction: column;
+    padding: 10px 20px 20px;
+    border-top: 1px solid rgba(7, 21, 33, 0.2);
+    background: #3eaef2;
+  }
+
+  .mobileNav a {
+    padding: 15px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #071521;
+    border-bottom: 1px solid rgba(7, 21, 33, 0.1);
+    text-decoration: none;
+  }
+
+  .mobileNav a:last-child {
+    border-bottom: none;
+  }
+
+  .activeMobileLink {
+    color: #f97316 !important;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE SCREENS
+   BELOW 767px
+===================================================== */
+
+@media screen and (max-width: 767px) {
+
+  /* Smaller logo */
+  .navbarLogoImage {
+    width: 120px !important;
+    height: auto !important;
+  }
+
+  /* Hide SUMO AFRICA and tagline */
+  .navbarBrand h1,
+  .navbarBrand > p:not(.mobileBrand) {
+    display: none;
+  }
+
+  /* Show SIAM */
+  .mobileBrand {
+    display: block !important;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #071521;
+  }
+}
+/* MOBILE PROJECTS DROPDOWN */
+
+.mobileProjects {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileProjects button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 0;
+
+  font-size: 15px;
+  font-weight: 700;
+  color: #071521;
+
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(7, 21, 33, 0.1);
+
+  cursor: pointer;
+  text-align: left;
+}
+
+.mobileProjectsDropdown {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 20px;
+}
+
+.mobileProjectsDropdown a {
+  padding: 13px 0;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #071521;
+  text-decoration: none;
+}
+
+.mobileProjectsDropdown a:hover {
+  color: #f97316;
+}

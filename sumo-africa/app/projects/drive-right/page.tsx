@@ -9,7 +9,9 @@ import {
   TrendingUp,
   Award,
   Users,
+  MapPin, Mail, Send,Twitter, Linkedin, Facebook 
 } from "lucide-react";
+import { FaXTwitter, FaLinkedin, FaFacebook } from "react-icons/fa6";
 
 export default function DriveRightPage() {
   return (
@@ -38,7 +40,7 @@ export default function DriveRightPage() {
               </span>
             </div>
 
-            <h1 className="text-white text-[46px] md:text-[52px] leading-[0.95] font-black uppercase tracking-tight">
+            <h1 className="text-white text-[46px] md:text-[42px] leading-[0.95] font-black uppercase tracking-tight">
               Drive Right
             </h1>
 
@@ -54,14 +56,6 @@ export default function DriveRightPage() {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link
-                href="#"
-                className="bg-[#ff7a12] hover:bg-[#ef6d09] text-white border border-[#ff7a12] px-8 py-4 text-xs md:text-[14px] font-extrabold tracking-[0.08em] uppercase inline-flex items-center justify-center gap-3 transition"
-              >
-                View on GYC
-                <ArrowUpRight size={18} />
-              </Link>
-
-              <Link
                 href="#join-movement"
                 className="border-2 border-white text-white hover:bg-white hover:text-[#0c1b2a] px-8 py-4 text-xs md:text-[14px] font-extrabold tracking-[0.08em] uppercase inline-flex items-center justify-center transition"
               >
@@ -76,11 +70,9 @@ export default function DriveRightPage() {
       <section className="bg-[#3eaef2]">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-8 md:py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div>
-            <p className="text-white/85 text-[11px] md:text-xs font-bold uppercase tracking-[0.14em]">
-              Project Theme
-            </p>
+            
             <h3 className="mt-2 text-white text-[22px] md:text-[30px] font-black uppercase leading-tight tracking-tight">
-              Sustainable, Inclusive & Active Mobility
+              Sustainable, Inclusive & Active Mobility(SIAM)
             </h3>
           </div>
 
@@ -89,9 +81,6 @@ export default function DriveRightPage() {
               <Gauge className="text-white" size={24} strokeWidth={2.4} />
             </div>
             <div>
-              <p className="text-white/85 text-[11px] md:text-xs font-bold uppercase tracking-[0.14em]">
-                Focus
-              </p>
               <p className="text-white text-[18px] md:text-[24px] font-black uppercase leading-tight">
                 Speed Reduction
               </p>
@@ -108,7 +97,7 @@ export default function DriveRightPage() {
               The Challenge
             </p>
 
-            <h2 className="mt-5 text-[#08142c] text-[28px] md:text-[38px] font-black uppercase leading-[1.04] tracking-tight max-w-3xl">
+            <h2 className="mt-5 text-[#08142c] text-[28px] md:text-[36px] font-black uppercase leading-[1.04] tracking-tight max-w-3xl">
               High Crash Rates in Nairobi&apos;s Matatu Sector
             </h2>
 
@@ -175,7 +164,7 @@ export default function DriveRightPage() {
             <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               Key Milestones
             </p>
-            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[40px] font-black uppercase tracking-tight">
+            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[36px] font-black uppercase tracking-tight">
               Project Objectives
             </h2>
           </div>
@@ -231,7 +220,7 @@ export default function DriveRightPage() {
               Impact
             </p>
 
-            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[46px] font-black uppercase tracking-tight leading-[1.05]">
+            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[38px] font-black uppercase tracking-tight leading-[1.05]">
               Expected Outcomes
             </h2>
 
@@ -306,201 +295,112 @@ export default function DriveRightPage() {
         </div>
       </section>
 
-      {/* GLOBAL GOALS */}
-      <section className="bg-[#06153a] py-24 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
-          <div className="text-center">
-            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
-              2025 Global Youth Statement
-            </p>
-            <h2 className="mt-4 text-white text-[30px] md:text-[42px] font-black uppercase tracking-tight">
-              Aligned With Global Goals
-            </h2>
-          </div>
-
-          <div className="mt-16 grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Road Safety as Core Value (1.3)",
-                text: "Establishing safe driving as a societal norm through training and accountability.",
-              },
-              {
-                title: "Youth-Led Learning & Action (1.4)",
-                text: "Equipping young volunteers with practical skills in data collection and advocacy.",
-              },
-              {
-                title: "Slowing Down Saves Lives (2.3)",
-                text: "Promoting 30 km/h zones to reduce crash severity and protect vulnerable road users.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white/10 border-l-4 border-[#ff7a12] px-7 py-8"
-              >
-                <h3 className="text-white text-[18px] md:text-[20px] font-black uppercase leading-tight">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-white/75 text-[16px] leading-[1.8]">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-            {/* JOIN MOVEMENT */}
-      <section
-        id="join-movement"
-        className="bg-[#3eaef2] py-24 md:py-28 text-center"
-      >
-        <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <h2 className="text-white text-[32px] md:text-[52px] font-black uppercase tracking-tight leading-none">
-            Join The Movement
-          </h2>
-
-          <p className="mt-8 text-white text-[17px] md:text-[21px] leading-[1.9] max-w-4xl mx-auto">
-            Whether you&apos;re a transport operator, youth volunteer,
-            policymaker, or advocate for road safety, there&apos;s a role for
-            you in Drive Right.
-          </p>
-
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="bg-[#07162a] text-white hover:bg-[#0d2243] px-10 py-5 min-w-[270px] text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] inline-flex items-center justify-center gap-3 transition"
-            >
-              Get Involved
-              <ArrowRight size={18} />
-            </Link>
-
-            <Link
-              href="/projects/safe-steps-to-school"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#ff7a12] px-10 py-5 min-w-[340px] text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] inline-flex items-center justify-center transition"
-            >
-              View Safe Steps Project
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#071a2f] text-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-20 grid md:grid-cols-2 xl:grid-cols-4 gap-14">
+      <footer className="mt-24 bg-[#3eaef2] border-t border-white/10">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 px-6 py-16">
+
+          {/* ABOUT */}
           <div>
-            <h3 className="text-[30px] md:text-[24px] font-black uppercase tracking-tight leading-none">
-              SUMO AFRICA
-            </h3>
-            <p className="mt-3 text-[#3eaef2] text-xs md:text-[13px] font-bold uppercase tracking-[0.16em] leading-relaxed">
-              Inclusive & Sustainable <br /> Mobility
+            <h3 className="font-bold ">SUMO AFRICA</h3>
+
+            <p className="text-[#071521] text-xs mt-1">
+              INCLUSIVE & SUSTAINABLE MOBILITY
             </p>
 
-            <p className="mt-8 text-[#3eaef2] text-[16px] md:text-[17px] leading-[1.9] max-w-sm">
+            <p className="text-[#071521] text-sm mt-4 leading-relaxed">
               A Nairobi-based NGO advancing road safety and sustainable
-              transport across Africa through advocacy, awareness, education,
-              and research.
+              transport across Africa through advocacy, awareness,
+              education, and research.
             </p>
 
-            <div className="mt-8 flex gap-4">
-              <div className="w-12 h-12 bg-white/10 flex items-center justify-center text-white text-lg">
-                X
-              </div>
-              <div className="w-12 h-12 bg-white/10 flex items-center justify-center text-white text-lg">
-                in
-              </div>
-              <div className="w-12 h-12 bg-white/10 flex items-center justify-center text-white text-lg">
-                f
-              </div>
-            </div>
+           <div className="flex gap-4 mt-5 items-center">
+  <a href="#" aria-label="X (Twitter)">
+    <FaXTwitter
+      size={24}
+      className="text-black transition-transform duration-300 hover:scale-110"
+    />
+  </a>
+
+  <a href="#" aria-label="LinkedIn)">
+    <FaLinkedin
+      size={25}
+      className="text-[#0A66C2] transition-transform duration-300 hover:scale-110"
+    />
+  </a>
+
+  <a href="#" aria-label="Facebook">
+    <FaFacebook
+      size={25}
+      className="text-[#1877F2] transition-transform duration-300 hover:scale-110"
+    />
+  </a>
+</div>
           </div>
 
+          {/* QUICK LINKS */}
           <div>
-            <h4 className="text-white text-[18px] md:text-[20px] font-black uppercase">
-              Quick Links
-            </h4>
-            <div className="mt-7 space-y-4 text-[#3eaef2]/75 text-[16px] md:text-[17px]">
-              <Link href="/" className="block hover:text-[#ff7a12] transition">
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className="block hover:text-[#ff7a12] transition"
-              >
-                About Us
-              </Link>
-              <Link
-                href="/work"
-                className="block hover:text-[#ff7a12] transition"
-              >
-                Our Work
-              </Link>
-              <Link
-                href="/news"
-                className="block hover:text-[#ff7a12] transition"
-              >
-                News
-              </Link>
-              <Link
-                href="/contact"
-                className="block hover:text-[#ff7a12] transition"
-              >
-                Contact
-              </Link>
-            </div>
+            <h4 className="text-[#071521] font-semibold mb-4">QUICK LINKS</h4>
+
+            <ul className="space-y-2 text-[#071521] text-sm">
+              <li className="hover:text-white cursor-pointer">Home</li>
+              <li className="hover:text-white cursor-pointer">About Us</li>
+              <li className="hover:text-white cursor-pointer">Our Work</li>
+              <li className="hover:text-white cursor-pointer">News</li>
+              <li className="hover:text-white cursor-pointer">Contact</li>
+            </ul>
           </div>
 
+          {/* PROJECTS + CONTACT */}
           <div>
-            <h4 className="text-white text-[18px] md:text-[20px] font-black uppercase">
-              Local Action Projects
-            </h4>
-            <div className="mt-7 space-y-4 text-[#3eaef2]/75 text-[16px] md:text-[17px]">
-              <Link
-                href="/projects/drive-right"
-                className="block hover:text-[#ff7a12] transition"
-              >
-                Drive Right
-              </Link>
-              <Link
-                href="/projects/safe-steps-to-school"
-                className="block hover:text-[#ff7a12] transition"
-              >
-                Safe Steps To School
-              </Link>
+            <h4 className="text-[#071521] font-semibold mb-4">LOCAL ACTION PROJECTS</h4>
+
+            <ul className="space-y-2 text-[#071521] text-sm mb-6">
+              <li className="hover:text-white cursor-pointer">Drive Right</li>
+              <li className="hover:text-white cursor-pointer">Safe Steps to School</li>
+            </ul>
+
+            {/* LOCATION */}
+            <div className="flex gap-2 text-[#071521] text-sm mb-2">
+              <MapPin size={16} className="text-[#071521] mt-1" />
+              <p>
+                CVS Plaza, Lenana Road <br />
+                Nairobi, Kenya
+              </p>
             </div>
 
-            <div className="mt-9 space-y-5 text-[#3eaef2]/75 text-[15px] md:text-[16px] leading-[1.8]">
-              <p>CVS Plaza, Lenana Road, 8281-00100, Nairobi, Kenya</p>
+            {/* EMAIL */}
+            <div className="flex gap-2 text-[#071521] text-sm">
+              <Mail size={16} className="text-[#071521]mt-1" />
               <p>info@sumoafrica.org</p>
             </div>
           </div>
+{/* GET IN TOUCH */}
+<div className="min-w-0">
+  <h4 className="mb-4 font-semibold text-[#071521]">
+    GET IN TOUCH
+  </h4>
 
-          <div>
-            <h4 className="text-white text-[18px] md:text-[20px] font-black uppercase">
-              Stay Updated
-            </h4>
+  <p className="mb-5 text-sm leading-6 text-[#071521]">
+    Have a question, partnership idea, or want to learn more about
+    our work? We'd love to hear from you.
+  </p>
 
-            <p className="mt-7 text-[#3eaef2]/75 text-[16px] md:text-[17px] leading-[1.9]">
-              Subscribe to our newsletter for the latest updates on road safety
-              and sustainable mobility.
-            </p>
+  <a
+    href="/contact"
+    className="inline-flex items-center text-sm font-semibold text-[#071521] transition-colors hover:text-white"
+  >
+    Contact Us →
+  </a>
+</div>
+          
 
-            <form className="mt-8 space-y-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full bg-white/8 border border-white/10 px-5 py-4 text-white text-sm placeholder:text-white/35 outline-none"
-              />
-              <button
-                type="submit"
-                className="w-full bg-[#3eaef2] hover:bg-[#3eaef2] text-white px-5 py-4 text-xs md:text-[14px] font-extrabold uppercase tracking-[0.08em] transition"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
         </div>
 
-        <div className="border-t border-white/10"></div>
+        {/* COPYRIGHT */}
+        <div className="text-center text-[#071521] text-sm pb-6 border-t border-white/10 pt-6">
+          © 2026 SUMO Africa. All rights reserved.
+        </div>
       </footer>
     </main>
   );

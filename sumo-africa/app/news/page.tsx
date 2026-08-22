@@ -1,70 +1,59 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CalendarDays, MapPin, Mail, Send, Twitter, Linkedin, Facebook } from "lucide-react"
-
+import { ArrowRight, CalendarDays, MapPin, Mail, Send,  } from "lucide-react"
+import { FaXTwitter, FaLinkedin, FaFacebook } from "react-icons/fa6";
 const newsItems = [
-  {
+ {
     id: 1,
-    image: "/images/news/news-1.jpg",
-    category: "Road Safety",
+    category: "ROAD SAFETY",
     date: "March 2026",
-    title: "SUMO Africa Champions Safer Mobility Conversations Across Kenya",
+    title:
+      "SR4S Road Safety Assessment at Children's Garden School",
     excerpt:
-      "Highlights from our recent engagements, partnerships, and advocacy efforts to advance safer and more sustainable transport systems.",
+      "As part of the Safe Steps to School Project, SUMO Africa partnered with NTSA and KURA to carry out an SR4S road safety assessment at Children's Garden Home & School. The assessment evaluated the roads and pedestrian infrastructure surrounding the school to identify interventions that will make daily journeys safer for learners.",
+    image: "/images/sumo12.jpeg",
+    content: `
+In March, following our initial ground-truthing visit, the SUMO Africa team returned to Children's Garden Home & School along Naivasha Road in Uthiru, Nairobi, to undertake the full iRAP Star Rating for Schools (SR4S) road safety audit/assessment under the Safe Steps to School Project.
+
+Before the assessment exercise began, the National Transport and Safety Authority undertook an initial sensitisation session with the school community, led by @Eng. Christine Ogut. The session helped introduce the importance of road safety around schools and prepared learners and staff for the assessment process.
+
+A prior assessment was then conducted by the SUMO Africa team together with officials from the Kenya Urban Roads Authority, represented by Eng. Wilson Tikwa, and NTSA officials. The team assessed the school frontage and the surrounding routes commonly used by learners as they walk to and from school.
+
+The activity involved observing road user behaviour, reviewing pedestrian infrastructure, identifying key conflict points, and assessing safety conditions around crossing points, access roads, school gates, and learner movement corridors.
+
+The SUMO Team then led the SR4S assessment. This assessment is an important step towards identifying practical, evidence-based interventions that can improve safety for children on their daily journeys to school.
+
+We sincerely appreciate the support of NTSA, KURA, the leadership of Children's Garden Home & School, and YOURS - Youth for Road Safety for their continued collaboration and commitment to creating safer school zones.
+
+`,
   },
   {
     id: 2,
-    image: "/images/news/news-2.jpg",
+    image: "/images/sumo10.jpeg",
     category: "Events",
     date: "March 2026",
     title: "Stakeholders Convene to Strengthen Road Safety Data and Collaboration",
-    // excerpt:
-    //   "A look at ongoing dialogue and shared action to improve reporting systems, partnerships, and evidence-based mobility interventions.",
+    excerpt:
+      "A look at ongoing dialogue and shared action to improve reporting systems, partnerships, and evidence-based mobility interventions.",
   },
   {
     id: 3,
-    image: "/images/sumo10.jpeg",
+    image: "/images/sumo18.jpeg",
     category: "Projects",
     date: "March 2026",
     title: "Youth-Led Action Driving Awareness on Safer Public Transport",
-    // excerpt:
-    //   "Updates from local action initiatives focused on advocacy, public awareness, and building safer road user behavior.",
+    excerpt:
+      "Updates from local action initiatives focused on advocacy, public awareness, and building safer road user behavior.",
   },
-  {
-    id: 4,
-    image: "/images/news/news-4.jpg",
-    category: "Advocacy",
-    date: "February 2026",
-    title: "Building Momentum for Inclusive and Sustainable Urban Mobility",
-    // excerpt:
-    //   "SUMO Africa continues to support transport approaches that prioritize safety, inclusion, and cleaner movement across communities.",
-  },
-  {
-    id: 5,
-    image: "/images/news/news-5.jpg",
-    category: "Research",
-    date: "February 2026",
-    title: "Using Data to Inform Smarter Mobility Interventions",
-    // excerpt:
-    //   "Research and data systems remain central to designing targeted responses for road safety and accessibility challenges.",
-  },
-  {
-    id: 6,
-    image: "/images/sumo7.jpeg",
-    category: "Community",
-    date: "January 2026",
-    title: "Community Outreach Continues to Shape Safer Streets",
-    // excerpt:
-    //   "Our outreach efforts continue to connect road safety awareness with local voices, schools, and everyday road users.",
-  },
+  
   {
   id: 7,
   category: "ROAD SAFETY",
   date: "March 2026",
   title:
     "SUMO Africa Conducts SR4S Road Safety Assessment at Children's Garden Home & School",
-  // excerpt:
-  //   "SUMO Africa, together with NTSA and KURA, carried out a Star Rating for Schools (SR4S) assessment at Children's Garden Home & School to identify practical interventions that will improve the safety of children travelling to and from school.",
+  excerpt:
+    "SUMO Africa, together with NTSA and KURA, carried out a Star Rating for Schools (SR4S) assessment at Children's Garden Home & School to identify practical interventions that will improve the safety of children travelling to and from school.",
   image: "/images/sumo12.jpeg",
   content: `
 In March, following our initial ground-truthing visit, the SUMO Africa team returned to Children's Garden Home & School along Naivasha Road in Uthiru, Nairobi, to conduct the full iRAP Star Rating for Schools (SR4S) assessment under the Safe Steps to School Project.
@@ -76,13 +65,22 @@ The assessment brought together SUMO Africa, officials from KURA and NTSA to eva
 The findings will guide evidence-based interventions aimed at creating safer journeys for children through the Safe Steps to School Project.
 `,
 },
+  {
+    id: 6,
+    image: "/images/sumo23.jpeg",
+    category: "Community",
+    date: "January 2026",
+    title: "Community Outreach Continues to Shape Safer Streets",
+    excerpt:
+      "Our outreach efforts continue to connect road safety awareness with local voices, schools, and everyday road users.",
+  },
 {
   id: 8,
   category: "CONFERENCE",
   date: "2025",
   title: "Australasian Road Safety Conference 2025",
-  // excerpt:
-  //   "We were honoured to participate in the Australasian Road Safety Conference 2025 in Perth, where SUMO Africa shared its work on strengthening multi-sectoral collaboration to improve road safety data systems in Kenya.",
+  excerpt:
+    "We were honoured to participate in the Australasian Road Safety Conference 2025 in Perth, where SUMO Africa shared its work on strengthening multi-sectoral collaboration to improve road safety data systems in Kenya.",
   image: "/images/sumo20.jpeg",
   content: `
 SUMO Africa presented research on strengthening multi-sectoral collaboration to improve road safety data systems.
@@ -97,13 +95,31 @@ The conference strengthened international partnerships and showcased Kenya's pro
   category: "EVENTS",
   date: "2025",
   title: "Speaking at the Global Ministerial Conference on Road Safety 2025",
-  // excerpt:
-  //   "SUMO Africa was honoured to participate in the 4th Global Ministerial Conference on Road Safety.",
+  excerpt:
+    "SUMO Africa was honoured to participate in the 4th Global Ministerial Conference on Road Safety.",
   image: "/images/sumo22.jpeg",
   content: `
 SUMO Africa participated in the Global Ministerial Conference on Road Safety, sharing experiences and strengthening partnerships to improve safer mobility across Africa.
 `,
 },
+{
+    id: 4,
+    image: "/images/sumo4.jpeg",
+    category: "Advocacy",
+    date: "February 2026",
+    title: "Building Momentum for Inclusive and Sustainable Urban Mobility",
+    excerpt:
+      "SUMO Africa continues to support transport approaches that prioritize safety, inclusion, and cleaner movement across communities.",
+  },
+  {
+    id: 5,
+    image: "/images/sumo6.jpeg",
+    category: "Research",
+    date: "February 2026",
+    title: "Using Data to Inform Smarter Mobility Interventions",
+    excerpt:
+      "Research and data systems remain central to designing targeted responses for road safety and accessibility challenges.",
+  },
 ]
 
 export default function NewsPage() {
@@ -118,7 +134,7 @@ export default function NewsPage() {
     className="absolute inset-0 h-full w-full object-cover"
   />
 
-  <div className="absolute inset-0 bg-gradient-to-r from-[#06132e]/95 via-[#06132e]/70 to-[#06132e]/40" />
+  <div className="absolute inset-0 bg-gradient-to-r from-[#06132e]/95 via-[#0b5f91]/80 to-[#3eaef2]/55" />
 
   <div className="relative mx-auto flex h-full max-w-7xl items-center px-6 sm:px-10">
 
@@ -157,281 +173,307 @@ export default function NewsPage() {
 
 
 {/* NEWS GRID */}
+<section id="stories" className="py-24 bg-[#f7f8fa]">
+  <div className="max-w-7xl mx-auto px-6 sm:px-10">
 
-<section
-  id="stories"
-  className="bg-[#f7f8fa] py-24"
->
-
-  <div className="mx-auto max-w-7xl px-6 sm:px-10">
-
-    <div className="mb-16 flex items-end justify-between">
-
+    {/* Header */}
+    <div className="flex items-center justify-between mb-14">
       <div>
-
-        <p className="text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
-          Latest Stories
-        </p>
-
-        <h2 className="mt-3 text-4xl font-black uppercase text-[#06132e]">
+       
+        <h2 className="mt-3 text-4xl font-black uppercase text-[#3eaef2] ">
           News & Highlights
         </h2>
-
       </div>
-
     </div>
 
+    {/* TOP LAYOUT */}
+   {/* TOP LAYOUT */}
+<div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
 
-
-    <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-      {newsItems.map((item, index) => (
-
-        <Link
-          key={item.id}
-          href={`/news/${item.id}`}
-          className={`group relative overflow-hidden rounded-3xl
-
-          ${
-            index === 0
-              ? "md:col-span-2 h-[520px]"
-              : "h-[430px]"
-          }
-
-          `}
-        >
+      {/* FEATURED STORY */}
+      <Link
+        href={`/news/${newsItems[0].id}`}
+        className="group overflow-hidden bg-white border border-gray-200 hover:border-[#3eaef2] transition-all duration-500"
+      >
+        <div className="relative h-[430px] overflow-hidden">
 
           <img
-            src={item.image}
-            alt={item.title}
-            className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+            src={newsItems[0].image}
+            alt={newsItems[0].title}
+            className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06132e] via-[#06132e]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#06132e]/95 via-[#06132e]/25 to-transparent" />
 
+          <div className="absolute bottom-0 left-0 p-8 text-white">
 
-
-          <div className="absolute left-6 top-6 flex items-center gap-3">
-
-            <span className="rounded-full bg-orange-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white">
-
-              {item.category}
-
+            <span className="inline-flex rounded-full bg-orange-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em]">
+              {newsItems[0].category}
             </span>
+
+            <div className="mt-5 flex items-center gap-2 text-sm text-slate-300">
+              <CalendarDays size={15} />
+              {newsItems[0].date}
+            </div>
+
+            <h3 className="mt-4 max-w-xl text-4xl font-black leading-tight">
+              {newsItems[0].title}
+            </h3>
 
           </div>
 
+        </div>
 
+        <div className="p-8">
 
-          <div className="absolute bottom-0 p-8 text-white">
+          <p className="leading-8 text-gray-600">
+            {newsItems[0].excerpt}
+          </p>
 
-            <div className="mb-5 flex items-center gap-2 text-sm text-slate-300">
+          <div className="mt-8 inline-flex items-center gap-3 font-bold uppercase tracking-[0.18em] text-[#3eaef2] transition-all group-hover:gap-5">
+            Read Story
+            <ArrowRight
+              size={18}
+              className="transition group-hover:translate-x-2"
+            />
+          </div>
 
-              <CalendarDays size={15} />
+        </div>
 
-              {item.date}
+      </Link>
 
-            </div>
+      {/* RIGHT COLUMN */}
+      {/* RIGHT COLUMN */}
+<div className="my-auto overflow-hidden bg-white border border-gray-200">
 
-            <h2 className="text-3xl font-black leading-tight transition group-hover:text-[#3eaef2]">
+        {newsItems.slice(1, 3).map((item) => (
 
-              {item.title}
+          <Link
+            key={item.id}
+            href={`/news/${item.id}`}
+            className="group flex gap-4 border-b border-gray-200 p-4 last:border-b-0 hover:bg-gray-50 transition"
+          >
 
-            </h2>
+            <div className="relative h-28 w-36 flex-shrink-0 overflow-hidden">
 
-            <p className="mt-5 line-clamp-3 max-w-lg leading-8 text-slate-300">
-
-              {item.excerpt}
-
-            </p>
-
-            <div className="mt-8 inline-flex items-center gap-3 font-bold uppercase tracking-[0.18em] text-orange-400">
-
-              Read Story
-
-              <ArrowRight
-                size={18}
-                className="transition group-hover:translate-x-2"
+              <img
+                src={item.image}
+                alt={item.title}
+                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
               />
 
             </div>
 
-          </div>
+            <div className="flex-1">
 
-        </Link>
+              <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-orange-500">
+                {item.category}
+              </p>
 
-      ))}
+              <div className="mb-2 flex items-center gap-2 text-xs text-gray-500">
+                <CalendarDays size={13} />
+                {item.date}
+              </div>
+
+              <h3 className="text-lg font-bold leading-snug text-[#06132e] transition group-hover:text-[#3eaef2]">
+                {item.title}
+              </h3>
+
+              <p className="mt-2 line-clamp-2 text-sm leading-6 text-gray-600">
+                {item.excerpt}
+              </p>
+
+              <div className="mt-3 inline-flex items-center gap-2 font-semibold text-[#3eaef2]">
+                Read Story
+                <ArrowRight
+                  size={15}
+                  className="transition group-hover:translate-x-1"
+                />
+              </div>
+
+            </div>
+
+          </Link>
+
+        ))}
+
+      </div>
 
     </div>
 
-  </div>
+    {/* REMAINING STORIES */}
+    {newsItems.length > 3 && (
 
-</section>
-      {/* NEWSLETTER CTA */}
-      <section className="bg-[#06132e] py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center sm:px-10">
- <p className="mb-4 text-xl md:text-2xl font-extrabold uppercase tracking-[0.16em] leading-[1.6] text-white">
-  Never Miss An Update
-</p>
+      <div className="mt-8">
 
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300">
-            Subscribe to our newsletter to receive the latest news, insights,
-            and opportunities directly in your inbox.
-          </p>
+          {newsItems.slice(3).map((item) => (
 
-         <div className="flex justify-center mt-8">
-  <button className="h-14 bg-[#3eaef2] px-10 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#3eaef2]">
-    Subscribe Now
-  </button>
-</div>
-        </div>
-      </section>
+            <Link
+              key={item.id}
+              href={`/news/${item.id}`}
+              className="group overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-[#3eaef2] hover:shadow-md transition-all duration-300"
+            >
 
-      <footer className="bg-[#071a2f] text-white pt-20 pb-8">
-      <div className="max-w-7xl mx-auto px-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
-          {/* COLUMN 1 */}
-          <div>
-            <h2 className="text-2xl font-extrabold uppercase leading-none tracking-tight">
-              SUMO AFRICA
-            </h2>
+              <div className="relative h-72 overflow-hidden">
 
-            <p className="mt-3 text-[#3eaef2] text-sm font-bold uppercase tracking-[0.14em] leading-snug">
-              Inclusive & Sustainable
-              <br />
-              Mobility
-            </p>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
 
-            <p className="mt-8 text-[#3eaef2] text-base leading-8 max-w-[280px]">
-              A Nairobi-based NGO advancing road safety and sustainable transport
-              across Africa through advocacy, awareness, education, and research.
-            </p>
+                <span className="absolute left-4 top-4 rounded-full bg-orange-500 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white">
+                  {item.category}
+                </span>
 
-            <div className="flex items-center gap-4 mt-8">
-              <a
-                href="#"
-                className="w-12 h-12 bg-[#112246] border border-[#1b2f5c] flex items-center justify-center transition hover:bg-[#17305d]"
-              >
-                <Twitter size={18} className="text-white" />
-              </a>
+              </div>
 
-              <a
-                href="#"
-                className="w-12 h-12 bg-[#112246] border border-[#1b2f5c] flex items-center justify-center transition hover:bg-[#17305d]"
-              >
-                <Linkedin size={18} className="text-white" />
-              </a>
+              <div className="p-4">
 
-              <a
-                href="#"
-                className="w-12 h-12 bg-[#112246] border border-[#1b2f5c] flex items-center justify-center transition hover:bg-[#17305d]"
-              >
-                <Facebook size={18} className="text-white" />
-              </a>
-            </div>
-          </div>
+                <div className="mb-2 flex items-center gap-2 text-xs text-gray-500">
+                  <CalendarDays size={13} />
+                  {item.date}
+                </div>
 
-          {/* COLUMN 2 */}
-          <div>
-            <h3 className="text-lg font-extrabold uppercase tracking-tight mb-8">
-              Quick Links
-            </h3>
+                <h3 className="text-lg font-bold leading-snug text-[#06132e] transition group-hover:text-[#3eaef2]">
+                  {item.title}
+                </h3>
 
-            <div className="flex flex-col gap-4 text-[#3eaef2] text-base">
-              <Link href="/" className="hover:text-[#3eaef2] transition">
-                Home
-              </Link>
-              <Link href="/about" className="hover:text-[#3eaef2] transition">
-                About Us
-              </Link>
-              <Link href="/our-work" className="hover:text-[#3eaef2] transition">
-                Our Work
-              </Link>
-              <Link href="/news" className="hover:text-[#3eaef2] transition">
-                News
-              </Link>
-              <Link href="/contact" className="hover:text-[#3eaef2] transition">
-                Contact
-              </Link>
-            </div>
-          </div>
-
-          {/* COLUMN 3 */}
-          <div>
-            <h3 className="text-lg font-extrabold uppercase tracking-tight mb-8">
-              Local Action Projects
-            </h3>
-
-            <div className="flex flex-col gap-4 text-[#3eaef2] text-base">
-              <Link href="/projects" className="hover:text-[#3eaef2] transition">
-                Drive Right
-              </Link>
-              <Link href="/projects" className="hover:text-[#3eaef2] transition">
-                Safe Steps to School
-              </Link>
-            </div>
-
-            <div className="mt-10 space-y-5">
-              <div className="flex items-start gap-4">
-                <MapPin className="text-[#3eaef2] mt-1 shrink-0" size={20} />
-                <p className="text-[#3eaef2] text-base leading-7">
-                  CVS Plaza, Lenana Road,
-                  <br />
-                  6281-00100, Nairobi, Kenya
+                <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">
+                  {item.excerpt}
                 </p>
+
+                <div className="mt-3 inline-flex items-center gap-2 font-semibold text-[#3eaef2]">
+                  Read Story
+                  <ArrowRight
+                    size={15}
+                    className="transition group-hover:translate-x-1"
+                  />
+                </div>
+
               </div>
 
-              <div className="flex items-center gap-4">
-                <Mail className="text-[#3eaef2] shrink-0" size={20} />
-                <a
-                  href="mailto:info@sumoafrica.org"
-                  className="text-[#3eaef2] text-base hover:text-[#3eaef2] transition"
-                >
-                  info@sumoafrica.org
-                </a>
-              </div>
-            </div>
-          </div>
+            </Link>
 
-          {/* COLUMN 4 */}
+          ))}
+
+        </div>
+
+      </div>
+
+    )}
+
+  </div>
+</section>
+
+{/* FOOTER */}
+      <footer className="mt-24 bg-[#3eaef2] border-t border-white/10">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 px-6 py-16">
+
+          {/* ABOUT */}
           <div>
-            <h3 className="text-lg font-extrabold uppercase tracking-tight mb-8">
-              Stay Updated
-            </h3>
+            <h3 className="font-bold ">SUMO AFRICA</h3>
 
-            <p className="text-[#3eaef2] text-base leading-7 max-w-[290px] mb-6">
-              Subscribe to our newsletter for the latest updates on road safety
-              and sustainable mobility.
+            <p className="text-[#071521] text-xs mt-1">
+              INCLUSIVE & SUSTAINABLE MOBILITY
             </p>
 
-            <div className="space-y-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full h-14 bg-[#112246] border border-[#1b2f5c] px-5 text-white placeholder:text-[#6f7b98] outline-none"
-              />
+            <p className="text-[#071521] text-sm mt-4 leading-relaxed">
+              A Nairobi-based NGO advancing road safety and sustainable
+              transport across Africa through advocacy, awareness,
+              education, and research.
+            </p>
 
-              <button className="w-full h-14 bg-[#3eaef2] hover:bg-orange-600 transition flex items-center justify-center gap-3 text-white font-bold uppercase tracking-wide">
-                <Send size={16} />
-                Subscribe
-              </button>
+         <div className="flex gap-4 mt-5 items-center">
+  <a href="#" aria-label="X (Twitter)">
+    <FaXTwitter
+      size={24}
+      className="text-black transition-transform duration-300 hover:scale-110"
+    />
+  </a>
+
+  <a href="#" aria-label="LinkedIn)">
+    <FaLinkedin
+      size={25}
+      className="text-[#0A66C2] transition-transform duration-300 hover:scale-110"
+    />
+  </a>
+
+  <a href="#" aria-label="Facebook">
+    <FaFacebook
+      size={25}
+      className="text-[#1877F2] transition-transform duration-300 hover:scale-110"
+    />
+  </a>
+</div>
+          </div>
+
+          {/* QUICK LINKS */}
+          <div>
+            <h4 className="text-[#071521] font-semibold mb-4">QUICK LINKS</h4>
+
+            <ul className="space-y-2 text-[#071521] text-sm">
+              <li className="hover:text-white cursor-pointer">Home</li>
+              <li className="hover:text-white cursor-pointer">About Us</li>
+              <li className="hover:text-white cursor-pointer">Our Work</li>
+              <li className="hover:text-white cursor-pointer">News</li>
+              <li className="hover:text-white cursor-pointer">Contact</li>
+            </ul>
+          </div>
+
+          {/* PROJECTS + CONTACT */}
+          <div>
+            <h4 className="text-[#071521] font-semibold mb-4">LOCAL ACTION PROJECTS</h4>
+
+            <ul className="space-y-2 text-[#071521] text-sm mb-6">
+              <li className="hover:text-white cursor-pointer">Drive Right</li>
+              <li className="hover:text-white cursor-pointer">Safe Steps to School</li>
+            </ul>
+
+            {/* LOCATION */}
+            <div className="flex gap-2 text-[#071521] text-sm mb-2">
+              <MapPin size={16} className="text-[#071521] mt-1" />
+              <p>
+                CVS Plaza, Lenana Road <br />
+                Nairobi, Kenya
+              </p>
+            </div>
+
+            {/* EMAIL */}
+            <div className="flex gap-2 text-[#071521] text-sm">
+              <Mail size={16} className="text-[#071521]mt-1" />
+              <p>info@sumoafrica.org</p>
             </div>
           </div>
+
+ {/* GET IN TOUCH */}
+<div className="min-w-0">
+  <h4 className="mb-4 font-semibold text-[#071521]">
+    GET IN TOUCH
+  </h4>
+
+  <p className="mb-5 text-sm leading-6 text-[#071521]">
+    Have a question, partnership idea, or want to learn more about
+    our work? We'd love to hear from you.
+  </p>
+
+  <a
+    href="/contact"
+    className="inline-flex items-center text-sm font-semibold text-[#071521] transition-colors hover:text-white"
+  >
+    Contact Us →
+  </a>
+</div>        
+
         </div>
 
-        {/* BOTTOM BAR */}
-        <div className="border-t border-[#112246] mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#3eaef2] text-sm">
-            © 2026 SUMO Africa. All rights reserved.
-          </p>
-
-          <p className="text-[#3eaef2] text-sm text-center md:text-right">
-            Founded August 2024 • Nairobi, Kenya
-          </p>
+        {/* COPYRIGHT */}
+        <div className="text-center text-[#071521] text-sm pb-6 border-t border-white/10 pt-6">
+          © 2026 SUMO Africa. All rights reserved.
         </div>
-      </div>
-    </footer>
+      </footer>
     </main>
   )
 }

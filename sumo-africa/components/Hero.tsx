@@ -31,7 +31,7 @@ export default function Hero() {
         <div className="flex justify-center gap-5 mt-10">
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 bg-[#3eaef2] hover:bg-[#2d9de0] px-8 py-4 font-semibold text-white transition duration-300"
+            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 px-8 py-4 font-semibold text-white transition duration-300"
           >
             LEARN MORE →
           </Link>

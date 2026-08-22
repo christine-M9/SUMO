@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import {
   Send,
   MapPin,
@@ -7,15 +10,56 @@ import {
   Twitter,
   Linkedin,
   Facebook,
+  ChevronDown,
+  Handshake,
+  Heart,
 } from "lucide-react";
+import { FaXTwitter, FaLinkedin, FaFacebook } from "react-icons/fa6";
 
 export default function ContactPage() {
+  const [getInvolvedOpen, setGetInvolvedOpen] = useState(false);
+  const [partnerOpen, setPartnerOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [donateOpen, setDonateOpen] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
+
+  const [donationFormOpen, setDonationFormOpen] = useState(false);
+  const [selectedDonation, setSelectedDonation] = useState("");
+  const [donationSubmitted, setDonationSubmitted] = useState(false);
+
+  const handlePartnerSubmit = (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  const handleDonationSelection = (selection: string) => {
+    setSelectedDonation(selection);
+    setDonationSubmitted(false);
+    setDonationFormOpen(true);
+    setGetInvolvedOpen(false);
+    setDonateOpen(false);
+    setProjectsOpen(false);
+
+    setTimeout(() => {
+      document
+        .getElementById("donation-form")
+        ?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+    }, 100);
+  };
+
   return (
     <main className="bg-[#f5f5f5] text-[#0c1b2a]">
+
       {/* HERO */}
-      <section className="bg-[#06153a] pt-32 pb-24 md:pt-36 md:pb-28">
+      <section className="bg-[#3eaef2] pt-32 pb-24 md:pt-36 md:pb-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
           <div className="max-w-3xl">
+
             <p className="text-[#ff7a12] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               Contact Us
             </p>
@@ -29,9 +73,414 @@ export default function ContactPage() {
               We&apos;d love to hear from you. Reach out and let&apos;s work
               together for safer roads.
             </p>
+
+            {/* GET INVOLVED */}
+            <div className="mt-8 w-full max-w-[300px]">
+
+              <button
+                onClick={() => setGetInvolvedOpen(!getInvolvedOpen)}
+                className="inline-flex items-center gap-3 rounded-full bg-[#ff7a12] px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#e96808] hover:shadow-lg"
+              >
+                Get Involved
+
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-300 ${
+                    getInvolvedOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {/* DROPDOWN CONTENT - NOW IN NORMAL PAGE FLOW */}
+              {getInvolvedOpen && (
+                <div className="mt-4 w-full overflow-hidden rounded-2xl bg-white p-2 shadow-2xl">
+
+                  {/* PARTNER WITH US */}
+                  <button
+                    onClick={() => {
+                      setPartnerOpen(true);
+                      setDonationFormOpen(false);
+                      setGetInvolvedOpen(false);
+
+                      setTimeout(() => {
+                        document
+                          .getElementById("partner-form")
+                          ?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+                      }, 100);
+                    }}
+                    className="flex w-full items-center gap-3 rounded-xl px-5 py-4 text-left text-sm font-bold text-[#06153a] transition hover:bg-[#f5f5f5] hover:text-[#ff7a12]"
+                  >
+                    <Handshake className="h-4 w-4" />
+                    Partner With Us
+                  </button>
+
+                  {/* DONATE */}
+                  <div>
+                    <button
+                      onClick={() => setDonateOpen(!donateOpen)}
+                      className="flex w-full items-center justify-between gap-3 rounded-xl px-5 py-4 text-left text-sm font-bold text-[#06153a] transition hover:bg-[#f5f5f5] hover:text-[#ff7a12]"
+                    >
+                      <span className="flex items-center gap-3">
+                        <Heart className="h-4 w-4" />
+                        Donate
+                      </span>
+
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-300 ${
+                          donateOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {donateOpen && (
+                      <div className="mt-1 space-y-1 px-2 pb-2">
+
+                        {/* PROJECTS */}
+                        <div>
+                          <button
+                            onClick={() =>
+                              setProjectsOpen(!projectsOpen)
+                            }
+                            className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-semibold text-[#06153a] transition hover:bg-[#f5f5f5] hover:text-[#ff7a12]"
+                          >
+                            <span>Projects</span>
+
+                            <ChevronDown
+                              className={`h-4 w-4 transition-transform duration-300 ${
+                                projectsOpen ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+
+                          {/* PROJECT OPTIONS */}
+                          {projectsOpen && (
+                            <div className="ml-3 mt-1 space-y-1 border-l-2 border-[#ff7a12]/30 pl-3">
+
+                              <button
+                                onClick={() =>
+                                  handleDonationSelection("Drive Right")
+                                }
+                                className="block w-full rounded-lg px-3 py-3 text-left text-sm font-medium text-[#06153a] transition hover:bg-[#f5f5f5] hover:text-[#ff7a12]"
+                              >
+                                Drive Right
+                              </button>
+
+                              <button
+                                onClick={() =>
+                                  handleDonationSelection(
+                                    "Safe Steps to School"
+                                  )
+                                }
+                                className="block w-full rounded-lg px-3 py-3 text-left text-sm font-medium text-[#06153a] transition hover:bg-[#f5f5f5] hover:text-[#ff7a12]"
+                              >
+                                Safe Steps to School
+                              </button>
+
+                            </div>
+                          )}
+                        </div>
+
+                        {/* IN-KIND CONTRIBUTION */}
+                        <button
+                          onClick={() =>
+                            handleDonationSelection(
+                              "In-Kind Contribution"
+                            )
+                          }
+                          className="block w-full rounded-lg px-4 py-3 text-left text-sm font-semibold text-[#06153a] transition hover:bg-[#f5f5f5] hover:text-[#ff7a12]"
+                        >
+                          In-Kind Contribution
+                        </button>
+
+                      </div>
+                    )}
+                  </div>
+
+                </div>
+              )}
+
+            </div>
+
           </div>
         </div>
       </section>
+      {/* DONATION / CONTRIBUTION FORM */}
+      {donationFormOpen && (
+        <section
+          id="donation-form"
+          className="bg-white py-20 md:py-28"
+        >
+          <div className="mx-auto max-w-3xl px-6 md:px-10">
+            <div className="mb-10 text-center">
+              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#ff7a12]">
+                Get Involved
+              </p>
+
+              <h2 className="mt-4 text-3xl font-black text-[#06153a] md:text-5xl">
+                Support {selectedDonation}
+              </h2>
+
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600">
+                Tell us how you would like to support this initiative and our
+                team will get back to you.
+              </p>
+            </div>
+
+            {donationSubmitted ? (
+              <div className="rounded-3xl bg-[#06153a] p-10 text-center text-white shadow-xl">
+                <Heart className="mx-auto mb-5 h-12 w-12 text-[#ff7a12]" />
+
+                <h3 className="text-2xl font-bold">
+                  Thank You!
+                </h3>
+
+                <p className="mt-3 text-white/70">
+                  We have received your interest in supporting{" "}
+                  {selectedDonation}. Our team will get back to you soon.
+                </p>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setDonationSubmitted(true);
+                }}
+                className="rounded-3xl bg-[#f5f5f5] p-7 md:p-10"
+              >
+                {/* SELECTED PROJECT */}
+                <div className="mb-6">
+                  <label className="mb-2 block text-sm font-bold text-[#06153a]">
+                    You are supporting
+                  </label>
+
+                  <input
+                    type="text"
+                    value={selectedDonation}
+                    readOnly
+                    className="w-full rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm font-semibold text-[#06153a] outline-none"
+                  />
+                </div>
+
+                {/* NAME */}
+                <div className="mb-6">
+                  <label className="mb-2 block text-sm font-bold text-[#06153a]">
+                    Full Name
+                  </label>
+
+                  <input
+                    type="text"
+                    required
+                    placeholder="Enter your full name"
+                    className="w-full rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm outline-none transition focus:border-[#ff7a12]"
+                  />
+                </div>
+
+                {/* EMAIL */}
+                <div className="mb-6">
+                  <label className="mb-2 block text-sm font-bold text-[#06153a]">
+                    Email Address
+                  </label>
+
+                  <input
+                    type="email"
+                    required
+                    placeholder="Enter your email address"
+                    className="w-full rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm outline-none transition focus:border-[#ff7a12]"
+                  />
+                </div>
+
+                {/* ORGANIZATION */}
+                <div className="mb-6">
+                  <label className="mb-2 block text-sm font-bold text-[#06153a]">
+                    Organization
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="Enter your organization name"
+                    className="w-full rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm outline-none transition focus:border-[#ff7a12]"
+                  />
+                </div>
+
+                {/* MESSAGE */}
+                <div className="mb-8">
+                  <label className="mb-2 block text-sm font-bold text-[#06153a]">
+                    Message
+                  </label>
+
+                  <textarea
+                    required
+                    rows={6}
+                    placeholder="Tell us how you would like to support..."
+                    className="w-full resize-none rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm outline-none transition focus:border-[#ff7a12]"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#ff7a12] px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#e96808] hover:shadow-lg"
+                >
+                  <Send className="h-4 w-4" />
+                  Submit Support Request
+                </button>
+              </form>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* PARTNER WITH US FORM */}
+      {partnerOpen && (
+        <section
+          id="partner-form"
+          className="bg-[#f5f5f5] py-20 md:py-28"
+        >
+          <div className="mx-auto max-w-3xl px-6 md:px-10">
+
+            {!submitted ? (
+              <div className="rounded-3xl bg-white p-7 shadow-[0_20px_60px_rgba(6,21,58,0.08)] md:p-10">
+
+                <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#ff7a12]">
+                  Partner With Us
+                </p>
+
+                <h2 className="mt-4 text-3xl font-black text-[#06153a] md:text-4xl">
+                  Let&apos;s Work Together
+                </h2>
+
+                <p className="mt-4 leading-7 text-gray-600">
+                  Interested in partnering with us? Tell us a little about
+                  yourself and how you would like to collaborate.
+                </p>
+
+                <form
+                  onSubmit={handlePartnerSubmit}
+                  className="mt-8 space-y-6"
+                >
+
+                  {/* NAME */}
+                  <div>
+                    <label
+                      htmlFor="partner-name"
+                      className="mb-2 block text-sm font-bold text-[#06153a]"
+                    >
+                      Full Name
+                    </label>
+
+                    <input
+                      id="partner-name"
+                      name="name"
+                      type="text"
+                      required
+                      placeholder="Enter your full name"
+                      className="w-full rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm text-[#06153a] outline-none transition focus:border-[#3eaef2] focus:ring-2 focus:ring-[#3eaef2]/20"
+                    />
+                  </div>
+
+                  {/* EMAIL */}
+                  <div>
+                    <label
+                      htmlFor="partner-email"
+                      className="mb-2 block text-sm font-bold text-[#06153a]"
+                    >
+                      Email Address
+                    </label>
+
+                    <input
+                      id="partner-email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="Enter your email address"
+                      className="w-full rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm text-[#06153a] outline-none transition focus:border-[#3eaef2] focus:ring-2 focus:ring-[#3eaef2]/20"
+                    />
+                  </div>
+
+                  {/* ORGANIZATION */}
+                  <div>
+                    <label
+                      htmlFor="organization"
+                      className="mb-2 block text-sm font-bold text-[#06153a]"
+                    >
+                      Organization
+                      <span className="ml-1 text-gray-400">
+                        (Optional)
+                      </span>
+                    </label>
+
+                    <input
+                      id="organization"
+                      name="organization"
+                      type="text"
+                      placeholder="Organization or company name"
+                      className="w-full rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm text-[#06153a] outline-none transition focus:border-[#3eaef2] focus:ring-2 focus:ring-[#3eaef2]/20"
+                    />
+                  </div>
+
+                  {/* MESSAGE */}
+                  <div>
+                    <label
+                      htmlFor="partner-message"
+                      className="mb-2 block text-sm font-bold text-[#06153a]"
+                    >
+                      How would you like to partner with us?
+                    </label>
+
+                    <textarea
+                      id="partner-message"
+                      name="message"
+                      rows={6}
+                      required
+                      placeholder="Tell us about your partnership idea or how you would like to collaborate..."
+                      className="w-full resize-none rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm leading-6 text-[#06153a] outline-none transition focus:border-[#3eaef2] focus:ring-2 focus:ring-[#3eaef2]/20"
+                    />
+                  </div>
+
+                  {/* SUBMIT */}
+                  <button
+                    type="submit"
+                    className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#ff7a12] px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#e96808] hover:shadow-lg"
+                  >
+                    <Send className="h-4 w-4" />
+                    Send Partnership Request
+                  </button>
+
+                </form>
+              </div>
+            ) : (
+              <div className="rounded-3xl bg-white p-10 text-center shadow-[0_20px_60px_rgba(6,21,58,0.08)]">
+
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#3eaef2]">
+                  <Send className="h-7 w-7 text-white" />
+                </div>
+
+                <h2 className="mt-6 text-3xl font-black text-[#06153a]">
+                  Thank You!
+                </h2>
+
+                <p className="mx-auto mt-4 max-w-md leading-7 text-gray-600">
+                  Your partnership request has been received. We&apos;ll get
+                  back to you as soon as possible.
+                </p>
+
+                <button
+                  onClick={() => {
+                    setPartnerOpen(false);
+                    setSubmitted(false);
+                  }}
+                  className="mt-8 rounded-full bg-[#06153a] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0c2a5a]"
+                >
+                  Close
+                </button>
+
+              </div>
+            )}
+
+          </div>
+        </section>
+      )}
 
       {/* FORM + CONTACT INFO */}
       <section className="bg-[#f7f7f7] py-24 md:py-28">
@@ -245,150 +694,112 @@ export default function ContactPage() {
 
       
 
-      <footer className="bg-[#071a2f] text-white pt-20 pb-8">
-      <div className="max-w-7xl mx-auto px-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
-          {/* COLUMN 1 */}
-          <div>
-            <h2 className="text-2xl font-extrabold uppercase leading-none tracking-tight">
-              SUMO AFRICA
-            </h2>
+      {/* FOOTER */}
+      <footer className="mt-24 bg-[#3eaef2] border-t border-white/10">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 px-6 py-16">
 
-            <p className="mt-3 text-[#3eaef2] text-sm font-bold uppercase tracking-[0.14em] leading-snug">
-              Inclusive & Sustainable
-              <br />
-              Mobility
+          {/* ABOUT */}
+          <div>
+            <h3 className="font-bold ">SUMO AFRICA</h3>
+
+            <p className="text-[#071521] text-xs mt-1">
+              INCLUSIVE & SUSTAINABLE MOBILITY
             </p>
 
-            <p className="mt-8 text-[#3eaef2] text-base leading-8 max-w-[280px]">
-              A Nairobi-based NGO advancing road safety and sustainable transport
-              across Africa through advocacy, awareness, education, and research.
+            <p className="text-[#071521] text-sm mt-4 leading-relaxed">
+              A Nairobi-based NGO advancing road safety and sustainable
+              transport across Africa through advocacy, awareness,
+              education, and research.
             </p>
 
-            <div className="flex items-center gap-4 mt-8">
-              <a
-                href="#"
-                className="w-12 h-12 bg-[#112246] border border-[#1b2f5c] flex items-center justify-center transition hover:bg-[#17305d]"
-              >
-                <Twitter size={18} className="text-white" />
-              </a>
+           <div className="flex gap-4 mt-5 items-center">
+  <a href="#" aria-label="X (Twitter)">
+    <FaXTwitter
+      size={24}
+      className="text-black transition-transform duration-300 hover:scale-110"
+    />
+  </a>
 
-              <a
-                href="https://www.linkedin.com/company/sustainable-mobility-africa-sumo-africa/"
-                className="w-12 h-12 bg-[#112246] border border-[#1b2f5c] flex items-center justify-center transition hover:bg-[#17305d]"
-              >
-                <Linkedin size={18} className="text-white" />
-              </a>
+  <a href="#" aria-label="LinkedIn)">
+    <FaLinkedin
+      size={25}
+      className="text-[#0A66C2] transition-transform duration-300 hover:scale-110"
+    />
+  </a>
 
-              <a
-                href="#"
-                className="w-12 h-12 bg-[#112246] border border-[#1b2f5c] flex items-center justify-center transition hover:bg-[#17305d]"
-              >
-                <Facebook size={18} className="text-white" />
-              </a>
-            </div>
+  <a href="#" aria-label="Facebook">
+    <FaFacebook
+      size={25}
+      className="text-[#1877F2] transition-transform duration-300 hover:scale-110"
+    />
+  </a>
+</div>
           </div>
 
-          {/* COLUMN 2 */}
+          {/* QUICK LINKS */}
           <div>
-            <h3 className="text-lg font-extrabold uppercase tracking-tight mb-8">
-              Quick Links
-            </h3>
+            <h4 className="text-[#071521] font-semibold mb-4">QUICK LINKS</h4>
 
-            <div className="flex flex-col gap-4 text-[#3eaef2] text-base">
-              <Link href="/" className="hover:text-[#3eaef2] transition">
-                Home
-              </Link>
-              <Link href="/about" className="hover:text-[#3eaef2] transition">
-                About Us
-              </Link>
-              <Link href="/our-work" className="hover:text-[#3eaef2] transition">
-                Our Work
-              </Link>
-              <Link href="/news" className="hover:text-[#3eaef2] transition">
-                News
-              </Link>
-              <Link href="/contact" className="hover:text-[#3eaef2] transition">
-                Contact
-              </Link>
-            </div>
+            <ul className="space-y-2 text-[#071521] text-sm">
+              <li className="hover:text-white cursor-pointer">Home</li>
+              <li className="hover:text-white cursor-pointer">About Us</li>
+              <li className="hover:text-white cursor-pointer">Our Work</li>
+              <li className="hover:text-white cursor-pointer">News</li>
+              <li className="hover:text-white cursor-pointer">Contact</li>
+            </ul>
           </div>
 
-          {/* COLUMN 3 */}
+          {/* PROJECTS + CONTACT */}
           <div>
-            <h3 className="text-lg font-extrabold uppercase tracking-tight mb-8">
-              Local Action Projects
-            </h3>
+            <h4 className="text-[#071521] font-semibold mb-4">LOCAL ACTION PROJECTS</h4>
 
-            <div className="flex flex-col gap-4 text-[#3eaef2] text-base">
-              <Link href="/projects" className="hover:text-[#3eaef2] transition">
-                Drive Right
-              </Link>
-              <Link href="/projects" className="hover:text-[#3eaef2] transition">
-                Safe Steps to School
-              </Link>
+            <ul className="space-y-2 text-[#071521] text-sm mb-6">
+              <li className="hover:text-white cursor-pointer">Drive Right</li>
+              <li className="hover:text-white cursor-pointer">Safe Steps to School</li>
+            </ul>
+
+            {/* LOCATION */}
+            <div className="flex gap-2 text-[#071521] text-sm mb-2">
+              <MapPin size={16} className="text-[#071521] mt-1" />
+              <p>
+                CVS Plaza, Lenana Road <br />
+                Nairobi, Kenya
+              </p>
             </div>
 
-            <div className="mt-10 space-y-5">
-              <div className="flex items-start gap-4">
-                <MapPin className="text-[#3eaef2] mt-1 shrink-0" size={20} />
-                <p className="text-[#3eaef2] text-base leading-7">
-                  CVS Plaza, Lenana Road,
-                  <br />
-                  6281-00100, Nairobi, Kenya
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Mail className="text-[#3eaef2] shrink-0" size={20} />
-                <a
-                  href="mailto:info@sumoafrica.org"
-                  className="text-[#3eaef2] text-base hover:text-[#3eaef2] transition"
-                >
-                  info@sumoafrica.org
-                </a>
-              </div>
+            {/* EMAIL */}
+            <div className="flex gap-2 text-[#071521] text-sm">
+              <Mail size={16} className="text-[#071521]mt-1" />
+              <p>info@sumoafrica.org</p>
             </div>
           </div>
+{/* GET IN TOUCH */}
+<div className="min-w-0">
+  <h4 className="mb-4 font-semibold text-[#071521]">
+    GET IN TOUCH
+  </h4>
 
-          {/* COLUMN 4 */}
-          <div>
-            <h3 className="text-lg font-extrabold uppercase tracking-tight mb-8">
-              Stay Updated
-            </h3>
+  <p className="mb-5 text-sm leading-6 text-[#071521]">
+    Have a question, partnership idea, or want to learn more about
+    our work? We'd love to hear from you.
+  </p>
 
-            <p className="text-[#3eaef2] text-base leading-7 max-w-[290px] mb-6">
-              Subscribe to our newsletter for the latest updates on road safety
-              and sustainable mobility.
-            </p>
+  <a
+    href="/contact"
+    className="inline-flex items-center text-sm font-semibold text-[#071521] transition-colors hover:text-white"
+  >
+    Contact Us →
+  </a>
+</div>
+        
 
-            <div className="space-y-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full h-14 bg-[#112246] border border-[#1b2f5c] px-5 text-white placeholder:text-[#6f7b98] outline-none"
-              />
-
-              <button className="w-full h-14 bg-[#3eaef2] hover:bg-orange-600 transition flex items-center justify-center gap-3 text-white font-bold uppercase tracking-wide">
-                <Send size={16} />
-                Subscribe
-              </button>
-            </div>
-          </div>
         </div>
 
-        {/* BOTTOM BAR */}
-        <div className="border-t border-[#112246] mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#3eaef2] text-sm">
-            © 2026 SUMO Africa. All rights reserved.
-          </p>
-
-          <p className="text-[#3eaef2] text-sm text-center md:text-right">
-            Founded August 2024 • Nairobi, Kenya
-          </p>
+        {/* COPYRIGHT */}
+        <div className="text-center text-[#071521] text-sm pb-6 border-t border-white/10 pt-6">
+          © 2026 SUMO Africa. All rights reserved.
         </div>
-      </div>
-    </footer>
+      </footer>
     </main>
   );
 }
