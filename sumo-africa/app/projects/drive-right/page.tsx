@@ -124,7 +124,7 @@ export default function DriveRightPage() {
             </div>
           </div>
 
-          <div className="bg-[#07162a] text-white px-8 md:px-12 py-10 md:py-12 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+          <div className="bg-[#3eaef2] text-white px-8 md:px-12 py-10 md:py-12 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
             <h3 className="text-[22px] md:text-[30px] font-black uppercase tracking-tight">
               Our Solution
             </h3>
@@ -161,9 +161,9 @@ export default function DriveRightPage() {
       <section className="bg-[#f6f6f6] py-24 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
           <div className="text-center">
-            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
+            {/* <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               Key Milestones
-            </p>
+            </p> */}
             <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[36px] font-black uppercase tracking-tight">
               Project Objectives
             </h2>
@@ -178,8 +178,7 @@ export default function DriveRightPage() {
                 Train 20+ Matatu Operators
               </h3>
               <p className="mt-5 text-[#66707f] text-[16px] leading-[1.8]">
-                Safe speed management and passenger relations training by
-                December 2025.
+                Safe speed management and passenger relations training.
               </p>
             </div>
 
@@ -191,8 +190,7 @@ export default function DriveRightPage() {
                 Youth-Led Speed Monitoring
               </h3>
               <p className="mt-5 text-[#66707f] text-[16px] leading-[1.8]">
-                Conduct 100+ random speed checks with real-time data collection
-                by February 2026.
+                Conduct 100+ random speed checks with real-time data collection.
               </p>
             </div>
 
@@ -204,8 +202,7 @@ export default function DriveRightPage() {
                 30 Km/H Zone Advocacy
               </h3>
               <p className="mt-5 text-[#66707f] text-[16px] leading-[1.8]">
-                Formalize 30 km/h zones through two policy roundtables by March
-                2026.
+                Formalize 30 km/h zones through two policy roundtables.
               </p>
             </div>
           </div>
