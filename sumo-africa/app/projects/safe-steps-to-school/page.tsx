@@ -173,14 +173,14 @@ export default function SafeStepsToSchoolPage() {
       </section>
 
       {/* PROJECT ACTIVITIES */}
-      <section className="bg-[#f6f6f6] py-24 md:py-28">
+      <section className="bg-[#f6f6f6] py-4 md:py-8">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
           <div className="text-center">
-            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
+            {/* <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
               Our Approach
-            </p>
-            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[40px] font-black uppercase tracking-tight">
-              Project Activities
+            </p> */}
+            <h2 className="mt-4 text-[#3eaef2] text-[30px] md:text-[40px] font-black uppercase tracking-tight">
+              Project Objectives
             </h2>
           </div>
 
