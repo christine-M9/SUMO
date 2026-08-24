@@ -402,80 +402,236 @@ export default function AboutPage() {
     </div>
   </div>
 </section>
-      {/* =========================================================
-          CORE VALUES
-      ========================================================= */}
-      <section className="my-8 bg-white py-16 sm:my-10 sm:py-20 md:my-12 md:py-24">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10">
-          <div className="mb-10 text-center sm:mb-14 md:mb-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange-500 sm:text-sm sm:tracking-[0.22em]">
-              What Drives Us
-            </p>
+{/* =========================================================
+    WHAT DRIVES US — CORE VALUES
+========================================================= */}
+<section className="bg-white py-20 sm:py-24 lg:py-28">
+  <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
 
-            <h2 className="mt-3 text-3xl font-bold text-[#071a2f] sm:mt-4 sm:text-4xl">
-              Our Core Values
-            </h2>
+    {/* =====================================================
+        SECTION INTRO
+    ===================================================== */}
+    <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end lg:mb-16">
 
-            <div className="mx-auto mt-5 h-1 w-20 bg-[#3eaef2] sm:mt-6 sm:w-24" />
-          </div>
+      <div>
+        <p className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
+          What Drives Us
+        </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3">
-            {/* VALUE 1 */}
-            <div className="flex min-w-0 gap-4 border-b border-gray-200 px-0 py-7 sm:px-4 md:border-b-0 md:border-r md:px-6 md:py-8">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3eaef2]/10 sm:h-14 sm:w-14">
-                <Heart className="text-[#3eaef2]" size={25} />
-              </div>
+        <h2 className="text-3xl font-bold tracking-tight text-[#3eaef2] sm:text-2xl lg:text-2xl">
+          Our Core Values
+        </h2>
+      </div>
 
-              <div className="min-w-0">
-                <h3 className="text-lg font-bold text-[#071a2f] sm:text-xl">
-                  Inclusivity
-                </h3>
+      <p className="max-w-md text-sm leading-6 text-gray-500 sm:text-base">
+        The principles that guide our work, our partnerships,
+        and our commitment to transforming mobility across Africa.
+      </p>
 
-                <p className="mt-2 text-sm leading-6 text-gray-600 sm:mt-3 sm:leading-7">
-                  We ensure every person, regardless of gender, age or ability,
-                  is represented in our programmes and decision making.
-                </p>
-              </div>
-            </div>
+    </div>
 
-            {/* VALUE 2 */}
-            <div className="flex min-w-0 gap-4 border-b border-gray-200 px-0 py-7 sm:px-4 md:border-b-0 md:border-r md:px-6 md:py-8">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 sm:h-14 sm:w-14">
-                <Target className="text-orange-500" size={25} />
-              </div>
 
-              <div className="min-w-0">
-                <h3 className="text-lg font-bold text-[#071a2f] sm:text-xl">
-                  Data-Driven
-                </h3>
+    {/* =====================================================
+        VALUES GRID
+    ===================================================== */}
+    <div className="grid gap-5 md:grid-cols-3">
 
-                <p className="mt-2 text-sm leading-6 text-gray-600 sm:mt-3 sm:leading-7">
-                  We rely on research, evidence and innovation to guide every
-                  intervention and maximise long-term impact.
-                </p>
-              </div>
-            </div>
 
-            {/* VALUE 3 */}
-            <div className="flex min-w-0 gap-4 px-0 py-7 sm:px-4 md:px-6 md:py-8">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3eaef2]/10 sm:h-14 sm:w-14">
-                <Users className="text-[#3eaef2]" size={25} />
-              </div>
+      {/* ===================================================
+          01 — INCLUSIVITY
+      =================================================== */}
+      <article
+        className="
+          group relative min-h-[390px]
+          overflow-hidden rounded-[1.5rem]
+          bg-[#eaf7fd]
+          p-7 sm:p-8 lg:p-9
+          transition-all duration-500
+          hover:-translate-y-2
+        "
+      >
 
-              <div className="min-w-0">
-                <h3 className="text-lg font-bold text-[#071a2f] sm:text-xl">
-                  Collaboration
-                </h3>
+        {/* Large number */}
+        <span
+          className="
+            absolute -right-3 -top-8
+            text-[150px] font-black leading-none
+            text-[#3eaef2]/10
+            transition-all duration-500
+            group-hover:text-[#3eaef2]/20
+          "
+        >
+          01
+        </span>
 
-                <p className="mt-2 text-sm leading-6 text-gray-600 sm:mt-3 sm:leading-7">
-                  We work with governments, communities, partners and young
-                  leaders to create safer roads and sustainable mobility.
-                </p>
-              </div>
-            </div>
-          </div>
+
+        {/* Content */}
+        <div className="relative z-10">
+
+          <h3 className="mt-20 text-3xl font-extrabold tracking-tight text-[#071521] lg:text-[34px]">
+            Inclusivity
+          </h3>
+
+          <div className="mt-5 h-[2px] w-10 bg-[#3eaef2] transition-all duration-500 group-hover:w-20" />
+
+          <p className="mt-6 max-w-sm text-[15px] leading-7 text-[#071521]/60">
+            We believe mobility should be accessible,
+            equitable, and responsive to the needs of
+            every person and community.
+          </p>
+
         </div>
-      </section>
+
+
+        {/* Decorative corner */}
+        <div
+          className="
+            absolute -bottom-16 -left-16
+            h-40 w-40 rounded-full
+            border-[25px] border-[#3eaef2]/10
+            transition-transform duration-700
+            group-hover:scale-125
+          "
+        />
+
+      </article>
+
+
+
+      {/* ===================================================
+          02 — DATA-DRIVEN
+      =================================================== */}
+      <article
+        className="
+          group relative min-h-[390px]
+          overflow-hidden rounded-[1.5rem]
+          bg-[#071521]
+          p-7 sm:p-8 lg:p-9
+          transition-all duration-500
+          hover:-translate-y-2
+        "
+      >
+
+        {/* Large number */}
+<span
+  className="
+    absolute -right-3 -top-8
+    text-[150px] font-black leading-none
+    text-white
+    transition-all duration-500
+    group-hover:text-[#3eaef2]
+  "
+>
+  02
+</span>
+
+
+        {/* Content */}
+        <div className="relative z-10">
+
+          <h3 className="mt-20 text-3xl font-extrabold tracking-tight text-white lg:text-[34px]">
+            Data-Driven
+          </h3>
+
+          <div className="mt-5 h-[2px] w-10 bg-[#3eaef2] transition-all duration-500 group-hover:w-20" />
+
+          <p className="mt-6 max-w-sm text-[15px] leading-7 text-white">
+            We use research, evidence, and reliable data
+            to understand challenges and inform solutions
+            that create measurable impact.
+          </p>
+
+        </div>
+
+
+        {/* Decorative graphic */}
+        <div className="absolute bottom-0 right-0 h-36 w-36 opacity-20">
+
+          <div className="absolute bottom-6 right-6 h-20 w-20 rounded-full border border-[#3eaef2]" />
+
+          <div className="absolute bottom-10 right-10 h-12 w-12 rounded-full border border-[#3eaef2]" />
+
+          <div className="absolute bottom-14 right-14 h-4 w-4 rounded-full bg-[#3eaef2]" />
+
+        </div>
+
+      </article>
+
+
+
+      {/* ===================================================
+          03 — COLLABORATION
+      =================================================== */}
+      <article
+        className="
+          group relative min-h-[390px]
+          overflow-hidden rounded-[1.5rem]
+          bg-[#3eaef2]
+          p-7 sm:p-8 lg:p-9
+          transition-all duration-500
+          hover:-translate-y-2
+        "
+      >
+
+        {/* Large number */}
+        <span
+          className="
+            absolute -right-3 -top-8
+            text-[150px] font-black leading-none
+            text-white/10
+            transition-all duration-500
+            group-hover:text-white/20
+          "
+        >
+          03
+        </span>
+
+
+        {/* Content */}
+        <div className="relative z-10">
+
+          <h3 className="mt-20 text-3xl font-extrabold tracking-tight text-[#071521] lg:text-[34px]">
+            Collaboration
+          </h3>
+
+          <div className="mt-5 h-[2px] w-10 bg-[#071521] transition-all duration-500 group-hover:w-20" />
+
+          <p className="mt-6 max-w-sm text-[15px] leading-7 text-[#071521]/65">
+            We bring together communities, institutions,
+            and partners to create stronger and lasting
+            mobility solutions.
+          </p>
+
+        </div>
+
+
+        {/* Decorative overlapping circles */}
+        <div className="absolute -bottom-16 -right-12 h-44 w-44 rounded-full border-[28px] border-white/10 transition-transform duration-700 group-hover:scale-110" />
+
+        <div className="absolute -bottom-8 -right-4 h-28 w-28 rounded-full border-[18px] border-white/10" />
+
+      </article>
+
+    </div>
+
+
+    {/* =====================================================
+        BOTTOM LINE
+    ===================================================== */}
+    <div className="mt-8 flex items-center gap-4">
+
+      <div className="h-px flex-1 bg-[#071521]/10" />
+
+      <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#071521]/35">
+        Safe · Inclusive · Sustainable Mobility
+      </span>
+
+      <div className="h-px flex-1 bg-[#071521]/10" />
+
+    </div>
+
+  </div>
+</section>
 
       {/* =========================================================
           OUR NETWORK
@@ -487,7 +643,7 @@ export default function AboutPage() {
               Our Network
             </p>
 
-            <h2 className="mx-auto max-w-3xl text-2xl font-extrabold uppercase leading-tight text-[#071a2f] sm:text-3xl md:text-4xl">
+            <h2 className="mx-auto max-w-3xl text-2xl font-extrabold uppercase leading-tight text-[#071a2f] sm:text-3xl md:text-3xl">
               Organizations We've Worked With
             </h2>
           </div>
