@@ -12,19 +12,19 @@ export default function LocalActionProjects() {
       title: "Public Transport",
       summary: "Mobility for all",
       icon: Bus,
-      color: "#2a95dd",
+      color: "#3eaef2",
     },
     {
       title: "Advocacy",
       summary: "Better transport policies",
       icon: Megaphone,
-      color: "#1a7cc4",
+      color: "#3eaef2",
     },
     {
       title: "Active Mobility",
       summary: "Walking and cycling",
       icon: Bike,
-      color: "#0f62a3",
+      color: "#3eaef2",
     },
   ];
 
@@ -32,7 +32,7 @@ export default function LocalActionProjects() {
   const radius = 36;
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-orange-50 py-32 sm:py-36 lg:py-40">
+    <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-sky-100/60 py-14 sm:py-16">
 
       {/* Faint dot pattern, fading out toward the edges */}
       <div
@@ -48,27 +48,27 @@ export default function LocalActionProjects() {
 
       {/* Soft color glows matching the circles */}
       <div aria-hidden className="pointer-events-none absolute -left-24 top-10 h-80 w-80 rounded-full bg-[#3eaef2]/30 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -right-24 top-1/3 h-96 w-96 rounded-full bg-[#f97316]/25 blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute -right-24 top-1/3 h-96 w-96 rounded-full bg-[#2a95dd]/20 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -bottom-24 left-1/4 h-80 w-80 rounded-full bg-[#1a7cc4]/20 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -bottom-16 right-1/4 h-72 w-72 rounded-full bg-[#0f62a3]/15 blur-3xl" />
 
       {/* Small floating accent circles */}
       <div aria-hidden className="pointer-events-none absolute left-[12%] top-[22%] h-6 w-6 animate-bounce rounded-full bg-[#3eaef2]/60" style={{ animationDuration: "4s" }} />
       <div aria-hidden className="pointer-events-none absolute left-[20%] bottom-[18%] h-10 w-10 rounded-full border-4 border-[#2a95dd]/40" />
-      <div aria-hidden className="pointer-events-none absolute right-[14%] top-[18%] h-12 w-12 rounded-full border-4 border-[#f97316]/40" />
+      <div aria-hidden className="pointer-events-none absolute right-[14%] top-[18%] h-12 w-12 rounded-full border-4 border-[#3eaef2]/40" />
       <div aria-hidden className="pointer-events-none absolute right-[22%] bottom-[22%] h-5 w-5 animate-bounce rounded-full bg-[#1a7cc4]/50" style={{ animationDuration: "5s" }} />
-      <div aria-hidden className="pointer-events-none absolute left-[8%] top-[60%] h-3 w-3 rounded-full bg-[#f97316]/60" />
+      <div aria-hidden className="pointer-events-none absolute left-[8%] top-[60%] h-3 w-3 rounded-full bg-[#1a7cc4]/50" />
       <div aria-hidden className="pointer-events-none absolute right-[8%] top-[55%] h-4 w-4 rounded-full bg-[#3eaef2]/60" />
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
 
         {/* Title */}
-        <h2 className="mb-16 text-center text-3xl font-bold uppercase text-[#3eaef2] sm:text-4xl">
+        <h2 className="mb-6 text-center text-2xl font-bold uppercase text-[#3eaef2] sm:mb-8 sm:text-3xl">
           What We Do
         </h2>
 
         {/* Ring of focus circles */}
-        <div className="relative mx-auto aspect-square w-[320px] max-w-full sm:w-[480px]">
+        <div className="relative mx-auto aspect-square w-[320px] max-w-full sm:w-[460px]">
 
           {/* Soft glow behind the whole ring */}
           <div aria-hidden className="absolute inset-[-6%] rounded-full bg-[radial-gradient(circle,rgba(62,174,242,0.14),transparent_65%)]" />
@@ -108,11 +108,9 @@ export default function LocalActionProjects() {
             <span className="text-sm font-extrabold uppercase leading-tight text-sky-700 sm:text-lg">
               SUMO
               <br />
-              Africa&apos;s
+              Africa
             </span>
-            <span className="mt-1 text-[10px] font-bold uppercase tracking-wide text-orange-500 sm:text-xs">
-              Areas of Focus
-            </span>
+            <span className="mt-2 h-[2px] w-8 rounded-full bg-[#3eaef2]" />
           </div>
 
           {/* Outer circles, evenly spaced, starting at the top */}

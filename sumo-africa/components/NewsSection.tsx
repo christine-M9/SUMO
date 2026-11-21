@@ -1,12 +1,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function NewsSection() {
   const posts = [
     {
-      category: "CONFERENCE",
-      title: "AUSTRALASIAN ROAD SAFETY CONFERENCE 2025",
+      id: 8,
+      category: "Conference",
+      title: "Australasian Road Safety Conference 2025",
       excerpt:
         "We were honoured to participate in the Australasian Road Safety Conference 2025 in Perth, where SUMO Africa shared its work on strengthening multi-sectoral collaboration to improve road safety data systems in Kenya.",
       image: "/images/sumo20.jpeg",
@@ -29,7 +31,8 @@ SUMO Africa remains committed to strengthening partnerships, improving road safe
     },
 
     {
-      category: "ROAD SAFETY",
+      id: 7,
+      category: "Road Safety",
       title:
         "SUMO Africa Conducts SR4S Road Safety Assessment at Children's Garden Home & School",
       excerpt:
@@ -53,8 +56,9 @@ Through the Safe Steps to School Project, SUMO Africa remains committed to worki
     },
 
     {
-      category: "EVENTS",
-      title: "SPEAKING AT THE GLOBAL MINISTERIAL CONFERENCE ON ROAD SAFETY 2025",
+      id: 9,
+      category: "Events",
+      title: "Speaking at the Global Ministerial Conference on Road Safety 2025",
       excerpt:
         "SUMO Africa was honored to participate in the 4th Global Ministerial Conference on Road Safety...",
       image: "/images/sumo22.jpeg",
@@ -64,127 +68,123 @@ Through the Safe Steps to School Project, SUMO Africa remains committed to worki
     
   ];
 
+  const [featured, ...rest] = posts;
+
   return (
-    <section className="py-24 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Header */}
-        <div className="flex items-center justify-between mb-12 ml-[40px]">
-
-          <div>
-            <p className="text-orange-500 text-sm font-semibold tracking-wider mb-2">
-              NEWS & UPDATES
-            </p>
-
-            <h2 className="text-3xl font-bold text-[#3eaef2] ml-[0px]">
-              LATEST FROM SUMO AFRICA
-            </h2>
-          </div>
-
-        </div>
-{/* NEWS LAYOUT */}
-<div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10">
-
-  {/* FEATURED ARTICLE */}
-  <Link
-    href="/news"
-    className="group overflow-hidden bg-white border border-gray-200 hover:border-[#3eaef2] transition-all duration-500"
-  >
-    <div className="relative h-[400px] overflow-hidden">
-      <Image
-        src={posts[0].image}
-        alt={posts[0].title}
-        fill
-        className="object-cover transition duration-700 group-hover:scale-105"
+    <section className="relative overflow-hidden bg-gradient-to-br from-sky-100/70 via-white to-sky-50 py-16 sm:py-20">
+      {/* Faint dot pattern, fading out toward the edges */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{
+          backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
+          maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+          WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+        }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-[#071a2f]/90 via-transparent to-transparent" />
+      {/* Soft color glows */}
+      <div aria-hidden className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-[#3eaef2]/20 blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute -bottom-24 -right-32 h-96 w-96 rounded-full bg-[#1a7cc4]/15 blur-3xl" />
 
-      <div className="absolute bottom-0 left-0 p-8 text-white">
-        <span className="inline-block bg-orange-500 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em]">
-          {posts[0].category}
-        </span>
+      {/* Large faint rings in the corners */}
+      <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border-[32px] border-[#3eaef2]/10" />
+      <div aria-hidden className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 animate-spin rounded-full border-2 border-dashed border-[#3eaef2]/30" style={{ animationDuration: "50s" }} />
 
-        <h3 className="mt-5 text-4xl font-bold leading-tight max-w-xl">
-          {posts[0].title}
-        </h3>
-      </div>
-    </div>
+      {/* Small floating accent circles */}
+      <div aria-hidden className="pointer-events-none absolute left-[4%] top-[12%] h-5 w-5 animate-bounce rounded-full bg-[#3eaef2]/50" style={{ animationDuration: "4s" }} />
+      <div aria-hidden className="pointer-events-none absolute right-[1.5%] top-[55%] h-10 w-10 rounded-full border-4 border-[#2a95dd]/30" />
+      <div aria-hidden className="pointer-events-none absolute bottom-[8%] right-[30%] h-4 w-4 animate-bounce rounded-full bg-[#1a7cc4]/40" style={{ animationDuration: "5s" }} />
+      <div aria-hidden className="pointer-events-none absolute bottom-[14%] left-[6%] h-3 w-3 rounded-full bg-[#3eaef2]/60" />
 
-    <div className="p-8">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
 
-      <p className="text-gray-600 leading-8">
-        {posts[0].excerpt}
-      </p>
+        {/* Title */}
+        <h2 className="mb-10 text-center text-2xl font-bold uppercase text-[#3eaef2] sm:mb-12 sm:text-3xl">
+          Latest From SUMO Africa
+        </h2>
 
-      <div className="mt-8 flex items-center gap-3 text-[#3eaef2] font-semibold group-hover:gap-5 transition-all">
-        Read Story →
-      </div>
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8">
 
-    </div>
-  </Link>
+          {/* ===== Featured story ===== */}
+          <Link
+            href={`/news/${featured.id}`}
+            className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#3eaef2]/60 hover:shadow-[0_18px_40px_rgba(62,174,242,0.18)]"
+          >
+            <div className="relative h-56 overflow-hidden sm:h-72">
+              <Image
+                src={featured.image}
+                alt={featured.title}
+                fill
+                sizes="(min-width: 1024px) 600px, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#06132e]/95 via-[#06132e]/40 to-transparent" />
+              <span className="absolute left-4 top-4 rounded-full bg-[#3eaef2] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow sm:left-5 sm:top-5">
+                {featured.category}
+              </span>
+              <h3 className="absolute bottom-0 left-0 p-5 text-xl font-extrabold leading-tight text-[#3eaef2] sm:p-6 sm:text-2xl">
+                {featured.title}
+              </h3>
+            </div>
 
-  {/* NEWS LIST */}
-  <div className="flex flex-col divide-y divide-gray-200 bg-white border border-gray-200">
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <p className="line-clamp-3 text-sm leading-7 text-slate-600 sm:text-[15px]">{featured.excerpt}</p>
+              <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-bold uppercase tracking-wide text-[#3eaef2]">
+                Read Story
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+            </div>
+          </Link>
 
-    {posts.slice(1).map((post, index) => (
+          {/* ===== More stories ===== */}
+          <div className="flex min-w-0 flex-col gap-6">
+            {rest.map((post) => (
+              <Link
+                key={post.id}
+                href={`/news/${post.id}`}
+                className="group flex min-w-0 flex-1 gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#3eaef2]/60 hover:shadow-[0_18px_40px_rgba(62,174,242,0.18)] sm:gap-5 sm:p-5"
+              >
+                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl sm:h-auto sm:w-36">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    sizes="(min-width: 640px) 144px, 96px"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
 
-      <Link
-        key={index}
-        href="/news"
-        className="group flex gap-5 p-6 hover:bg-gray-50 transition"
-      >
-
-        <div className="relative w-40 h-32 flex-shrink-0 overflow-hidden">
-
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            className="object-cover group-hover:scale-105 transition duration-700"
-          />
-
-        </div>
-
-        <div className="flex-1">
-
-          <p className="text-xs uppercase tracking-[0.18em] font-semibold text-orange-500 mb-3">
-            {post.category}
-          </p>
-
-          <h3 className="text-xl font-bold leading-snug text-[#071a2f] group-hover:text-[#3eaef2] transition">
-            {post.title}
-          </h3>
-
-          <p className="mt-3 text-sm text-gray-600 leading-7 line-clamp-3">
-            {post.excerpt}
-          </p>
-
-          <div className="mt-4 text-[#3eaef2] font-semibold">
-            Read →
+                <div className="flex min-w-0 flex-1 flex-col">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#3eaef2]">
+                    {post.category}
+                  </span>
+                  <h3 className="mt-1.5 line-clamp-2 text-sm font-extrabold leading-snug text-[#3eaef2] transition-colors group-hover:text-[#1a7cc4] sm:text-base">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 hidden text-sm leading-6 text-slate-600 sm:line-clamp-2">{post.excerpt}</p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-xs font-bold uppercase tracking-wide text-[#3eaef2]">
+                    Read
+                    <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
-
         </div>
 
-      </Link>
-
-    ))}
-
-  </div>
-
-</div>
-
-{/* VIEW ALL */}
-<div className="mt-14 flex justify-center">
-  <Link
-    href="/news"
-    className="inline-flex items-center gap-3 rounded-md bg-[#3eaef2] px-8 py-4 font-semibold text-[#071521]"
-  >
-    VIEW ALL NEWS
-    <span>→</span>
-  </Link>
-</div>
- </div>
+        {/* View all */}
+        <div className="mt-10 flex justify-center sm:mt-12">
+          <Link
+            href="/news"
+            className="group inline-flex h-12 items-center gap-2 rounded-full bg-[#3eaef2] px-8 text-sm font-bold uppercase tracking-wide text-white shadow-[0_10px_25px_rgba(62,174,242,0.35)] transition hover:-translate-y-0.5 hover:bg-[#2a95dd]"
+          >
+            View All News
+            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }

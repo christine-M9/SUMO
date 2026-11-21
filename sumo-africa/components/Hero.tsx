@@ -1,54 +1,67 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
-      {/* Static Background */}
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden text-center text-white">
+      {/* Background photo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/sumo1.jpeg')",
-        }}
+        style={{ backgroundImage: "url('/images/sumo1.jpeg')" }}
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-[#0c1b2a]/50 z-10" />
+      {/* Dark overlay so the text is easy to read */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#06132e]/80 via-[#06132e]/60 to-[#06132e]/85" />
+
+      {/* Soft theme glows */}
+      <div aria-hidden className="absolute -left-32 top-1/4 h-80 w-80 rounded-full bg-[#3eaef2]/25 blur-3xl" />
+      <div aria-hidden className="absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-[#1a7cc4]/30 blur-3xl" />
 
       {/* Content */}
-      <div className="relative z-20 max-w-3xl">
-        <p className="text-[#3eaef2] text-6xl tracking-widest mb-4 font-extrabold">
-          SUMO AFRICA
-        </p>
-
-        <h1 className="text-3xl font-bold leading-tight">
-          <span className="text-[#3eaef2]">INCLUSIVE & SUSTAINABLE MOBILITY</span>
-          <br />
-          {/* <span className="text-[#3eaef2]">SUSTAINABLE FUTURE</span> */}
+      <div className="relative z-10 mx-auto max-w-4xl px-5 pb-16 pt-28 sm:pt-32">
+        <h1 className="text-4xl font-black uppercase tracking-[0.12em] text-white sm:text-6xl lg:text-7xl">
+          SUMO <span className="text-[#3eaef2]">Africa</span>
         </h1>
 
-        <div className="flex justify-center gap-5 mt-10">
+        {/* Animated accent line */}
+        <div className="relative mx-auto mt-5 h-[2px] w-32 overflow-hidden rounded-full bg-white/15 sm:w-40">
+          <div className="animate-slideLine absolute inset-y-0 left-0 w-full bg-[#3eaef2]" />
+        </div>
+
+        <p className="mt-5 text-base font-bold uppercase tracking-[0.18em] text-[#7cc8f5] sm:text-xl md:text-2xl">
+          Inclusive &amp; Sustainable Mobility
+        </p>
+
+        {/* Buttons */}
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 px-8 py-4 font-semibold text-white transition duration-300"
+            className="inline-flex h-12 w-52 items-center justify-center gap-2 rounded-full bg-[#3eaef2] text-sm font-bold uppercase tracking-wide text-white shadow-[0_10px_25px_rgba(62,174,242,0.35)] transition hover:-translate-y-0.5 hover:bg-[#2a95dd] sm:w-auto sm:px-8"
           >
-            LEARN MORE →
+            Learn More
+            <ArrowRight size={16} />
           </Link>
 
           <Link
             href="/contact"
-            className="inline-flex items-center bg-orange-500 hover:bg-orange-600 px-8 py-4 font-semibold text-white transition duration-300"
+            className="inline-flex h-12 w-52 items-center justify-center rounded-full border-2 border-white/80 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-[#3eaef2] hover:bg-[#3eaef2] sm:w-auto sm:px-8"
           >
-            GET INVOLVED
+            Get Involved
           </Link>
         </div>
-
-        {/* Animated Orange Line */}
-        <div className="relative mt-10 w-40 h-[1px] mx-auto overflow-hidden">
-          <div className="absolute top-0 left-0 h-[1px] w-full bg-orange-500 animate-slideLine"></div>
-        </div>
       </div>
+
+      {/* Scroll down hint */}
+      <a
+        href="#next"
+        aria-label="Scroll down"
+        className="absolute bottom-6 left-1/2 z-10 flex h-10 w-10 -translate-x-1/2 animate-bounce items-center justify-center rounded-full border border-white/40 text-white/80 transition hover:border-[#3eaef2] hover:text-[#3eaef2]"
+      >
+        <ChevronDown size={20} />
+      </a>
+      <span id="next" className="absolute bottom-0" />
 
       <style jsx>{`
         @keyframes slideLine {
