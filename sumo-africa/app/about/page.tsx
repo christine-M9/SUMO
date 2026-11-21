@@ -11,6 +11,10 @@ import {
   Megaphone,
   CheckCircle2,
   ArrowRight,
+  Lightbulb,
+  RefreshCw,
+  TrendingUp,
+  Globe,
   MapPin,
   Mail,
   Send,
@@ -158,73 +162,129 @@ export default function AboutPage() {
 ========================================================= */}
 <section
   id="journey"
-  className="my-8 bg-[#3eaef2] py-10 sm:my-10 sm:py-12"
+  className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-orange-50 py-24 sm:py-28"
 >
-  <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
+  {/* Faint dot pattern, fading out toward the edges */}
+  <div
+    aria-hidden
+    className="pointer-events-none absolute inset-0 opacity-60"
+    style={{
+      backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)",
+      backgroundSize: "22px 22px",
+      maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+      WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+    }}
+  />
 
-    {/* Heading */}
-    <div className="mb-8 text-center">
-      <p className="mb-1 text-[14px] font-semibold uppercase tracking-[0.2em] text-white">
-        Our Approach
-      </p>
+  {/* Soft color glows */}
+  <div aria-hidden className="pointer-events-none absolute -left-24 top-10 h-80 w-80 rounded-full bg-[#3eaef2]/30 blur-3xl" />
+  <div aria-hidden className="pointer-events-none absolute -right-24 top-1/3 h-96 w-96 rounded-full bg-[#f97316]/20 blur-3xl" />
+  <div aria-hidden className="pointer-events-none absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-[#1a7cc4]/15 blur-3xl" />
 
-      <h3 className="text-2xl font-extrabold uppercase tracking-tight text-[#06132e] sm:text-3xl">
-        From Idea To Impact
-      </h3>
-    </div>
+  {/* Small floating accent circles */}
+  <div aria-hidden className="pointer-events-none absolute left-[12%] top-[20%] h-6 w-6 animate-bounce rounded-full bg-[#3eaef2]/60" style={{ animationDuration: "4s" }} />
+  <div aria-hidden className="pointer-events-none absolute right-[14%] top-[16%] h-12 w-12 rounded-full border-4 border-[#f97316]/40" />
+  <div aria-hidden className="pointer-events-none absolute left-[18%] bottom-[16%] h-10 w-10 rounded-full border-4 border-[#2a95dd]/40" />
+  <div aria-hidden className="pointer-events-none absolute right-[20%] bottom-[20%] h-5 w-5 animate-bounce rounded-full bg-[#1a7cc4]/50" style={{ animationDuration: "5s" }} />
 
-    {/* Process */}
-    <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:flex-nowrap lg:gap-2">
-      {[
-        {
-          title: "Pilot",
-          text: "Community-based mobility solutions.",
-        },
-        {
-          title: "Refine",
-          text: "Using data to improve interventions.",
-        },
-        {
-          title: "Scale",
-          text: "Expanding successful models countywide.",
-        },
-        {
-          title: "Replicate",
-          text: "Supporting adoption across Africa.",
-        },
-      ].map((step, index, steps) => (
-        <div
-          key={step.title}
-          className="flex flex-col items-center lg:flex-row"
-        >
-          {/* Circle */}
-          <div className="flex aspect-square w-[150px] flex-none flex-col items-center justify-center rounded-full border-2 border-[#06132e]/80 bg-white/20 px-5 text-center backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/30 sm:w-[160px]">
-            <h4 className="text-sm font-extrabold uppercase tracking-wide text-[#06132e]">
-              {step.title}
-            </h4>
+  <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-8">
 
-            <p className="mt-2 max-w-[115px] text-[11px] leading-4 text-[#06132e]/70">
-              {step.text}
-            </p>
+    {/* Title */}
+    <h2 className="mb-14 text-center text-3xl font-bold uppercase text-[#3eaef2] sm:text-4xl">
+      Our Approach
+    </h2>
+
+    {/* Ring of steps */}
+    {(() => {
+      const steps = [
+        { title: "Pilot", text: "Community based solutions", icon: Lightbulb, color: "#3eaef2" },
+        { title: "Refine", text: "Data driven improvement", icon: RefreshCw, color: "#2a95dd" },
+        { title: "Scale", text: "Expanding countywide", icon: TrendingUp, color: "#1a7cc4" },
+        { title: "Replicate", text: "Adoption across Africa", icon: Globe, color: "#0f62a3" },
+      ]
+      const radius = 36
+
+      return (
+        <div className="relative mx-auto aspect-square w-[320px] max-w-full sm:w-[480px]">
+
+          {/* Soft glow behind the ring */}
+          <div aria-hidden className="absolute inset-[-6%] rounded-full bg-[radial-gradient(circle,rgba(62,174,242,0.14),transparent_65%)]" />
+
+          {/* Slowly turning outer ring */}
+          <div
+            aria-hidden
+            className="absolute inset-[2%] animate-spin rounded-full border border-dashed border-sky-200"
+            style={{ animationDuration: "60s" }}
+          />
+
+          {/* Path ring the steps sit on */}
+          <div className="absolute inset-[14%] rounded-full border-2 border-dashed border-[#3eaef2]/40" />
+
+          {/* Arrows between steps, pointing clockwise */}
+          {steps.map((step, i) => {
+            const angle = ((i + 0.5) / steps.length) * 2 * Math.PI - Math.PI / 2
+            const left = 50 + radius * Math.cos(angle)
+            const top = 50 + radius * Math.sin(angle)
+            const rotate = (angle * 180) / Math.PI + 90
+
+            return (
+              <div
+                key={`arrow-${step.title}`}
+                aria-hidden
+                className="absolute flex h-7 w-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#2a95dd] shadow-md sm:h-9 sm:w-9"
+                style={{ left: `${left}%`, top: `${top}%` }}
+              >
+                <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2.5} style={{ transform: `rotate(${rotate}deg)` }} />
+              </div>
+            )
+          })}
+
+          {/* Center circle */}
+          <div className="absolute left-1/2 top-1/2 flex h-[110px] w-[110px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-white text-center shadow-[0_10px_30px_rgba(15,23,42,0.08)] sm:h-[160px] sm:w-[160px]">
+            <span className="text-[10px] font-bold uppercase tracking-wide text-orange-500 sm:text-xs">
+              From Idea
+            </span>
+            <span className="mt-0.5 text-sm font-extrabold uppercase leading-tight text-sky-700 sm:text-lg">
+              To Impact
+            </span>
           </div>
 
-          {/* Arrow */}
-          {index < steps.length - 1 && (
-            <>
-              {/* Mobile: downward arrow */}
-              <span className="my-1 text-2xl font-light text-[#06132e]/60 lg:hidden">
-                ↓
-              </span>
+          {/* Step circles, starting at the top and going clockwise */}
+          {steps.map((step, i) => {
+            const Icon = step.icon
+            const angle = (i / steps.length) * 2 * Math.PI - Math.PI / 2
+            const left = 50 + radius * Math.cos(angle)
+            const top = 50 + radius * Math.sin(angle)
 
-              {/* Desktop: horizontal arrow */}
-              <span className="mx-2 hidden text-2xl font-light text-[#06132e]/60 lg:block">
-                →
-              </span>
-            </>
-          )}
+            return (
+              <div
+                key={step.title}
+                className="absolute -translate-x-1/2 -translate-y-1/2"
+                style={{ left: `${left}%`, top: `${top}%` }}
+              >
+                <div
+                  className="relative flex h-[96px] w-[96px] flex-col items-center justify-center rounded-full border-4 border-white p-2 text-center text-white shadow-[0_10px_25px_rgba(15,23,42,0.18)] transition-transform duration-300 hover:scale-110 sm:h-[140px] sm:w-[140px] sm:p-3"
+                  style={{ backgroundColor: step.color }}
+                >
+                  {/* Step number badge */}
+                  <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white text-[10px] font-extrabold text-[#1a7cc4] shadow ring-2 ring-[#3eaef2] sm:h-8 sm:w-8 sm:text-xs">
+                    {i + 1}
+                  </span>
+
+                  <Icon className="h-6 w-6 shrink-0 sm:h-9 sm:w-9" strokeWidth={1.75} />
+                  <h4 className="mt-1 text-[11px] font-extrabold uppercase tracking-wide sm:mt-2 sm:text-sm">
+                    {step.title}
+                  </h4>
+                  <p className="mt-0.5 text-[8px] leading-tight text-white/90 sm:mt-1 sm:text-[11px]">
+                    {step.text}
+                  </p>
+                </div>
+              </div>
+            )
+          })}
         </div>
-      ))}
-    </div>
+      )
+    })()}
   </div>
 </section>
 {/* =========================================================
