@@ -9,22 +9,18 @@ import {
   Users,
   Handshake,
   Megaphone,
-  CheckCircle2,
   ArrowRight,
   Lightbulb,
   RefreshCw,
   TrendingUp,
   Globe,
-  MapPin,
-  Mail,
   Send,
  
 } from "lucide-react"
-import { FaXTwitter, FaLinkedin, FaFacebook } from "react-icons/fa6";
 
-import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import FocusAreas from "@/components/FocusAreas"
 
 const focusAreas = [
   {
@@ -107,7 +103,6 @@ const focusAreas = [
 ]
 
 export default function AboutPage() {
-  const [selected, setSelected] = useState(0)
 
   return (
     <>
@@ -290,404 +285,114 @@ export default function AboutPage() {
 {/* =========================================================
     OUR FOCUS AREAS
 ========================================================= */}
-<section className="my-8 overflow-hidden bg-[#3eaef2]/10 py-16 sm:my-10 sm:py-20 md:my-12 md:py-24">
-  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10">
-
-    {/* Heading */}
-    <div className="mb-10 text-center sm:mb-14 md:mb-16">
-      <h2 className="text-[1.8rem] font-extrabold uppercase leading-tight text-[#071630] sm:text-[2.4rem] md:text-[3rem]">
-        OUR FOCUS AREAS
-      </h2>
-    </div>
-
-    {/* Main Layout */}
-    <div className="grid min-w-0 grid-cols-1 items-start gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
-
-      {/* =====================================================
-          LEFT — SELECTED FOCUS AREA
-      ===================================================== */}
-      <div className="min-w-0">
-
-    {/* IMAGE */}
-<div className="relative h-[300px] overflow-hidden rounded-3xl shadow-[0_20px_45px_rgba(0,0,0,0.16)] sm:h-[350px] md:h-[350px]">
-  <img
-    src={focusAreas[selected].image}
-    alt={focusAreas[selected].title}
-    className="h-full w-full object-cover transition-all duration-700"
-  />
-</div>
-
-{/* SELECTED FOCUS AREA TEXT */}
-<div className="mt-6">
-
-  {/* Small label */}
-  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-orange-500">
-    {focusAreas[selected].title}
-  </p>
-
-  {/* Title */}
-  <h3 className="text-2xl font-extrabold uppercase leading-tight text-[#071630] sm:text-3xl">
-    {focusAreas[selected].title}
-  </h3>
-
-  {/* Description */}
-  <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-600 sm:text-[15px]">
-    {focusAreas[selected].description}
-  </p>
-
-</div>
-
-{/* KEY ACTIVITIES */}
-<div className="mt-6 rounded-3xl border border-gray-200 bg-[#f8fafc] p-5 sm:p-6">
-
-  <div className="mb-5 flex items-center justify-between gap-4">
-    <h3 className="text-lg font-bold text-[#071630]">
-      Key Activities
-    </h3>
-
-    <div className="h-1 w-10 flex-shrink-0 rounded-full bg-[#3eaef2] sm:w-12" />
-  </div>
-
-  <div className="space-y-3">
-    {focusAreas[selected].points.map((point) => (
-      <div
-        key={point}
-        className="flex min-w-0 items-start gap-3"
-      >
-        <CheckCircle2
-          size={18}
-          className="mt-1 flex-shrink-0 text-orange-500"
-        />
-
-        <span className="min-w-0 text-sm leading-6 text-gray-700 sm:text-[15px]">
-          {point}
-        </span>
-      </div>
-    ))}
-  </div>
-
-</div>
-      </div>
-
-      {/* =====================================================
-          RIGHT — FOCUS AREA SELECTOR
-      ===================================================== */}
-      <div className="min-w-0">
-
-        {/* Header */}
-        <div className="mb-5 sm:mb-6">
-
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-500 sm:text-sm sm:tracking-[0.18em]">
-            Select a Focus Area
-          </p>
-
-          <h3 className="mt-2 text-xl font-bold text-[#071630] sm:text-2xl">
-            Explore Our Work
-          </h3>
-
-        </div>
-
-        {/* Focus Area List */}
-        <div className="max-w-xl space-y-3">
-
-          {focusAreas.map((item, index) => {
-            const Icon = item.icon
-
-            return (
-              <button
-                key={item.title}
-                onClick={() => setSelected(index)}
-                className={`group w-full min-w-0 rounded-2xl border p-4 text-left transition-all duration-300 sm:p-5 ${
-                  selected === index
-                    ? "border-[#3eaef2] bg-[#3eaef2] shadow-xl"
-                    : "border-gray-200 bg-white hover:border-[#3eaef2] hover:shadow-lg"
-                }`}
-              >
-
-                <div className="flex min-w-0 items-start gap-3 sm:gap-4">
-
-                  {/* ICON */}
-                  <div
-                    className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl transition sm:h-12 sm:w-12 ${
-                      selected === index
-                        ? "bg-white"
-                        : "bg-[#3eaef2] group-hover:bg-orange-500"
-                    }`}
-                  >
-
-                    <Icon
-                      size={21}
-                      className={
-                        selected === index
-                          ? "text-[#3eaef2]"
-                          : "text-white"
-                      }
-                    />
-
-                  </div>
-
-                  {/* TEXT */}
-                  <div className="min-w-0 flex-1">
-
-                    <h4
-                      className={`break-words text-sm font-bold uppercase leading-5 transition sm:text-base ${
-                        selected === index
-                          ? "text-[#071630]"
-                          : "text-[#071630]"
-                      }`}
-                    >
-                      {item.title}
-                    </h4>
-
-                    <p
-                      className={`mt-1.5 text-xs leading-5 transition sm:mt-2 sm:text-sm sm:leading-6 ${
-                        selected === index
-                          ? "text-[#071630]/70"
-                          : "text-gray-500"
-                      }`}
-                    >
-                      {item.description.substring(0, 90)}...
-                    </p>
-
-                  </div>
-
-                </div>
-              </button>
-            )
-          })}
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+<FocusAreas items={focusAreas} />
 {/* =========================================================
     WHAT DRIVES US — CORE VALUES
 ========================================================= */}
-<section className="bg-white py-20 sm:py-24 lg:py-28">
-  <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+<section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-sky-100/60 py-16 sm:py-20">
+  {/* Faint dot pattern, fading out toward the edges */}
+  <div
+    aria-hidden
+    className="pointer-events-none absolute inset-0 opacity-60"
+    style={{
+      backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)",
+      backgroundSize: "22px 22px",
+      maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+      WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+    }}
+  />
 
-    {/* =====================================================
-        SECTION INTRO
-    ===================================================== */}
-    <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end lg:mb-16">
+  {/* Soft color glows */}
+  <div aria-hidden className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full bg-[#3eaef2]/25 blur-3xl" />
+  <div aria-hidden className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#1a7cc4]/20 blur-3xl" />
+  <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3eaef2]/10 blur-3xl" />
 
-      <div>
-        <p className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-orange-500">
-          What Drives Us
-        </p>
+  {/* Large faint rings in the corners */}
+  <div aria-hidden className="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full border-[30px] border-[#3eaef2]/10" />
+  <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 animate-spin rounded-full border-2 border-dashed border-[#3eaef2]/30" style={{ animationDuration: "50s" }} />
 
-        <h2 className="text-3xl font-bold tracking-tight text-[#3eaef2] sm:text-2xl lg:text-2xl">
-          Our Core Values
-        </h2>
-      </div>
+  {/* Small floating accent circles */}
+  <div aria-hidden className="pointer-events-none absolute left-[8%] top-[18%] h-5 w-5 animate-bounce rounded-full bg-[#3eaef2]/50" style={{ animationDuration: "4s" }} />
+  <div aria-hidden className="pointer-events-none absolute right-[10%] bottom-[16%] h-10 w-10 rounded-full border-4 border-[#2a95dd]/35" />
+  <div aria-hidden className="pointer-events-none absolute right-[6%] top-[45%] h-4 w-4 animate-bounce rounded-full bg-[#1a7cc4]/40" style={{ animationDuration: "5s" }} />
+  <div aria-hidden className="pointer-events-none absolute left-[14%] bottom-[12%] h-3 w-3 rounded-full bg-[#f97316]/50" />
 
-      <p className="max-w-md text-sm leading-6 text-gray-500 sm:text-base">
-        The principles that guide our work, our partnerships,
-        and our commitment to transforming mobility across Africa.
-      </p>
+  <div className="relative mx-auto max-w-5xl px-4 sm:px-6 md:px-8">
 
-    </div>
+    {/* Title */}
+    <h2 className="mb-10 text-center text-3xl font-bold uppercase text-[#3eaef2] sm:text-4xl">
+      Our Core Values
+    </h2>
 
-
-    {/* =====================================================
-        VALUES GRID
-    ===================================================== */}
+    {/* Value cards */}
     <div className="grid gap-5 md:grid-cols-3">
+      {[
+        {
+          title: "Inclusivity",
+          text: "We believe mobility should be accessible, equitable, and responsive to the needs of every person and community.",
+          icon: Users,
+          color: "#3eaef2",
+        },
+        {
+          title: "Data-Driven",
+          text: "We use research, evidence, and reliable data to understand challenges and inform solutions that create measurable impact.",
+          icon: ChartColumn,
+          color: "#1a7cc4",
+        },
+        {
+          title: "Collaboration",
+          text: "We bring together communities, institutions, and partners to create stronger and lasting mobility solutions.",
+          icon: Handshake,
+          color: "#0f62a3",
+        },
+      ].map((value, i) => {
+        const Icon = value.icon
 
+        return (
+          <article
+            key={value.title}
+            className="group relative overflow-hidden rounded-2xl p-6 text-white shadow-[0_14px_35px_rgba(15,23,42,0.12)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(15,23,42,0.18)] sm:p-7"
+            style={{ backgroundColor: value.color }}
+          >
+            {/* Large faded number */}
+            <span
+              aria-hidden
+              className="absolute right-4 top-3 text-6xl font-black leading-none text-white/15 transition-colors duration-500 group-hover:text-white/25"
+            >
+              {String(i + 1).padStart(2, "0")}
+            </span>
 
-      {/* ===================================================
-          01 — INCLUSIVITY
-      =================================================== */}
-      <article
-        className="
-          group relative min-h-[390px]
-          overflow-hidden rounded-[1.5rem]
-          bg-[#eaf7fd]
-          p-7 sm:p-8 lg:p-9
-          transition-all duration-500
-          hover:-translate-y-2
-        "
-      >
+            {/* Decorative rings */}
+            <div aria-hidden className="absolute -bottom-14 -left-14 h-36 w-36 rounded-full border-[22px] border-white/10 transition-transform duration-700 group-hover:scale-125" />
 
-        {/* Large number */}
-        <span
-          className="
-            absolute -right-3 -top-8
-            text-[150px] font-black leading-none
-            text-[#3eaef2]/10
-            transition-all duration-500
-            group-hover:text-[#3eaef2]/20
-          "
-        >
-          01
-        </span>
+            <div className="relative z-10">
+              {/* Icon */}
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md">
+                <Icon size={22} style={{ color: value.color }} />
+              </span>
 
+              <h3 className="mt-5 text-2xl font-extrabold tracking-tight">
+                {value.title}
+              </h3>
 
-        {/* Content */}
-        <div className="relative z-10">
+              <div className="mt-3 h-[2px] w-10 bg-white/80 transition-all duration-500 group-hover:w-20" />
 
-          <h3 className="mt-20 text-3xl font-extrabold tracking-tight text-[#071521] lg:text-[34px]">
-            Inclusivity
-          </h3>
-
-          <div className="mt-5 h-[2px] w-10 bg-[#3eaef2] transition-all duration-500 group-hover:w-20" />
-
-          <p className="mt-6 max-w-sm text-[15px] leading-7 text-[#071521]/60">
-            We believe mobility should be accessible,
-            equitable, and responsive to the needs of
-            every person and community.
-          </p>
-
-        </div>
-
-
-        {/* Decorative corner */}
-        <div
-          className="
-            absolute -bottom-16 -left-16
-            h-40 w-40 rounded-full
-            border-[25px] border-[#3eaef2]/10
-            transition-transform duration-700
-            group-hover:scale-125
-          "
-        />
-
-      </article>
-
-
-
-      {/* ===================================================
-          02 — DATA-DRIVEN
-      =================================================== */}
-      <article
-        className="
-          group relative min-h-[390px]
-          overflow-hidden rounded-[1.5rem]
-          bg-[#071521]
-          p-7 sm:p-8 lg:p-9
-          transition-all duration-500
-          hover:-translate-y-2
-        "
-      >
-
-        {/* Large number */}
-<span
-  className="
-    absolute -right-3 -top-8
-    text-[150px] font-black leading-none
-    text-white
-    transition-all duration-500
-    group-hover:text-[#3eaef2]
-  "
->
-  02
-</span>
-
-
-        {/* Content */}
-        <div className="relative z-10">
-
-          <h3 className="mt-20 text-3xl font-extrabold tracking-tight text-white lg:text-[34px]">
-            Data-Driven
-          </h3>
-
-          <div className="mt-5 h-[2px] w-10 bg-[#3eaef2] transition-all duration-500 group-hover:w-20" />
-
-          <p className="mt-6 max-w-sm text-[15px] leading-7 text-white">
-            We use research, evidence, and reliable data
-            to understand challenges and inform solutions
-            that create measurable impact.
-          </p>
-
-        </div>
-
-
-        {/* Decorative graphic */}
-        <div className="absolute bottom-0 right-0 h-36 w-36 opacity-20">
-
-          <div className="absolute bottom-6 right-6 h-20 w-20 rounded-full border border-[#3eaef2]" />
-
-          <div className="absolute bottom-10 right-10 h-12 w-12 rounded-full border border-[#3eaef2]" />
-
-          <div className="absolute bottom-14 right-14 h-4 w-4 rounded-full bg-[#3eaef2]" />
-
-        </div>
-
-      </article>
-
-
-
-      {/* ===================================================
-          03 — COLLABORATION
-      =================================================== */}
-      <article
-        className="
-          group relative min-h-[390px]
-          overflow-hidden rounded-[1.5rem]
-          bg-[#3eaef2]
-          p-7 sm:p-8 lg:p-9
-          transition-all duration-500
-          hover:-translate-y-2
-        "
-      >
-
-        {/* Large number */}
-        <span
-          className="
-            absolute -right-3 -top-8
-            text-[150px] font-black leading-none
-            text-white/10
-            transition-all duration-500
-            group-hover:text-white/20
-          "
-        >
-          03
-        </span>
-
-
-        {/* Content */}
-        <div className="relative z-10">
-
-          <h3 className="mt-20 text-3xl font-extrabold tracking-tight text-[#071521] lg:text-[34px]">
-            Collaboration
-          </h3>
-
-          <div className="mt-5 h-[2px] w-10 bg-[#071521] transition-all duration-500 group-hover:w-20" />
-
-          <p className="mt-6 max-w-sm text-[15px] leading-7 text-[#071521]/65">
-            We bring together communities, institutions,
-            and partners to create stronger and lasting
-            mobility solutions.
-          </p>
-
-        </div>
-
-
-        {/* Decorative overlapping circles */}
-        <div className="absolute -bottom-16 -right-12 h-44 w-44 rounded-full border-[28px] border-white/10 transition-transform duration-700 group-hover:scale-110" />
-
-        <div className="absolute -bottom-8 -right-4 h-28 w-28 rounded-full border-[18px] border-white/10" />
-
-      </article>
-
+              <p className="mt-4 text-[15px] leading-7 text-white/85">
+                {value.text}
+              </p>
+            </div>
+          </article>
+        )
+      })}
     </div>
 
-
-    {/* =====================================================
-        BOTTOM LINE
-    ===================================================== */}
-    <div className="mt-8 flex items-center gap-4">
-
-      <div className="h-px flex-1 bg-[#071521]/10" />
-
-      <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#071521]/35">
+    {/* Bottom line */}
+    <div className="mt-10 flex items-center gap-4">
+      <div className="h-px flex-1 bg-[#3eaef2]/25" />
+      <span className="text-center text-[11px] font-bold uppercase tracking-[0.2em] text-[#3eaef2]">
         Safe · Inclusive · Sustainable Mobility
       </span>
-
-      <div className="h-px flex-1 bg-[#071521]/10" />
-
+      <div className="h-px flex-1 bg-[#3eaef2]/25" />
     </div>
 
   </div>
@@ -696,294 +401,141 @@ export default function AboutPage() {
       {/* =========================================================
           OUR NETWORK
       ========================================================= */}
-      <section className="my-8 bg-white py-16 sm:my-10 sm:py-20 md:my-12 md:py-24">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10">
-          <div className="mb-10 text-center sm:mb-14">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-orange-500 sm:mb-4 sm:text-sm sm:tracking-[0.22em]">
-              Our Network
-            </p>
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-sky-50 to-white py-16 sm:py-20">
+        {/* Faint dot pattern, fading out toward the edges */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-50"
+          style={{
+            backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+            maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+            WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+          }}
+        />
 
-            <h2 className="mx-auto max-w-3xl text-2xl font-extrabold uppercase leading-tight text-[#071a2f] sm:text-3xl md:text-3xl">
-              Organizations We've Worked With
-            </h2>
-          </div>
+        {/* Soft color glows and accents */}
+        <div aria-hidden className="pointer-events-none absolute -left-32 top-1/4 h-80 w-80 rounded-full bg-[#3eaef2]/20 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#1a7cc4]/15 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute right-[8%] top-[12%] h-10 w-10 rounded-full border-4 border-[#3eaef2]/30" />
+        <div aria-hidden className="pointer-events-none absolute left-[10%] top-[14%] h-4 w-4 animate-bounce rounded-full bg-[#3eaef2]/50" style={{ animationDuration: "4s" }} />
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
-            {[
-              {
-                abbr: "NTSA",
-                full: "National Transport and Safety Authority",
-                logo: "/images/ntsa logo.png",
-              },
-              {
-                abbr: "KENYA POLICE",
-                full: "Kenya National Police Service",
-                logo: "/images/kp logo.jpeg",
-              },
-              {
-                abbr: "KENHA",
-                full: "Kenya National Highways Authority",
-                logo: "/images/kenha logo.jpeg",
-              },
-              {
-                abbr: "KURA",
-                full: "Kenya Urban Roads Authority",
-                logo: "/images/kura logo.png",
-              },
-              {
-                abbr: "MINISTRY OF HEALTH",
-                full: "Ministry of Health Kenya",
-                logo: "/images/mohlogo.jpg",
-              },
-              {
-                abbr: "MINISTRY OF TRANSPORT",
-                full: "Ministry of Transport Kenya",
-                logo: "/images/mot logo.jpeg",
-              },
-              {
-                abbr: "KERRA",
-                full: "Kenya Rural Roads Authority",
-                logo: "/images/kerra logo.jpeg",
-              },
-              {
-                abbr: "NAPTA",
-                full: "National Public Transport Alliance",
-                logo: "/images/naptalogo.png",
-              },
-              {
-                abbr: "ELGIA",
-                full: "Electoral Law and Governance Institute for Africa",
-                logo: "/images/elgia logo.png",
-              },
-              {
-                abbr: "GLOBAL YOUTH COALITION",
-                full: "Global Youth Coalition for Road Safety",
-                logo: "/images/gyfrslogo.jpeg",
-              },
-              {
-                abbr: "YFRS",
-                full: "Youth for Road Safety",
-                logo: "/images/yfrslogo.webp",
-              },
-            ].map((org) => (
+        <div className="relative">
+          {/* Title */}
+          <h2 className="mb-10 px-4 text-center text-3xl font-bold uppercase text-[#3eaef2] sm:mb-12 sm:text-4xl">
+            Our Network
+          </h2>
+
+          {(() => {
+            const orgs = [
+              { abbr: "NTSA", full: "National Transport and Safety Authority", logo: "/images/ntsa logo.png" },
+              { abbr: "Kenya Police", full: "Kenya National Police Service", logo: "/images/kp logo.jpeg" },
+              { abbr: "KeNHA", full: "Kenya National Highways Authority", logo: "/images/kenha logo.jpeg" },
+              { abbr: "KURA", full: "Kenya Urban Roads Authority", logo: "/images/kura logo.png" },
+              { abbr: "Ministry of Health", full: "Ministry of Health Kenya", logo: "/images/mohlogo.jpg" },
+              { abbr: "Ministry of Transport", full: "Ministry of Transport Kenya", logo: "/images/mot logo.jpeg" },
+              { abbr: "KeRRA", full: "Kenya Rural Roads Authority", logo: "/images/kerra logo.jpeg" },
+              { abbr: "NAPTA", full: "National Public Transport Alliance", logo: "/images/naptalogo.png" },
+              { abbr: "ELGIA", full: "Electoral Law and Governance Institute for Africa", logo: "/images/elgia logo.png" },
+              { abbr: "Global Youth Coalition", full: "Global Youth Coalition for Road Safety", logo: "/images/gyfrslogo.jpeg" },
+              { abbr: "YFRS", full: "Youth for Road Safety", logo: "/images/yfrslogo.webp" },
+            ]
+            // Show the list twice so the loop is seamless
+            const loop = [...orgs, ...orgs]
+
+            return (
               <div
-                key={org.abbr}
-                className="flex min-h-[220px] min-w-0 flex-col items-center justify-center border border-gray-200 bg-[#f8f8f8] px-5 py-6 text-center shadow-sm transition hover:shadow-md sm:min-h-[230px]"
+                className="group flex overflow-hidden"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+                }}
               >
-                <Image
-                  src={org.logo}
-                  alt={org.abbr}
-                  width={90}
-                  height={90}
-                  className="mb-4 h-14 w-auto object-contain sm:h-16"
+                <div className="flex w-max shrink-0 animate-marquee gap-5 pr-5 group-hover:[animation-play-state:paused] motion-reduce:animate-none">
+                {loop.map((org, i) => (
+                  <div
+                    key={`${org.abbr}-${i}`}
+                    aria-hidden={i >= orgs.length}
+                    title={org.full}
+                    className="flex h-40 w-56 shrink-0 flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#3eaef2] hover:shadow-[0_12px_28px_rgba(62,174,242,0.20)]"
+                  >
+                    <Image
+                      src={org.logo}
+                      alt={org.abbr}
+                      width={90}
+                      height={90}
+                      className="h-14 w-auto object-contain"
+                    />
+                    <h3 className="mt-3 text-sm font-extrabold uppercase leading-tight text-[#3eaef2]">
+                      {org.abbr}
+                    </h3>
+                    <p className="mt-1 line-clamp-2 text-xs leading-4 text-slate-500">
+                      {org.full}
+                    </p>
+                  </div>
+                ))}
+                </div>
+              </div>
+            )
+          })()}
+        </div>
+      </section>
+
+      {/* =========================================================
+          GLOBAL GOALS
+      ========================================================= */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f62a3] via-[#0b3f73] to-[#06132e] py-16 sm:py-20">
+        {/* Faint dot pattern, fading out toward the edges */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: "radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+            maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+            WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+          }}
+        />
+
+        {/* Soft glows, rings and accents */}
+        <div aria-hidden className="pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full bg-[#3eaef2]/30 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-[#3eaef2]/20 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 animate-spin rounded-full border-2 border-dashed border-white/20" style={{ animationDuration: "50s" }} />
+        <div aria-hidden className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full border-[30px] border-white/5" />
+        <div aria-hidden className="pointer-events-none absolute left-[10%] top-[20%] h-4 w-4 animate-bounce rounded-full bg-[#3eaef2]/60" style={{ animationDuration: "4s" }} />
+        <div aria-hidden className="pointer-events-none absolute right-[12%] bottom-[18%] h-10 w-10 rounded-full border-4 border-[#3eaef2]/40" />
+
+        <div className="relative mx-auto w-full max-w-5xl px-4 text-center sm:px-6 md:px-8">
+          {/* Title */}
+          <h2 className="text-3xl font-bold uppercase text-[#3eaef2] sm:text-4xl">
+            Aligned With Global Goals
+          </h2>
+
+          {/* SDG tiles */}
+          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-3 gap-3 sm:mt-12 sm:gap-5 md:grid-cols-6">
+            {[
+              { src: "/images/sdg3.png", alt: "SDG 3: Good Health and Well-being" },
+              { src: "/images/sdg4.png", alt: "SDG 4: Quality Education" },
+              { src: "/images/sdg5.png", alt: "SDG 5: Gender Equality" },
+              { src: "/images/sdg11.png", alt: "SDG 11: Sustainable Cities and Communities" },
+              { src: "/images/sdg13.png", alt: "SDG 13: Climate Action" },
+              { src: "/images/sdg17.png", alt: "SDG 17: Partnerships for the Goals" },
+            ].map((goal) => (
+              <div
+                key={goal.src}
+                className="overflow-hidden rounded-xl bg-white/10 p-1.5 shadow-[0_10px_25px_rgba(0,0,0,0.25)] ring-1 ring-white/15 transition-all duration-300 hover:-translate-y-2 hover:ring-[#3eaef2] hover:shadow-[0_16px_35px_rgba(62,174,242,0.35)]"
+              >
+                <img
+                  src={goal.src}
+                  alt={goal.alt}
+                  title={goal.alt}
+                  className="aspect-square w-full rounded-lg object-cover"
                 />
-
-                <h3 className="break-words text-sm font-bold uppercase leading-5 text-[#071a2f] sm:text-base">
-                  {org.abbr}
-                </h3>
-
-                <p className="mt-2 max-w-xs text-xs leading-5 text-gray-600 sm:text-sm sm:leading-relaxed">
-                  {org.full}
-                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-     {/* =========================================================
-    GLOBAL GOALS
-========================================================= */}
-<section className="my-8 bg-[#06132e] py-16 sm:my-10 sm:py-20 md:my-12">
-  <div className="mx-auto w-full max-w-7xl px-4 text-center sm:px-6 md:px-8 lg:px-10">
-
-    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-orange-500 sm:mb-4 sm:text-sm sm:tracking-[0.22em]">
-      WHY IT MATTERS
-    </p>
-
-    <h2 className="text-[1.75rem] font-extrabold uppercase leading-tight tracking-tight text-white sm:text-[2.2rem] md:text-[2.7rem]">
-      ALIGNED WITH GLOBAL GOALS
-    </h2>
-
-{/* SDG IMAGES */}
-<div className="mx-auto mt-10 grid max-w-5xl grid-cols-3 sm:mt-14 md:flex md:flex-wrap md:justify-center md:gap-6">
-
-  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
-    <img
-      src="/images/sdg3.png"
-      alt="SDG 3"
-      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
-    />
-  </div>
-
-  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
-    <img
-      src="/images/sdg4.png"
-      alt="SDG 4"
-      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
-    />
-  </div>
-
-  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
-    <img
-      src="/images/sdg5.png"
-      alt="SDG 5"
-      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
-    />
-  </div>
-
-  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
-    <img
-      src="/images/sdg11.png"
-      alt="SDG 11"
-      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
-    />
-  </div>
-
-  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
-    <img
-      src="/images/sdg13.png"
-      alt="SDG 13"
-      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
-    />
-  </div>
-
-  <div className="flex items-center justify-center p-3 sm:p-4 md:p-0">
-    <img
-      src="/images/sdg17.png"
-      alt="SDG 17"
-      className="h-20 w-20 object-contain transition duration-300 hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32"
-    />
-  </div>
-
-</div>
-  </div>
-</section>
-      {/* =========================================================
-          FOOTER
-      ========================================================= */}
-      <footer className="mt-10 bg-[#3eaef2] sm:mt-12 md:mt-16">
-<div className="grid w-full grid-cols-1 gap-10 px-4 py-12 sm:grid-cols-2 sm:gap-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:grid-cols-4 lg:pl-[10%] lg:pr-10">
-          {/* ABOUT */}
-          <div className="min-w-0">
-            <h3 className="font-bold text-[#071521]">
-              SUMO AFRICA
-            </h3>
-
-            <p className="mt-1 text-xs text-[#071521]">
-              INCLUSIVE & SUSTAINABLE MOBILITY
-            </p>
-
-            <p className="mt-4 text-sm leading-6 text-[#071521]">
-              A Nairobi-based NGO advancing road safety and sustainable
-              transport across Africa through advocacy, awareness, education,
-              and research.
-            </p>
-<div className="flex gap-4 mt-5 items-center">
-  <a href="#" aria-label="X (Twitter)">
-    <FaXTwitter
-      size={24}
-      className="text-black transition-transform duration-300 hover:scale-110"
-    />
-  </a>
-
-  <a href="#" aria-label="LinkedIn)">
-    <FaLinkedin
-      size={25}
-      className="text-[#0A66C2] transition-transform duration-300 hover:scale-110"
-    />
-  </a>
-
-  <a href="#" aria-label="Facebook">
-    <FaFacebook
-      size={25}
-      className="text-[#1877F2] transition-transform duration-300 hover:scale-110"
-    />
-  </a>
-</div>
-          </div>
-
-          {/* QUICK LINKS */}
-          <div className="min-w-0">
-            <h4 className="mb-4 font-semibold text-[#071521]">
-              QUICK LINKS
-            </h4>
-
-            <ul className="space-y-2 text-sm text-[#071521]">
-              <li className="cursor-pointer hover:text-white">Home</li>
-              <li className="cursor-pointer hover:text-white">About Us</li>
-              <li className="cursor-pointer hover:text-white">Our Work</li>
-              <li className="cursor-pointer hover:text-white">News</li>
-              <li className="cursor-pointer hover:text-white">Contact</li>
-            </ul>
-          </div>
-
-          {/* PROJECTS + CONTACT */}
-          <div className="min-w-0">
-            <h4 className="mb-4 font-semibold text-[#071521]">
-              LOCAL ACTION PROJECTS
-            </h4>
-
-            <ul className="mb-6 space-y-2 text-sm text-[#071521]">
-              <li className="cursor-pointer hover:text-white">
-                Drive Right
-              </li>
-
-              <li className="cursor-pointer hover:text-white">
-                Safe Steps to School
-              </li>
-            </ul>
-
-            <div className="mb-3 flex min-w-0 gap-2 text-sm text-[#071521]">
-              <MapPin
-                size={16}
-                className="mt-1 flex-shrink-0 text-[#071521]"
-              />
-
-              <p className="min-w-0 leading-6">
-                CVS Plaza, Lenana Road
-                <br />
-                Nairobi, Kenya
-              </p>
-            </div>
-
-            <div className="flex min-w-0 gap-2 text-sm text-[#071521]">
-              <Mail
-                size={16}
-                className="mt-1 flex-shrink-0 text-[#071521]"
-              />
-
-              <p className="min-w-0 break-all">
-                info@sumoafrica.org
-              </p>
-            </div>
-          </div>
-
-{/* GET IN TOUCH */}
-<div className="min-w-0">
-  <h4 className="mb-4 font-semibold text-[#071521]">
-    GET IN TOUCH
-  </h4>
-
-  <p className="mb-5 text-sm leading-6 text-[#071521]">
-    Have a question, partnership idea, or want to learn more about
-    our work? We'd love to hear from you.
-  </p>
-
-  <a
-    href="/contact"
-    className="inline-flex items-center text-sm font-semibold text-[#071521] transition-colors hover:text-white"
-  >
-    Contact Us →
-  </a>
-</div>
-        </div>
-
-        {/* COPYRIGHT */}
-        <div className="border-t border-white/10 px-4 pb-6 pt-6 text-center text-xs text-[#071521] sm:px-6 sm:text-sm">
-          © 2026 SUMO Africa. All rights reserved.
-        </div>
-      </footer>
     </>
   )
 }
