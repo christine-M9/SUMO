@@ -109,7 +109,7 @@ export default function AboutPage() {
       {/* =========================================================
           HERO SECTION
       ========================================================= */}
-      <section className="relative flex min-h-[75vh] items-center overflow-hidden">
+      <section className="relative flex min-h-screen items-center overflow-hidden">
         <img
           src="/images/sumo1.jpeg"
           alt="SUMO Africa"
@@ -120,22 +120,22 @@ export default function AboutPage() {
 
         <div className="absolute -right-40 top-20 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-[#3eaef2]/20 blur-3xl" />
 
-        <div className="absolute -left-40 bottom-10 h-60 w-60 sm:h-72 sm:w-72 rounded-full bg-orange-500/20 blur-3xl" />
+        <div className="absolute -left-40 bottom-10 h-60 w-60 sm:h-72 sm:w-72 rounded-full bg-[#1a7cc4]/25 blur-3xl" />
 
         <div className="relative mx-auto flex w-full max-w-7xl items-center px-4 pb-16 pt-32 sm:px-6 sm:pb-20 sm:pt-36 md:px-8 lg:px-10">
-          <div className="w-full max-w-3xl">
-            <span className="inline-block rounded-full border border-orange-500/40 bg-orange-500/20 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-orange-300 sm:px-5 sm:py-2 sm:text-xs sm:tracking-[0.25em]">
+          <div className="w-full max-w-2xl">
+            <span className="inline-block rounded-full border border-[#3eaef2]/40 bg-[#3eaef2]/15 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] text-[#7cc8f5] backdrop-blur-sm sm:text-xs">
               About Us
             </span>
 
-            <h1 className="mt-5 max-w-3xl text-[2.1rem] font-black uppercase leading-[1.08] text-white sm:mt-6 sm:text-4xl md:text-5xl lg:text-6xl">
+            <h1 className="mt-5 text-[1.9rem] font-black uppercase leading-[1.1] tracking-tight text-white sm:text-4xl md:text-[2.6rem] lg:text-5xl">
               <span className="text-[#3eaef2]">Building</span>{" "}
               A Safer,{" "}
               <span className="text-[#3eaef2]">Sustainable</span>{" "}
               <span className="text-[#3eaef2]">Africa</span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-7 md:text-lg md:leading-8">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
               SUMO Africa is a regional non-profit organization dedicated to
               advancing safe, inclusive, and sustainable transportation systems
               across Africa through advocacy, awareness, education, research,
@@ -144,7 +144,7 @@ export default function AboutPage() {
 
             <Link
               href="#journey"
-              className="mt-8 inline-flex h-11 items-center gap-2 rounded-full bg-orange-500 px-5 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-orange-600 sm:px-7 sm:text-sm"
+              className="mt-7 inline-flex h-11 items-center gap-2 rounded-full bg-[#3eaef2] px-6 text-xs font-bold uppercase tracking-wide text-white shadow-[0_10px_25px_rgba(62,174,242,0.35)] transition hover:-translate-y-0.5 hover:bg-[#2a95dd] sm:text-sm"
             >
               Our Journey
               <ArrowRight size={16} />
