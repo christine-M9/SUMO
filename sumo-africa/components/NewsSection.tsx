@@ -124,7 +124,7 @@ Through the Safe Steps to School Project, SUMO Africa remains committed to worki
               <span className="absolute left-4 top-4 rounded-full bg-[#3eaef2] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow sm:left-5 sm:top-5">
                 {featured.category}
               </span>
-              <h3 className="absolute bottom-0 left-0 p-5 text-xl font-extrabold leading-tight text-[#3eaef2] sm:p-6 sm:text-2xl">
+              <h3 className="absolute bottom-0 left-0 p-5 text-xl font-semibold leading-snug tracking-tight text-[#3eaef2] sm:p-6 sm:text-[1.6rem]">
                 {featured.title}
               </h3>
             </div>
@@ -160,7 +160,7 @@ Through the Safe Steps to School Project, SUMO Africa remains committed to worki
                   <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#3eaef2]">
                     {post.category}
                   </span>
-                  <h3 className="mt-1.5 line-clamp-2 text-sm font-extrabold leading-snug text-[#3eaef2] transition-colors group-hover:text-[#1a7cc4] sm:text-base">
+                  <h3 className="mt-1.5 line-clamp-2 text-[15px] font-semibold leading-snug tracking-tight text-[#3eaef2] transition-colors group-hover:text-[#1a7cc4] sm:text-[17px]">
                     {post.title}
                   </h3>
                   <p className="mt-2 hidden text-sm leading-6 text-slate-600 sm:line-clamp-2">{post.excerpt}</p>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, CalendarDays } from "lucide-react";
+import { ArrowLeft, CalendarDays, Clock, Quote, Tag } from "lucide-react";
+import { FaXTwitter, FaLinkedin, FaFacebook, FaWhatsapp } from "react-icons/fa6";
 
 // Import the same newsItems array you're using on your News page.
 // Example:
@@ -173,6 +174,12 @@ SUMO Africa participated in the Global Ministerial Conference on Road Safety, sh
   },
 ];
 
+// "ROAD SAFETY" and "Road Safety" both show as "Road Safety"
+const pretty = (c: string) => c.trim().toLowerCase().replace(/\b\w/g, (m) => m.toUpperCase());
+
+// The live address of each story, used by the share buttons
+const SITE = "https://www.sumoafrica.org";
+
 export default async function StoryPage({
   params,
 }: {
@@ -184,89 +191,219 @@ export default async function StoryPage({
 
   if (!story) notFound();
 
+  // The whole story as one continuous flow of sentences, with no paragraph breaks.
+  // List numbers like "1." are dropped so the points read as normal sentences.
+  const storyText = story.content
+    .trim()
+    .split("\n")
+    .map((line) => line.trim().replace(/^\d+[.)]\s*/, ""))
+    .filter(Boolean)
+    .map((line) => (/[.!?:]$/.test(line) ? line : `${line}.`))
+    // After a colon the sentence carries on, so the next word starts in lowercase
+    .reduce((text, line) => (text.endsWith(":") ? `${text} ${line.charAt(0).toLowerCase()}${line.slice(1)}` : text ? `${text} ${line}` : line), "");
+
+  // About 200 words a minute
+  const words = story.content.trim().split(/\s+/).length;
+  const minutes = Math.max(1, Math.round(words / 200));
+
+  // Share links for this story
+  const url = `${SITE}/news/${story.id}`;
+  const shareLinks = [
+    { label: "X", href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(story.title)}`, icon: FaXTwitter, color: "#000000" },
+    { label: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, icon: FaLinkedin, color: "#0A66C2" },
+    { label: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, icon: FaFacebook, color: "#1877F2" },
+    { label: "WhatsApp", href: `https://wa.me/?text=${encodeURIComponent(`${story.title} ${url}`)}`, icon: FaWhatsapp, color: "#25D366" },
+  ];
+
+
   return (
-    <main className="bg-[#f7f8fa] min-h-screen">
+    <main className="min-h-screen bg-white">
+      {/* =========================================================
+          HEADER: text on the left, photo on the right
+      ========================================================= */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-sky-50/60 pb-14 pt-28 sm:pt-32">
+        {/* Faint dot pattern and soft glows */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-50"
+          style={{
+            backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+            maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+            WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+          }}
+        />
+        <div aria-hidden className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-[#3eaef2]/15 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#1a7cc4]/10 blur-3xl" />
 
-   {/* Hero */}
-{/* Article Header */}
-<section className="bg-white border-b border-gray-200">
-  <div className="mx-auto max-w-5xl px-6 py-12">
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
+          <div>
+            <Link
+              href="/news"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-[#3eaef2] transition hover:text-[#1a7cc4]"
+            >
+              <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+              Back to News
+            </Link>
 
-    {/* Breadcrumb */}
-    <Link
-      href="/news"
-      className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 transition hover:text-orange-500"
-    >
-      <ArrowLeft size={16} />
-      Back to News
-    </Link>
+            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
+              <span className="rounded-full bg-[#3eaef2] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow">
+                {pretty(story.category)}
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+                <CalendarDays size={14} />
+                {story.date}
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+                <Clock size={14} />
+                {minutes} min read
+              </span>
+            </div>
 
-    {/* Category + Date */}
-    <div className="mt-8 flex flex-wrap items-center gap-4">
+            <h1 className="mt-5 text-2xl font-bold leading-snug tracking-tight text-[#3eaef2] sm:text-3xl lg:text-[2.4rem] lg:leading-[1.15]">
+              {story.title}
+            </h1>
 
-      <span className="rounded-full bg-orange-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-white">
-        {story.category}
-      </span>
+            <div className="mt-5 h-[3px] w-16 rounded-full bg-[#3eaef2]" />
+          </div>
 
-      <div className="flex items-center gap-2 text-sm text-gray-500">
-        <CalendarDays size={16} />
-        {story.date}
-      </div>
-
-    </div>
-
-    {/* Title */}
-    <h1 className="mt-6 max-w-4xl text-3xl md:text-4xl font-bold leading-tight text-[#071a2c]">
-      {story.title}
-    </h1>
-
-  {/* Image */}
-<div className="mt-10 flex justify-center">
-  <img
-    src={story.image}
-    alt={story.title}
-    className="w-full max-w-[800px] h-[400px] rounded-3xl object-cover shadow-lg"
-  />
-</div>
-
-  </div>
-</section>
-
-      {/* Story */}
-      <section className="py-20">
-
-        <div className="mx-auto max-w-4xl px-6">
-
-          {/* <p className="text-xl leading-9 text-gray-600 mb-12">
-            {story.excerpt}
-          </p> */}
-
-          <div className="mt-10">
-
-  <div className="mb-6 h-1.5 w-20 rounded-full bg-orange-500"></div>
-
-  {/* <p className="mb-8 text-[22px] leading-9 text-[#5a6475] italic">
-    {story.excerpt}
-  </p> */}
-
-  <article className="whitespace-pre-line text-[18px] leading-8 text-[#394150]">
-    {story.content.trim()}
-  </article>
-
-</div>
-
-          <Link
-            href="/news"
-            className="mt-16 inline-flex items-center gap-3 rounded-full bg-[#06132e] px-8 py-4 font-bold uppercase tracking-wide text-white transition hover:bg-orange-500"
-          >
-            <ArrowLeft size={18} />
-            Back to News
-          </Link>
-
+          {/* Photo in full, with a blue frame set behind it */}
+          <div className="relative mx-auto w-fit">
+            <div aria-hidden className="absolute -bottom-4 -right-4 h-full w-full rounded-3xl border-2 border-[#3eaef2]/40" />
+            <img
+              src={story.image}
+              alt={story.title}
+              className="relative block h-auto max-h-[340px] w-auto max-w-full rounded-3xl shadow-[0_24px_50px_rgba(15,23,42,0.18)] sm:max-h-[420px]"
+            />
+          </div>
         </div>
-
       </section>
 
+      {/* =========================================================
+          STORY with a side panel
+      ========================================================= */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-sky-50/70 to-sky-100/50 py-14 sm:py-16">
+        {/* Faint dot pattern, fading out toward the edges */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-60"
+          style={{
+            backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+            maskImage: "radial-gradient(ellipse at center, black 35%, transparent 80%)",
+            WebkitMaskImage: "radial-gradient(ellipse at center, black 35%, transparent 80%)",
+          }}
+        />
+
+        {/* Soft glows and rings spread down the section */}
+        <div aria-hidden className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full bg-[#3eaef2]/15 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -right-32 top-1/2 h-96 w-96 rounded-full bg-[#1a7cc4]/15 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -bottom-24 left-1/4 h-80 w-80 rounded-full bg-[#2a95dd]/10 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -left-20 bottom-24 h-64 w-64 rounded-full border-[30px] border-[#3eaef2]/10" />
+        <div aria-hidden className="pointer-events-none absolute -right-16 top-10 h-56 w-56 animate-spin rounded-full border-2 border-dashed border-[#3eaef2]/30" style={{ animationDuration: "50s" }} />
+
+        {/* Small floating accent circles */}
+        <div aria-hidden className="pointer-events-none absolute left-[3%] top-[18%] h-5 w-5 animate-bounce rounded-full bg-[#3eaef2]/50" style={{ animationDuration: "4s" }} />
+        <div aria-hidden className="pointer-events-none absolute right-[3%] top-[62%] h-10 w-10 rounded-full border-4 border-[#2a95dd]/30" />
+        <div aria-hidden className="pointer-events-none absolute left-[2%] top-[70%] h-4 w-4 animate-bounce rounded-full bg-[#1a7cc4]/40" style={{ animationDuration: "5s" }} />
+        <div aria-hidden className="pointer-events-none absolute right-[5%] bottom-[8%] h-3 w-3 rounded-full bg-[#3eaef2]/60" />
+
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 sm:px-6 lg:grid-cols-[1fr_280px] lg:gap-12">
+          <div className="min-w-0">
+            {/* Summary as a pull quote */}
+            <figure className="relative rounded-3xl bg-gradient-to-br from-[#3eaef2] to-[#1a7cc4] p-6 text-white shadow-[0_18px_40px_rgba(62,174,242,0.30)] sm:p-8">
+              <Quote aria-hidden size={40} className="absolute right-5 top-5 text-white/25" />
+              <blockquote className="relative text-base font-medium leading-7 sm:text-lg sm:leading-8">
+                {story.excerpt}
+              </blockquote>
+            </figure>
+
+            <article className="mt-10 text-[15px] leading-8 text-slate-600 sm:text-base sm:leading-8">
+              <p className="first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-6xl first-letter:font-black first-letter:leading-[0.8] first-letter:text-[#3eaef2]">
+                {storyText}
+              </p>
+            </article>
+
+            <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 pt-8">
+              <Link
+                href="/news"
+                className="group inline-flex h-11 items-center gap-2 rounded-full bg-[#3eaef2] px-6 text-xs font-bold uppercase tracking-wide text-white shadow-[0_10px_25px_rgba(62,174,242,0.35)] transition hover:-translate-y-0.5 hover:bg-[#2a95dd] sm:text-sm"
+              >
+                <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+                Back to News
+              </Link>
+
+              {/* Share buttons again at the end, for phones */}
+              <div className="flex items-center gap-2 lg:hidden">
+                {shareLinks.map(({ label, href, icon: Icon, color }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Share on ${label}`}
+                    className="flex h-10 w-10 items-center justify-center rounded-lg text-white shadow transition-transform hover:scale-110"
+                    style={{ backgroundColor: color }}
+                  >
+                    <Icon size={18} />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Side panel that stays in view while reading */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-28 space-y-5">
+              <div className="rounded-3xl border border-slate-100 bg-white/95 p-6 shadow-[0_14px_35px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+                <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#3eaef2]">At a Glance</h2>
+                <dl className="mt-4 space-y-4 text-sm">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#3eaef2]/10 text-[#3eaef2]"><Tag size={16} /></span>
+                    <div>
+                      <dt className="text-[11px] uppercase tracking-wider text-slate-400">Category</dt>
+                      <dd className="font-semibold text-[#071630]">{pretty(story.category)}</dd>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#3eaef2]/10 text-[#3eaef2]"><CalendarDays size={16} /></span>
+                    <div>
+                      <dt className="text-[11px] uppercase tracking-wider text-slate-400">Date</dt>
+                      <dd className="font-semibold text-[#071630]">{story.date}</dd>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#3eaef2]/10 text-[#3eaef2]"><Clock size={16} /></span>
+                    <div>
+                      <dt className="text-[11px] uppercase tracking-wider text-slate-400">Reading Time</dt>
+                      <dd className="font-semibold text-[#071630]">{minutes} min</dd>
+                    </div>
+                  </div>
+                </dl>
+              </div>
+
+              <div className="rounded-3xl border border-slate-100 bg-white/95 p-6 shadow-[0_14px_35px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+                <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#3eaef2]">Share This Story</h2>
+                <div className="mt-4 grid grid-cols-4 gap-2">
+                  {shareLinks.map(({ label, href, icon: Icon, color }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Share on ${label}`}
+                      className="flex h-11 items-center justify-center rounded-xl text-white shadow transition-transform hover:scale-105"
+                      style={{ backgroundColor: color }}
+                    >
+                      <Icon size={18} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
     </main>
   );
 }

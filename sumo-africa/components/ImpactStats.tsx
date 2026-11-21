@@ -63,7 +63,7 @@ function Counter({ value, suffix = "", countUp = true }: { value: number; suffix
 
 export default function ImpactStats() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#3eaef2] via-[#2a95dd] to-[#1a7cc4] py-14 sm:py-16">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#3eaef2] via-[#2a95dd] to-[#1a7cc4] py-8 sm:py-10">
       {/* Faint dot pattern */}
       <div
         aria-hidden
@@ -81,23 +81,23 @@ export default function ImpactStats() {
       <div aria-hidden className="pointer-events-none absolute -bottom-20 -right-10 h-64 w-64 animate-spin rounded-full border-2 border-dashed border-white/25" style={{ animationDuration: "50s" }} />
       <div aria-hidden className="pointer-events-none absolute left-1/3 top-0 h-40 w-96 rounded-full bg-white/10 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 sm:gap-6 sm:px-6 md:grid-cols-4">
+      <div className="relative mx-auto grid max-w-5xl grid-cols-2 gap-3 px-4 sm:gap-4 sm:px-6 md:grid-cols-4">
         {stats.map(({ value, suffix, label, icon: Icon, countUp }) => (
           <div
             key={label}
-            className="group flex flex-col items-center rounded-2xl bg-white/10 px-3 py-6 text-center ring-1 ring-white/25 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/15 sm:py-7"
+            className="group flex flex-col items-center rounded-2xl bg-white/10 px-3 py-4 text-center ring-1 ring-white/25 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/15 sm:py-5"
           >
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#1a7cc4] shadow-md transition-transform duration-300 group-hover:scale-110">
-              <Icon size={22} />
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#1a7cc4] shadow-md transition-transform duration-300 group-hover:scale-110">
+              <Icon size={18} />
             </span>
 
-            <p className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <p className="mt-3 text-2xl font-black tracking-tight text-white sm:text-3xl">
               <Counter value={value} suffix={suffix} countUp={countUp} />
             </p>
 
-            <div className="mt-2 h-[2px] w-8 rounded-full bg-white/60 transition-all duration-300 group-hover:w-14" />
+            <div className="mt-1.5 h-[2px] w-8 rounded-full bg-white/60 transition-all duration-300 group-hover:w-14" />
 
-            <p className="mt-3 text-[11px] font-bold uppercase leading-snug tracking-[0.15em] text-white/90 sm:text-xs">
+            <p className="mt-2 text-[10px] font-bold uppercase leading-snug tracking-[0.15em] text-white/90 sm:text-[11px]">
               {label}
             </p>
           </div>

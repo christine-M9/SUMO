@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight, CalendarDays, Send,  } from "lucide-react"
+import NewsGrid from "@/components/NewsGrid"
+import { ArrowRight } from "lucide-react"
 const newsItems = [
  {
     id: 1,
@@ -123,250 +123,89 @@ SUMO Africa participated in the Global Ministerial Conference on Road Safety, sh
 
 export default function NewsPage() {
   return (
-    <main className="bg-[#f3f3f4] pt-24">
-{/* HERO */}
-<section className="relative h-[75vh] min-h-[600px] overflow-hidden">
+    <main className="bg-white">
+      {/* =========================================================
+          HERO
+      ========================================================= */}
+      <section className="relative flex min-h-screen items-center overflow-hidden">
+        <img
+          src="/images/sumo1.jpeg"
+          alt="SUMO Africa"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06132e]/95 via-[#06132e]/75 to-[#0b3f73]/50" />
+        <div aria-hidden className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-[#3eaef2]/20 blur-3xl" />
+        <div aria-hidden className="absolute -left-40 bottom-10 h-72 w-72 rounded-full bg-[#1a7cc4]/25 blur-3xl" />
 
-  <img
-    src="/images/sumo1.jpeg"
-    alt="SUMO Africa"
-    className="absolute inset-0 h-full w-full object-cover"
-  />
-
-  <div className="absolute inset-0 bg-gradient-to-r from-[#06132e]/95 via-[#0b5f91]/80 to-[#3eaef2]/55" />
-
-  <div className="relative mx-auto flex h-full max-w-7xl items-center px-6 sm:px-10">
-
-    <div className="max-w-3xl">
-
-      <span className="inline-block rounded-full border border-orange-500/40 bg-orange-500/20 px-5 py-2 text-xs font-bold uppercase tracking-[0.25em] text-orange-300">
-        News & Updates
-      </span>
-
-      <h1 className="mt-8 text-5xl font-black uppercase leading-[0.9] text-white md:text-7xl">
-        Stories
-        <br />
-        Creating
-        <span className="text-[#3eaef2]"> Impact</span>
-      </h1>
-
-      <p className="mt-8 max-w-2xl text-lg leading-9 text-slate-300">
-        Explore our latest projects, road safety campaigns, partnerships,
-        research and community initiatives shaping safer mobility across Africa.
-      </p>
-
-      <Link
-        href="#stories"
-        className="mt-10 inline-flex h-14 items-center gap-3 rounded-full bg-orange-500 px-8 font-bold uppercase tracking-wide text-white transition hover:bg-orange-600"
-      >
-        Explore Stories
-        <ArrowRight size={18} />
-      </Link>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-{/* NEWS GRID */}
-<section id="stories" className="py-24 bg-[#f7f8fa]">
-  <div className="max-w-7xl mx-auto px-6 sm:px-10">
-
-    {/* Header */}
-    <div className="flex items-center justify-between mb-14">
-      <div>
-       
-        <h2 className="mt-3 text-4xl font-black uppercase text-[#3eaef2] ">
-          News & Highlights
-        </h2>
-      </div>
-    </div>
-
-    {/* TOP LAYOUT */}
-   {/* TOP LAYOUT */}
-<div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-
-      {/* FEATURED STORY */}
-      <Link
-        href={`/news/${newsItems[0].id}`}
-        className="group overflow-hidden bg-white border border-gray-200 hover:border-[#3eaef2] transition-all duration-500"
-      >
-        <div className="relative h-[430px] overflow-hidden">
-
-          <img
-            src={newsItems[0].image}
-            alt={newsItems[0].title}
-            className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06132e]/95 via-[#06132e]/25 to-transparent" />
-
-          <div className="absolute bottom-0 left-0 p-8 text-white">
-
-            <span className="inline-flex rounded-full bg-orange-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em]">
-              {newsItems[0].category}
+        <div className="relative mx-auto flex w-full max-w-7xl items-center px-4 pb-16 pt-32 sm:px-6 sm:pb-20 sm:pt-36 md:px-8 lg:px-10">
+          <div className="w-full max-w-2xl">
+            <span className="inline-block rounded-full border border-[#3eaef2]/40 bg-[#3eaef2]/15 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] text-[#7cc8f5] backdrop-blur-sm sm:text-xs">
+              News &amp; Updates
             </span>
 
-            <div className="mt-5 flex items-center gap-2 text-sm text-slate-300">
-              <CalendarDays size={15} />
-              {newsItems[0].date}
-            </div>
+            <h1 className="mt-5 text-[1.9rem] font-black uppercase leading-[1.1] tracking-tight text-white sm:text-4xl md:text-[2.6rem] lg:text-5xl">
+              Stories Creating <span className="text-[#3eaef2]">Impact</span>
+            </h1>
 
-            <h3 className="mt-4 max-w-xl text-4xl font-black leading-tight">
-              {newsItems[0].title}
-            </h3>
-
-          </div>
-
-        </div>
-
-        <div className="p-8">
-
-          <p className="leading-8 text-gray-600">
-            {newsItems[0].excerpt}
-          </p>
-
-          <div className="mt-8 inline-flex items-center gap-3 font-bold uppercase tracking-[0.18em] text-[#3eaef2] transition-all group-hover:gap-5">
-            Read Story
-            <ArrowRight
-              size={18}
-              className="transition group-hover:translate-x-2"
-            />
-          </div>
-
-        </div>
-
-      </Link>
-
-      {/* RIGHT COLUMN */}
-      {/* RIGHT COLUMN */}
-<div className="my-auto overflow-hidden bg-white border border-gray-200">
-
-        {newsItems.slice(1, 3).map((item) => (
-
-          <Link
-            key={item.id}
-            href={`/news/${item.id}`}
-            className="group flex gap-4 border-b border-gray-200 p-4 last:border-b-0 hover:bg-gray-50 transition"
-          >
-
-            <div className="relative h-28 w-36 flex-shrink-0 overflow-hidden">
-
-              <img
-                src={item.image}
-                alt={item.title}
-                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-              />
-
-            </div>
-
-            <div className="flex-1">
-
-              <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-orange-500">
-                {item.category}
-              </p>
-
-              <div className="mb-2 flex items-center gap-2 text-xs text-gray-500">
-                <CalendarDays size={13} />
-                {item.date}
-              </div>
-
-              <h3 className="text-lg font-bold leading-snug text-[#06132e] transition group-hover:text-[#3eaef2]">
-                {item.title}
-              </h3>
-
-              <p className="mt-2 line-clamp-2 text-sm leading-6 text-gray-600">
-                {item.excerpt}
-              </p>
-
-              <div className="mt-3 inline-flex items-center gap-2 font-semibold text-[#3eaef2]">
-                Read Story
-                <ArrowRight
-                  size={15}
-                  className="transition group-hover:translate-x-1"
-                />
-              </div>
-
-            </div>
-
-          </Link>
-
-        ))}
-
-      </div>
-
-    </div>
-
-    {/* REMAINING STORIES */}
-    {newsItems.length > 3 && (
-
-      <div className="mt-8">
-
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-
-          {newsItems.slice(3).map((item) => (
+            <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
+              Explore our latest projects, road safety campaigns, partnerships,
+              research and community initiatives shaping safer mobility across Africa.
+            </p>
 
             <Link
-              key={item.id}
-              href={`/news/${item.id}`}
-              className="group overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-[#3eaef2] hover:shadow-md transition-all duration-300"
+              href="#stories"
+              className="group mt-7 inline-flex h-11 items-center gap-2 rounded-full bg-[#3eaef2] px-6 text-xs font-bold uppercase tracking-wide text-white shadow-[0_10px_25px_rgba(62,174,242,0.35)] transition hover:-translate-y-0.5 hover:bg-[#2a95dd] sm:text-sm"
             >
-
-              <div className="relative h-72 overflow-hidden">
-
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-
-                <span className="absolute left-4 top-4 rounded-full bg-orange-500 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white">
-                  {item.category}
-                </span>
-
-              </div>
-
-              <div className="p-4">
-
-                <div className="mb-2 flex items-center gap-2 text-xs text-gray-500">
-                  <CalendarDays size={13} />
-                  {item.date}
-                </div>
-
-                <h3 className="text-lg font-bold leading-snug text-[#06132e] transition group-hover:text-[#3eaef2]">
-                  {item.title}
-                </h3>
-
-                <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">
-                  {item.excerpt}
-                </p>
-
-                <div className="mt-3 inline-flex items-center gap-2 font-semibold text-[#3eaef2]">
-                  Read Story
-                  <ArrowRight
-                    size={15}
-                    className="transition group-hover:translate-x-1"
-                  />
-                </div>
-
-              </div>
-
+              Explore Stories
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
-
-          ))}
-
+          </div>
         </div>
+      </section>
 
-      </div>
+      {/* =========================================================
+          NEWS GRID
+      ========================================================= */}
+      <section id="stories" className="relative scroll-mt-20 overflow-hidden bg-gradient-to-br from-sky-100/70 via-white to-sky-50 py-16 sm:py-20">
+        {/* Faint dot pattern, fading out toward the edges */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-60"
+          style={{
+            backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+            maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+            WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+          }}
+        />
+        {/* Soft glows and rings */}
+        <div aria-hidden className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-[#3eaef2]/20 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -bottom-24 -right-32 h-96 w-96 rounded-full bg-[#1a7cc4]/15 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border-[32px] border-[#3eaef2]/10" />
 
-    )}
+        {/* More glows and rings spread down the long section */}
+        <div aria-hidden className="pointer-events-none absolute -right-32 top-[35%] h-96 w-96 rounded-full bg-[#3eaef2]/15 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -left-32 top-[60%] h-96 w-96 rounded-full bg-[#2a95dd]/15 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -left-24 top-[40%] h-64 w-64 animate-spin rounded-full border-2 border-dashed border-[#3eaef2]/30" style={{ animationDuration: "50s" }} />
+        <div aria-hidden className="pointer-events-none absolute -bottom-20 -right-20 h-72 w-72 rounded-full border-[32px] border-[#3eaef2]/10" />
 
-  </div>
-</section>
+        {/* Small floating accent circles */}
+        <div aria-hidden className="pointer-events-none absolute left-[4%] top-[6%] h-5 w-5 animate-bounce rounded-full bg-[#3eaef2]/50" style={{ animationDuration: "4s" }} />
+        <div aria-hidden className="pointer-events-none absolute right-[2%] top-[30%] h-10 w-10 rounded-full border-4 border-[#2a95dd]/30" />
+        <div aria-hidden className="pointer-events-none absolute left-[2%] top-[70%] h-4 w-4 animate-bounce rounded-full bg-[#1a7cc4]/40" style={{ animationDuration: "5s" }} />
+        <div aria-hidden className="pointer-events-none absolute right-[3%] top-[78%] h-3 w-3 rounded-full bg-[#3eaef2]/60" />
+        <div aria-hidden className="pointer-events-none absolute right-[8%] top-[4%] h-3 w-3 rounded-full bg-[#1a7cc4]/50" />
 
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+          {/* Title */}
+          <h2 className="mb-10 text-center text-2xl font-bold uppercase text-[#3eaef2] sm:mb-12 sm:text-3xl">
+            News &amp; Highlights
+          </h2>
+
+          {/* Category tabs and the story grid */}
+          <NewsGrid items={newsItems} />
+        </div>
+      </section>
     </main>
   )
 }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
-  ArrowUpRight,
   ArrowRight,
+  ChevronDown,
   School,
   Users,
   Eye,
@@ -10,327 +10,270 @@ import {
   CheckCircle2,
   Footprints,
   Bike,
-  MapPin, Send,Twitter, Linkedin, Facebook
+  MapPin,
+  AlertTriangle,
 } from "lucide-react";
+
+/* Reusable soft background: dots, glows, rings and floating circles */
+function Decor({ flip = false }: { flip?: boolean }) {
+  return (
+    <>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{
+          backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
+          maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+          WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+        }}
+      />
+      <div aria-hidden className={`pointer-events-none absolute top-10 h-80 w-80 rounded-full bg-[#3eaef2]/20 blur-3xl ${flip ? "-right-32" : "-left-32"}`} />
+      <div aria-hidden className={`pointer-events-none absolute -bottom-24 h-80 w-80 rounded-full bg-[#1a7cc4]/15 blur-3xl ${flip ? "-left-32" : "-right-32"}`} />
+      <div aria-hidden className={`pointer-events-none absolute -top-16 h-52 w-52 animate-spin rounded-full border-2 border-dashed border-[#3eaef2]/30 ${flip ? "-left-16" : "-right-16"}`} style={{ animationDuration: "50s" }} />
+      <div aria-hidden className={`pointer-events-none absolute -bottom-20 h-60 w-60 rounded-full border-[28px] border-[#3eaef2]/10 ${flip ? "-right-20" : "-left-20"}`} />
+      <div aria-hidden className="pointer-events-none absolute left-[2%] top-[5%] h-4 w-4 animate-bounce rounded-full bg-[#3eaef2]/50" style={{ animationDuration: "4s" }} />
+      <div aria-hidden className="pointer-events-none absolute bottom-[14%] right-[6%] h-9 w-9 rounded-full border-4 border-[#2a95dd]/30" />
+    </>
+  );
+}
+
+const challenges = [
+  "High vehicle speeds near schools",
+  "Inadequate pedestrian crossings",
+  "Missing signage and road markings",
+  "Lack of safe cycling infrastructure",
+];
+
+const beneficiaries = [
+  { title: "Primary", text: "Children aged 6-14", icon: Users },
+  { title: "Secondary", text: "Parents, teachers, school administrators, and local authorities", icon: School },
+];
+
+const objectives = [
+  { title: "Crash Trend Analysis", text: "Identify crash trends and infrastructure gaps around school zones.", icon: MapPin },
+  { title: "Road Safety Inspection", text: "Conduct comprehensive road safety inspection at high-risk schools.", icon: Eye },
+  { title: "Low-Cost Interventions", text: "Implement immediate, low-cost interventions like signage and road markings.", icon: TriangleAlert },
+  { title: "Policy Advocacy", text: "Share high-cost recommendations with authorities and advocate for reforms.", icon: Shield },
+];
+
+const achievements = [
+  "Safer pedestrian crossings near schools",
+  "Enhanced visibility for children and drivers",
+  "Greater road safety awareness in communities",
+  "Speed reduction in school zones",
+  "Advocacy for city-wide school zone safety reforms",
+  "Promotion of inclusive, non-motorised transport planning",
+];
+
+const highlights = [
+  { top: "Safer", bottom: "Crossings", icon: Footprints, color: "#3eaef2" },
+  { top: "Enhanced", bottom: "Visibility", icon: Eye, color: "#2a95dd" },
+  { top: "Speed", bottom: "Reduction", icon: TriangleAlert, color: "#1a7cc4" },
+  { top: "Active", bottom: "Mobility", icon: Bike, color: "#0f62a3" },
+];
 
 export default function SafeStepsToSchoolPage() {
   return (
-    <main className="bg-[#f5f5f5] text-[#0c1b2a]">
-      {/* HERO SECTION */}
-      <section
-        className="relative min-h-[92vh] flex items-center pt-28"
-        style={{
-          backgroundImage: "url('/images/safe-steps-hero.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#07162a]/78"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#06142a]/92 via-[#06142a]/72 to-[#06142a]/22"></div>
+    <main className="bg-white text-[#071630]">
+      {/* =========================================================
+          HERO
+      ========================================================= */}
+      <section className="relative flex min-h-screen items-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/sumo12.jpeg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06132e]/95 via-[#06132e]/80 to-[#0b3f73]/50" />
+        <div aria-hidden className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-[#3eaef2]/20 blur-3xl" />
+        <div aria-hidden className="absolute -left-40 bottom-10 h-72 w-72 rounded-full bg-[#1a7cc4]/25 blur-3xl" />
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 lg:px-16">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8">
-              <span className="bg-[#22d35f] text-white text-[10px] md:text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 inline-block">
+        <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-32 sm:px-8 sm:pt-36 lg:px-10">
+          <div className="max-w-2xl">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="rounded-full border border-[#3eaef2]/40 bg-[#3eaef2]/15 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] text-[#7cc8f5] backdrop-blur-sm sm:text-xs">
                 Local Action Project
               </span>
-              <span className="bg-white/10 text-white text-xs md:text-sm font-semibold px-4 py-3">
-                2025
-              </span>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">2025</span>
             </div>
 
-            <h1 className="text-white text-[42px] md:text-[42px] leading-[0.92] font-black uppercase tracking-tight">
-              Safe Steps
-              <br />
-              <span className="text-[#22d35f]">To School</span>
+            <h1 className="mt-5 text-4xl font-black uppercase leading-none tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Safe Steps <span className="text-[#3eaef2]">To School</span>
             </h1>
 
-            <h2 className="mt-7 text-[#22d35f] text-[17px] md:text-[24px] font-extrabold uppercase tracking-wide leading-tight">
+            <p className="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-[#7cc8f5] sm:text-base">
               Protecting Our Children On The Road
-            </h2>
-
-            <p className="mt-7 text-white/92 text-[16px] md:text-[19px] leading-[1.8] max-w-3xl">
-              Improving child safety around high-traffic school zones in Nairobi
-              by reducing vehicle speeds and promoting inclusive walking and
-              cycling infrastructure.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
+              Improving child safety around high-traffic school zones in Nairobi by reducing vehicle
+              speeds and promoting inclusive walking and cycling infrastructure.
+            </p>
 
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="#join-movement"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#0c1b2a] px-8 py-4 text-xs md:text-[14px] font-extrabold tracking-[0.08em] uppercase inline-flex items-center justify-center transition"
+                href="/contact"
+                className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#3eaef2] px-6 text-xs font-bold uppercase tracking-wide text-white shadow-[0_10px_25px_rgba(62,174,242,0.35)] transition hover:-translate-y-0.5 hover:bg-[#2a95dd] sm:text-sm"
               >
                 Get Involved
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="#challenge"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-full border-2 border-white/80 px-6 text-xs font-bold uppercase tracking-wide text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-[#3eaef2] hover:bg-[#3eaef2] sm:text-sm"
+              >
+                Learn More
+                <ChevronDown size={16} />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* GREEN STRIP */}
-      <section className="bg-[#3eaef2]">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-8 md:py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          <div>
-            <p className="text-white/90 text-[11px] md:text-xs font-bold uppercase tracking-[0.14em]">
-              Project Theme
-            </p>
-            <h3 className="mt-2 text-white text-[18px] md:text-[24px] font-black uppercase leading-tight tracking-tight">
-              Sustainable, Inclusive & Active Mobility (SIAM)
-            </h3>
-          </div>
-
-          <div className="flex items-center gap-4 md:gap-5">
-            <div className="w-14 h-14 rounded-full border-[3px] border-white flex items-center justify-center">
-              <School className="text-white" size={24} strokeWidth={2.4} />
-            </div>
-            <div>
-              <p className="text-white/90 text-[11px] md:text-xs font-bold uppercase tracking-[0.14em]">
-                Focus
-              </p>
-              <p className="text-white text-[18px] md:text-[24px] font-black uppercase leading-tight">
-                Speed Reduction & Child Safety
-              </p>
-            </div>
-          </div>
+      {/* =========================================================
+          SIAM BAND
+      ========================================================= */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#3eaef2] via-[#2a95dd] to-[#1a7cc4]">
+        <div aria-hidden className="pointer-events-none absolute -right-10 -top-16 h-48 w-48 rounded-full border-[24px] border-white/10" />
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-5 px-5 py-7 sm:px-8 md:flex-row md:items-center md:justify-between">
+          <p className="text-lg font-black uppercase leading-tight tracking-tight text-white sm:text-xl">
+            Sustainable, Inclusive &amp; Active Mobility <span className="text-white/70">(SIAM)</span>
+          </p>
+          <span className="inline-flex w-fit items-center gap-3 rounded-full bg-white/15 py-2 pl-2 pr-5 ring-1 ring-white/30 backdrop-blur-sm">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#1a7cc4]">
+              <School size={20} />
+            </span>
+            <span className="text-sm font-bold uppercase tracking-[0.12em] text-white">Speed Reduction &amp; Child Safety</span>
+          </span>
         </div>
       </section>
 
-      {/* CHALLENGE + BENEFICIARIES */}
-      <section className="bg-[#f7f7f7] py-24 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
-          <div>
-            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
-              The Challenge
-            </p>
-
-            <h2 className="mt-5 text-[#08142c] text-[28px] md:text-[40px] font-black uppercase leading-[1.04] tracking-tight max-w-3xl">
-              Dangerous School Zones In Nairobi
+      {/* =========================================================
+          CHALLENGE AND BENEFICIARIES
+      ========================================================= */}
+      <section id="challenge" className="relative scroll-mt-20 overflow-hidden bg-gradient-to-br from-sky-50 via-white to-sky-100/60 py-16 sm:py-20">
+        <Decor />
+        <div className="relative mx-auto grid max-w-6xl items-stretch gap-8 px-5 sm:px-8 lg:grid-cols-2 lg:gap-10">
+          {/* The challenge */}
+          <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm backdrop-blur-sm sm:p-8">
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#3eaef2]/10 text-[#3eaef2]">
+              <AlertTriangle size={22} />
+            </span>
+            <p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-[#3eaef2]">The Challenge</p>
+            <h2 className="mt-2 text-xl font-bold uppercase leading-snug tracking-tight text-[#071630] sm:text-2xl">
+              Dangerous School Zones in Nairobi
             </h2>
-
-            <p className="mt-8 text-[#5d6673] text-[16px] md:text-[19px] leading-[1.9] max-w-3xl">
-              Children walking to and from school face significant dangers from
-              high-speed traffic, inadequate crossing facilities, and poor
-              visibility. School zones often lack proper infrastructure to
-              protect our most vulnerable road users.
+            <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-[15px]">
+              Children walking to and from school face significant dangers from high-speed traffic,
+              inadequate crossing facilities, and poor visibility. School zones often lack proper
+              infrastructure to protect our most vulnerable road users.
             </p>
+            <ul className="mt-6 space-y-3">
+              {challenges.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm leading-6 text-slate-600 sm:text-[15px]">
+                  <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#3eaef2]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            <div className="mt-10 space-y-6">
-              {[
-                "High vehicle speeds near schools",
-                "Inadequate pedestrian crossings",
-                "Missing signage and road markings",
-                "Lack of safe cycling infrastructure",
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <span className="mt-2 w-4 h-4 rounded-full bg-[#3eaef2] shrink-0"></span>
-                  <p className="text-[#5d6673] text-[16px] md:text-[18px] leading-[1.7]">
-                    {item}
-                  </p>
+          {/* Target beneficiaries */}
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#3eaef2] to-[#1a7cc4] p-6 text-white shadow-[0_20px_45px_rgba(26,124,196,0.35)] sm:p-8">
+            <div aria-hidden className="pointer-events-none absolute -bottom-14 -right-14 h-44 w-44 rounded-full border-[24px] border-white/10" />
+            <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#1a7cc4]">
+              <Users size={22} />
+            </span>
+            <p className="relative mt-5 text-xs font-bold uppercase tracking-[0.2em] text-white/80">Who We Serve</p>
+            <h2 className="relative mt-2 text-xl font-bold uppercase leading-snug tracking-tight sm:text-2xl">
+              Target Beneficiaries
+            </h2>
+            <div className="relative mt-6 space-y-4">
+              {beneficiaries.map(({ title, text, icon: Icon }) => (
+                <div key={title} className="flex items-start gap-4 rounded-2xl bg-white/15 p-4 ring-1 ring-white/20 backdrop-blur-sm">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#1a7cc4]">
+                    <Icon size={20} />
+                  </span>
+                  <div>
+                    <h3 className="font-bold uppercase tracking-wide">{title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-white/90">{text}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="bg-white border border-[#ececec] px-8 md:px-10 py-8 md:py-10 shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
-            <h3 className="text-[#08142c] text-[22px] md:text-[30px] font-black uppercase tracking-tight">
-              Target Beneficiaries
-            </h3>
+      {/* =========================================================
+          PROJECT OBJECTIVES
+      ========================================================= */}
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20">
+        <Decor flip />
+        <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
+          <h2 className="mb-10 text-center text-2xl font-bold uppercase text-[#3eaef2] sm:text-3xl">
+            Project Objectives
+          </h2>
 
-            <div className="mt-8 space-y-6">
-              <div className="flex items-start gap-5">
-                <div className="w-16 h-16 bg-[#22d35f] flex items-center justify-center shrink-0">
-                  <Users className="text-white" size={28} strokeWidth={2.2} />
-                </div>
-                <div>
-                  <h4 className="text-[#08142c] text-[18px] md:text-[20px] font-bold">
-                    Primary
-                  </h4>
-                  <p className="mt-1 text-[#66707f] text-[15px] md:text-[17px] leading-[1.7]">
-                    Children aged 6-14
-                  </p>
-                </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {objectives.map(({ title, text, icon: Icon }, i) => (
+              <div
+                key={title}
+                className="group relative rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#3eaef2]/60 hover:shadow-[0_18px_40px_rgba(62,174,242,0.18)]"
+              >
+                <span className="absolute right-4 top-3 text-3xl font-black text-[#3eaef2]/10">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#3eaef2] text-white shadow-[0_8px_20px_rgba(62,174,242,0.35)] transition-transform duration-300 group-hover:scale-110">
+                  <Icon size={24} />
+                </span>
+                <h3 className="mt-5 text-base font-bold uppercase leading-snug tracking-tight text-[#071630]">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{text}</p>
               </div>
-
-              <div className="flex items-start gap-5">
-                <div className="w-16 h-16 bg-[#06153a] flex items-center justify-center shrink-0">
-                  <School className="text-[#22d35f]" size={28} strokeWidth={2.2} />
-                </div>
-                <div>
-                  <h4 className="text-[#08142c] text-[18px] md:text-[20px] font-bold">
-                    Secondary
-                  </h4>
-                  <p className="mt-1 text-[#66707f] text-[15px] md:text-[17px] leading-[1.7]">
-                    Parents, teachers, school administrators, and local
-                    authorities
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* PROJECT ACTIVITIES */}
-      <section className="bg-[#f6f6f6] py-4 md:py-8">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
-          <div className="text-center">
-            {/* <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
-              Our Approach
-            </p> */}
-            <h2 className="mt-4 text-[#3eaef2] text-[30px] md:text-[40px] font-black uppercase tracking-tight">
-              Project Objectives
-            </h2>
-          </div>
-
-          <div className="mt-16 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-            <div className="bg-white border border-[#e9e9e9] shadow-[0_10px_24px_rgba(0,0,0,0.03)] px-8 py-10 text-center relative">
-              <div className="absolute left-0 top-0 h-[4px] w-full bg-[#3eaef2]"></div>
-              <div className="w-16 h-16 mx-auto bg-[#3eaef2] flex items-center justify-center">
-                <MapPin className="text-white" size={28} strokeWidth={2.2} />
-              </div>
-              <div className="mt-6 text-[#d8dde6] text-[34px] md:text-[40px] font-black">
-                01
-              </div>
-              <h3 className="mt-3 text-[#08142c] text-[17px] md:text-[19px] font-black uppercase leading-tight">
-                Crash Trend Analysis
-              </h3>
-              <p className="mt-4 text-[#66707f] text-[15px] md:text-[16px] leading-[1.8]">
-                Identify crash trends and infrastructure gaps around school
-                zones.
-              </p>
-            </div>
-
-            <div className="bg-white border border-[#e9e9e9] shadow-[0_10px_24px_rgba(0,0,0,0.03)] px-8 py-10 text-center">
-              <div className="w-16 h-16 mx-auto bg-[#3eaef2] flex items-center justify-center">
-                <Eye className="text-white" size={28} strokeWidth={2.2} />
-              </div>
-              <div className="mt-6 text-[#d8dde6] text-[34px] md:text-[40px] font-black">
-                02
-              </div>
-              <h3 className="mt-3 text-[#08142c] text-[17px] md:text-[19px] font-black uppercase leading-tight">
-                Road Safety Inspection
-              </h3>
-              <p className="mt-4 text-[#66707f] text-[15px] md:text-[16px] leading-[1.8]">
-                Conduct comprehensive road safety inspection at high-risk
-                schools.
-              </p>
-            </div>
-
-            <div className="bg-white border border-[#e9e9e9] shadow-[0_10px_24px_rgba(0,0,0,0.03)] px-8 py-10 text-center">
-              <div className="w-16 h-16 mx-auto bg-[#3eaef2] flex items-center justify-center">
-                <TriangleAlert className="text-white" size={28} strokeWidth={2.2} />
-              </div>
-              <div className="mt-6 text-[#d8dde6] text-[34px] md:text-[40px] font-black">
-                03
-              </div>
-              <h3 className="mt-3 text-[#08142c] text-[17px] md:text-[19px] font-black uppercase leading-tight">
-                Low-Cost Interventions
-              </h3>
-              <p className="mt-4 text-[#66707f] text-[15px] md:text-[16px] leading-[1.8]">
-                Implement immediate, low-cost interventions like signage and
-                road markings.
-              </p>
-            </div>
-
-            <div className="bg-white border border-[#e9e9e9] shadow-[0_10px_24px_rgba(0,0,0,0.03)] px-8 py-10 text-center">
-              <div className="w-16 h-16 mx-auto bg-[#3eaef2] flex items-center justify-center">
-                <Shield className="text-white" size={28} strokeWidth={2.2} />
-              </div>
-              <div className="mt-6 text-[#d8dde6] text-[34px] md:text-[40px] font-black">
-                04
-              </div>
-              <h3 className="mt-3 text-[#08142c] text-[17px] md:text-[19px] font-black uppercase leading-tight">
-                Policy Advocacy
-              </h3>
-              <p className="mt-4 text-[#66707f] text-[15px] md:text-[16px] leading-[1.8]">
-                Share high-cost recommendations with authorities and advocate
-                for reforms.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* IMPACT */}
-      <section className="bg-[#f7f7f7] py-24 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-start">
+      {/* =========================================================
+          WHAT WE'LL ACHIEVE
+      ========================================================= */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-sky-100/60 via-white to-sky-50 py-16 sm:py-20">
+        <Decor />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           <div>
-            <p className="text-[#3eaef2] text-xs md:text-[13px] font-extrabold uppercase tracking-[0.16em]">
-              Impact
-            </p>
-
-            <h2 className="mt-4 text-[#08142c] text-[30px] md:text-[42px] font-black uppercase tracking-tight leading-[1.05]">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#3eaef2]">Impact</p>
+            <h2 className="mt-2 text-2xl font-bold uppercase tracking-tight text-[#3eaef2] sm:text-3xl">
               What We&apos;ll Achieve
             </h2>
-
-            <div className="mt-9 space-y-5">
-              {[
-                "Safer pedestrian crossings near schools",
-                "Enhanced visibility for children and drivers",
-                "Greater road safety awareness in communities",
-                "Speed reduction in school zones",
-                "Advocacy for city-wide school zone safety reforms",
-                "Promotion of inclusive, non-motorised transport planning",
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <CheckCircle2
-                    className="text-[#77d68f] mt-1 shrink-0"
-                    size={26}
-                    strokeWidth={2.4}
-                  />
-                  <p className="text-[#66707f] text-[16px] md:text-[18px] leading-[1.7]">
-                    {item}
-                  </p>
-                </div>
+            <ul className="mt-6 space-y-3">
+              {achievements.map((item) => (
+                <li key={item} className="flex items-start gap-3 rounded-xl bg-white/80 p-3 text-sm leading-6 text-slate-600 shadow-sm ring-1 ring-slate-100 backdrop-blur-sm sm:text-[15px]">
+                  <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-[#3eaef2]" />
+                  {item}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 md:gap-5 mt-8">
-            <div className="bg-[#3eaef2] min-h-[190px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
-              <Footprints className="text-white" size={38} strokeWidth={2.4} />
-              <p className="mt-7 text-white/90 text-[16px] md:text-[18px] uppercase tracking-wide">
-                Safer
-              </p>
-              <h3 className="mt-1 text-white text-[28px] md:text-[34px] font-black leading-none">
-                Crossings
-              </h3>
-            </div>
-
-            <div className="bg-[#06153a] min-h-[190px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
-              <Eye className="text-[#22d35f]" size={38} strokeWidth={2.4} />
-              <p className="mt-7 text-white/90 text-[16px] md:text-[18px] uppercase tracking-wide">
-                Enhanced
-              </p>
-              <h3 className="mt-1 text-white text-[28px] md:text-[34px] font-black leading-none">
-                Visibility
-              </h3>
-            </div>
-
-            <div className="bg-[#f0f1f5] min-h-[190px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
-              <TriangleAlert className="text-[#e2b12d]" size={38} strokeWidth={2.4} />
-              <p className="mt-7 text-[#6d7380] text-[16px] md:text-[18px] uppercase tracking-wide">
-                Speed
-              </p>
-              <h3 className="mt-1 text-[#08142c] text-[28px] md:text-[34px] font-black leading-none">
-                Reduction
-              </h3>
-            </div>
-
-            <div className="bg-[#06153a] min-h-[190px] md:min-h-[210px] flex flex-col items-center justify-center text-center px-6">
-              <Bike className="text-[#22d35f]" size={38} strokeWidth={2.4} />
-              <p className="mt-7 text-white/90 text-[16px] md:text-[18px] uppercase tracking-wide">
-                Active
-              </p>
-              <h3 className="mt-1 text-white text-[28px] md:text-[34px] font-black leading-none">
-                Mobility
-              </h3>
-            </div>
+          <div className="grid grid-cols-2 gap-4">
+            {highlights.map(({ top, bottom, icon: Icon, color }) => (
+              <div
+                key={bottom}
+                className="group relative overflow-hidden rounded-2xl p-5 text-center text-white shadow-[0_14px_35px_rgba(15,23,42,0.15)] transition-transform duration-300 hover:-translate-y-1 sm:p-6"
+                style={{ backgroundColor: color }}
+              >
+                <div aria-hidden className="pointer-events-none absolute -bottom-10 -right-10 h-28 w-28 rounded-full border-[16px] border-white/10" />
+                <span className="relative mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-white" style={{ color }}>
+                  <Icon size={20} />
+                </span>
+                <p className="relative mt-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white/85">{top}</p>
+                <p className="relative mt-1 text-xl font-black uppercase leading-none sm:text-2xl">{bottom}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-
     </main>
   );
 }
