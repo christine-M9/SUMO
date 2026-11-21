@@ -236,7 +236,7 @@ export default function AboutPage() {
 
           {/* Center circle */}
           <div className="absolute left-1/2 top-1/2 flex h-[110px] w-[110px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-white text-center shadow-[0_10px_30px_rgba(15,23,42,0.08)] sm:h-[160px] sm:w-[160px]">
-            <span className="text-[10px] font-bold uppercase tracking-wide text-orange-500 sm:text-xs">
+            <span className="text-[10px] font-bold uppercase tracking-wide text-sky-700 sm:text-xs">
               From Idea
             </span>
             <span className="mt-0.5 text-sm font-extrabold uppercase leading-tight text-sky-700 sm:text-lg">
